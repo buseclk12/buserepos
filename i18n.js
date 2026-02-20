@@ -117,8 +117,8 @@ const translations = {
     "proj.soulmate.badge": "Startup \u2022 Founder",
     "proj.soulmate.desc": "Cross-platform dating app for iOS and Android featuring AI-driven matchmaking algorithms, real-time chat with WebSockets, and Firebase-powered authentication. End-to-end architecture from Figma design systems to production deployment.",
 
-    "proj.influence.badge": "Senior Project \u2022 Founder",
-    "proj.influence.desc": "Full-scale AI-based recommendation platform connecting brands with influencers and event organizers with performers. Web and mobile applications with AI matchmaking model, Docker deployment, and complete UI/UX design in Figma.",
+    "proj.influence.badge": "Senior Project \u2022 Founder \u2022 Cross-Platform",
+    "proj.influence.desc": "Full-scale AI-based recommendation platform connecting brands with influencers and event organizers with performers. Cross-platform web and mobile applications with AI matchmaking model, Docker deployment, and complete UI/UX design in Figma.",
 
     "proj.sipps.badge": "Full-Stack",
     "proj.sipps.desc": "Full-stack responsive web application with React/TypeScript frontend and Node.js/PostgreSQL backend. Focused on backend query efficiency and frontend web vitals optimization.",
@@ -292,8 +292,8 @@ const translations = {
     "proj.soulmate.badge": "Startup \u2022 Kurucu",
     "proj.soulmate.desc": "iOS ve Android için AI destekli eşleştirme algoritmaları, WebSocket ile gerçek zamanlı sohbet ve Firebase destekli kimlik doğrulama içeren çapraz platform arkadaşlık uygulaması. Figma tasarım sistemlerinden production deployment'a uçtan uca mimari.",
 
-    "proj.influence.badge": "Bitirme Projesi \u2022 Kurucu",
-    "proj.influence.desc": "Markaları influencer'larla, etkinlik organizatörlerini sanatçılarla buluşturan tam ölçekli AI tabanlı öneri platformu. AI eşleştirme modeli, Docker deployment ve Figma'da kapsamlı UI/UX tasarımı ile web ve mobil uygulamalar.",
+    "proj.influence.badge": "Bitirme Projesi \u2022 Kurucu \u2022 Cross-Platform",
+    "proj.influence.desc": "Markaları influencer'larla, etkinlik organizatörlerini sanatçılarla buluşturan tam ölçekli AI tabanlı öneri platformu. AI eşleştirme modeli, Docker deployment ve Figma'da kapsamlı UI/UX tasarımı ile cross-platform web ve mobil uygulamalar.",
 
     "proj.sipps.badge": "Full-Stack",
     "proj.sipps.desc": "React/TypeScript frontend ve Node.js/PostgreSQL backend ile full-stack responsive web uygulaması. Backend sorgu verimliliği ve frontend web vitals optimizasyonuna odaklı.",
