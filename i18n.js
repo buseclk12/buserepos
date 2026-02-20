@@ -132,8 +132,8 @@ const translations = {
     "proj.eminpt.badge": "Frontend \u2022 Freelance",
     "proj.eminpt.desc": "Professional portfolio website for a personal trainer based in Ankara. Modern dark-themed design with animated backgrounds, bilingual support (TR/EN), client transformations gallery, certifications showcase, and WhatsApp integration for easy client outreach.",
 
-    "proj.melon.badge": "Startup \u2022 Mobile",
-    "proj.melon.desc": "Cross-platform mobile application built with React Native, featuring high-fidelity animations and fluid user interactions. Optimized performance and state management using Redux Toolkit and RTK Query, reducing unnecessary re-renders for a seamless experience.",
+    "proj.melon.badge": "Startup \u2022 Tablet \u2022 Hospitality",
+    "proj.melon.desc": "Tablet application designed for the hospitality industry, built with React Native and Expo Go for hotel in-room guest experiences. Developed high-fidelity UI components with fluid animations and optimized state management using Redux Toolkit and RTK Query. Also built the promotional website using React with TypeScript.",
 
     "proj.kloudser.badge": "UI/UX \u2022 Cybersecurity",
     "proj.kloudser.desc": "Complete web application UI/UX designed for a cybersecurity firm using Figma. Created high-fidelity wireframes, interactive prototypes, and responsive layouts with a focus on user-centered design principles to enhance usability and visual coherence.",
@@ -307,8 +307,8 @@ const translations = {
     "proj.eminpt.badge": "Frontend \u2022 Serbest",
     "proj.eminpt.desc": "Ankara merkezli bir personal trainer i\u00e7in profesyonel portfolyo web sitesi. Animasyonlu arka planlar, iki dil deste\u011fi (TR/EN), m\u00fc\u015fteri d\u00f6n\u00fc\u015f\u00fcm galerisi, sertifika vitrini ve kolay ileti\u015fim i\u00e7in WhatsApp entegrasyonu ile modern koyu temal\u0131 tasar\u0131m.",
 
-    "proj.melon.badge": "Startup \u2022 Mobil",
-    "proj.melon.desc": "React Native ile geli\u015ftirilen, y\u00fcksek kaliteli animasyonlar ve ak\u0131c\u0131 kullan\u0131c\u0131 etkile\u015fimleri i\u00e7eren \u00e7apraz platform mobil uygulama. Redux Toolkit ve RTK Query ile performans ve durum y\u00f6netimi optimize edilerek gereksiz yeniden render\u0131n \u00f6n\u00fcne ge\u00e7ildi.",
+    "proj.melon.badge": "Startup \u2022 Tablet \u2022 Otelcilik",
+    "proj.melon.desc": "Otelcilik sekt\u00f6r\u00fc i\u00e7in tasarlanan, React Native ve Expo Go ile geli\u015ftirilen tablet uygulamas\u0131. Otel oda i\u00e7i misafir deneyimleri i\u00e7in y\u00fcksek kaliteli UI bile\u015fenleri ve ak\u0131c\u0131 animasyonlar geli\u015ftirildi. Redux Toolkit ve RTK Query ile durum y\u00f6netimi optimize edildi. Ayr\u0131ca React ve TypeScript ile tan\u0131t\u0131m web sitesi olu\u015fturuldu.",
 
     "proj.kloudser.badge": "UI/UX \u2022 Siber G\u00fcvenlik",
     "proj.kloudser.desc": "Figma kullanarak bir siber g\u00fcvenlik firmas\u0131 i\u00e7in tasarlanan kapsaml\u0131 web uygulamas\u0131 UI/UX\u2019i. Kullan\u0131labilirlik ve g\u00f6rsel tutarl\u0131l\u0131\u011f\u0131 art\u0131rmak i\u00e7in kullan\u0131c\u0131 merkezli tasar\u0131m ilkeleriyle y\u00fcksek kaliteli wireframe\u2019ler, interaktif prototipler ve responsive d\u00fczenler olu\u015fturuldu.",
