@@ -129,6 +129,9 @@ const translations = {
     "proj.fintela.badge": "Frontend \u2022 AI",
     "proj.fintela.desc": "AI-powered financial assistant web application. Responsive React.js interface with clean, reusable components and dynamic API-driven data rendering.",
 
+    "proj.eminpt.badge": "Frontend \u2022 Freelance",
+    "proj.eminpt.desc": "Professional portfolio website for a personal trainer based in Ankara. Modern dark-themed design with animated backgrounds, bilingual support (TR/EN), client transformations gallery, certifications showcase, and WhatsApp integration for easy client outreach.",
+
     "proj.melon.badge": "Startup \u2022 Mobile",
     "proj.melon.desc": "Cross-platform mobile application built with React Native, featuring high-fidelity animations and fluid user interactions. Optimized performance and state management using Redux Toolkit and RTK Query, reducing unnecessary re-renders for a seamless experience.",
 
@@ -300,6 +303,9 @@ const translations = {
 
     "proj.fintela.badge": "Frontend \u2022 AI",
     "proj.fintela.desc": "AI destekli finansal asistan web uygulaması. Temiz, yeniden kullanılabilir bileşenler ve dinamik API tabanlı veri görüntüleme ile responsive React.js arayüzü.",
+
+    "proj.eminpt.badge": "Frontend \u2022 Serbest",
+    "proj.eminpt.desc": "Ankara merkezli bir personal trainer i\u00e7in profesyonel portfolyo web sitesi. Animasyonlu arka planlar, iki dil deste\u011fi (TR/EN), m\u00fc\u015fteri d\u00f6n\u00fc\u015f\u00fcm galerisi, sertifika vitrini ve kolay ileti\u015fim i\u00e7in WhatsApp entegrasyonu ile modern koyu temal\u0131 tasar\u0131m.",
 
     "proj.melon.badge": "Startup \u2022 Mobil",
     "proj.melon.desc": "React Native ile geli\u015ftirilen, y\u00fcksek kaliteli animasyonlar ve ak\u0131c\u0131 kullan\u0131c\u0131 etkile\u015fimleri i\u00e7eren \u00e7apraz platform mobil uygulama. Redux Toolkit ve RTK Query ile performans ve durum y\u00f6netimi optimize edilerek gereksiz yeniden render\u0131n \u00f6n\u00fcne ge\u00e7ildi.",
