@@ -114,6 +114,9 @@ const translations = {
     "proj.visit": "Visit Site",
     "proj.arch": "Architecture",
 
+    "proj.empati.badge": "Full-Stack \u2022 Multiplayer",
+    "proj.empati.desc": "A Kahoot-style real-time multiplayer word game where players try to predict what others will write for a given topic. Monorepo architecture with Turborepo, real-time WebSocket communication via Socket.IO, Redis-powered state management with horizontal scaling support, server-authoritative game state, 6-digit PIN room system, and retro pixel art aesthetic. Main display for TV/computer, player controller for mobile devices.",
+
     "proj.soulmate.badge": "Startup \u2022 Founder",
     "proj.soulmate.desc": "Cross-platform dating app for iOS and Android featuring AI-driven matchmaking algorithms, real-time chat with WebSockets, and Firebase-powered authentication. End-to-end architecture from Figma design systems to production deployment.",
 
@@ -288,6 +291,9 @@ const translations = {
     "proj.desc": "Tasarladığım, geliştirdiğim ve yayına aldığım ürünler ve platformlar.",
     "proj.visit": "Siteyi Ziyaret Et",
     "proj.arch": "Mimari",
+
+    "proj.empati.badge": "Full-Stack \u2022 \u00c7ok Oyunculu",
+    "proj.empati.desc": "Kahoot tarz\u0131nda ger\u00e7ek zamanl\u0131 \u00e7ok oyunculu bir kelime oyunu. Oyuncular, verilen bir konu i\u00e7in di\u011fer oyuncular\u0131n ne yazaca\u011f\u0131n\u0131 tahmin etmeye \u00e7al\u0131\u015f\u0131r. Turborepo ile monorepo mimarisi, Socket.IO ile ger\u00e7ek zamanl\u0131 WebSocket ileti\u015fimi, Redis ile real-time state y\u00f6netimi ve horizontal scaling deste\u011fi, sunucu taraf\u0131nda yetkilendirilmi\u015f oyun durumu, 6 haneli PIN ile oda sistemi ve retro piksel art esteti\u011fi. TV/bilgisayar i\u00e7in ana ekran, mobil cihazlar i\u00e7in oyuncu kontrol paneli.",
 
     "proj.soulmate.badge": "Startup \u2022 Kurucu",
     "proj.soulmate.desc": "iOS ve Android için AI destekli eşleştirme algoritmaları, WebSocket ile gerçek zamanlı sohbet ve Firebase destekli kimlik doğrulama içeren çapraz platform arkadaşlık uygulaması. Figma tasarım sistemlerinden production deployment'a uçtan uca mimari.",
