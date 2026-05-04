@@ -13,10 +13,12 @@ const translations = {
 
     // Hero
     "hero.badge": "Available for opportunities",
-    "hero.subtitle": "Architecting scalable systems. Crafting seamless experiences.<br/>Full-stack engineer bridging backend depth with frontend finesse.",
+    "hero.subtitle": "Architecting scalable systems. Crafting seamless experiences. Full-stack engineer bridging backend depth with frontend finesse.",
     "hero.cta1": "View Projects",
     "hero.cta2": "Get in Touch",
     "hero.scroll": "Scroll",
+    "hero.location": "Ankara, Türkiye",
+    "hero.meta": "Engineer × Designer",
 
     // About
     "about.tag": "<about>",
@@ -170,7 +172,7 @@ const translations = {
 
     // Contact
     "contact.tag": "<contact>",
-    "contact.title": 'Let\'s <span class="text-accent">Connect</span>',
+    "contact.title": 'Let\'s build<br/><span class="text-accent">something.</span>',
     "contact.desc": "Open to new opportunities, collaborations, and interesting conversations.",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
@@ -191,10 +193,12 @@ const translations = {
 
     // Hero
     "hero.badge": "Yeni fırsatlara açığım",
-    "hero.subtitle": "Ölçeklenebilir sistemler tasarlıyor. Kusursuz deneyimler yaratıyor.<br/>Backend derinliği ile frontend zerafetini birleştiren full-stack mühendis.",
+    "hero.subtitle": "Ölçeklenebilir sistemler tasarlıyor. Kusursuz deneyimler yaratıyor. Backend derinliği ile frontend zerafetini birleştiren full-stack mühendis.",
     "hero.cta1": "Projeleri Gör",
     "hero.cta2": "İletişime Geç",
     "hero.scroll": "Kaydır",
+    "hero.location": "Ankara, Türkiye",
+    "hero.meta": "Mühendis × Tasarımcı",
 
     // About
     "about.tag": "<hakkımda>",
@@ -348,7 +352,7 @@ const translations = {
 
     // Contact
     "contact.tag": "<iletişim>",
-    "contact.title": '<span class="text-accent">İletişime</span> Geçelim',
+    "contact.title": 'Hadi inşa edelim<br/><span class="text-accent">bir şeyler.</span>',
     "contact.desc": "Yeni fırsatlara, iş birliklerine ve ilginç sohbetlere açığım.",
     "contact.email": "E-posta",
     "contact.linkedin": "LinkedIn",

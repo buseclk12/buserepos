@@ -5,129 +5,315 @@
 (function () {
   'use strict';
 
-  /* ---------- 3D PARTICLE GRID (Hero Canvas) ---------- */
+  /* ---------- SOFT AURORA (Hero WebGL Background) ----------
+     Vanilla port of React Bits @react-bits/SoftAurora-JS-CSS
+     Original shader by React Bits — uses perlin3D + cosineGradient bands. */
   const canvas = document.getElementById('heroCanvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let mouse = { x: -9999, y: -9999 };
-  let animFrame;
+  const auroraOpts = {
+    speed: 0.6,
+    scale: 1.5,
+    brightness: 1.0,
+    color1: [0xf7/255, 0xf7/255, 0xf7/255], // #f7f7f7
+    color2: [0xe1/255, 0x00/255, 0xff/255], // #e100ff
+    noiseFrequency: 2.5,
+    noiseAmplitude: 1.0,
+    bandHeight: 0.5,
+    bandSpread: 1.0,
+    octaveDecay: 0.1,
+    layerOffset: 0.0,
+    colorSpeed: 1.0,
+    enableMouseInteraction: true,
+    mouseInfluence: 0.25,
+  };
+  const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false, antialias: true });
+  let auroraRaf;
+  let targetMouse = [0.5, 0.5];
+  let currentMouse = [0.5, 0.5];
 
-  const GRID_COLS = 36;
-  const GRID_ROWS = 22;
-  const CONNECTION_DIST = 100;
-  const MOUSE_RADIUS = 200;
+  if (gl) {
+    const vsSrc = `
+      attribute vec2 position;
+      attribute vec2 uv;
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = vec4(position, 0.0, 1.0);
+      }
+    `;
 
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth * window.devicePixelRatio;
-    canvas.height = canvas.offsetHeight * window.devicePixelRatio;
-    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-    initParticles();
+    const fsSrc = `
+precision highp float;
+
+uniform float uTime;
+uniform vec3 uResolution;
+uniform float uSpeed;
+uniform float uScale;
+uniform float uBrightness;
+uniform vec3 uColor1;
+uniform vec3 uColor2;
+uniform float uNoiseFreq;
+uniform float uNoiseAmp;
+uniform float uBandHeight;
+uniform float uBandSpread;
+uniform float uOctaveDecay;
+uniform float uLayerOffset;
+uniform float uColorSpeed;
+uniform vec2 uMouse;
+uniform float uMouseInfluence;
+uniform bool uEnableMouse;
+
+#define TAU 6.28318
+
+vec3 gradientHash(vec3 p) {
+  p = vec3(
+    dot(p, vec3(127.1, 311.7, 234.6)),
+    dot(p, vec3(269.5, 183.3, 198.3)),
+    dot(p, vec3(169.5, 283.3, 156.9))
+  );
+  vec3 h = fract(sin(p) * 43758.5453123);
+  float phi = acos(2.0 * h.x - 1.0);
+  float theta = TAU * h.y;
+  return vec3(cos(theta) * sin(phi), sin(theta) * cos(phi), cos(phi));
+}
+
+float quinticSmooth(float t) {
+  float t2 = t * t;
+  float t3 = t * t2;
+  return 6.0 * t3 * t2 - 15.0 * t2 * t2 + 10.0 * t3;
+}
+
+vec3 cosineGradient(float t, vec3 a, vec3 b, vec3 c, vec3 d) {
+  return a + b * cos(TAU * (c * t + d));
+}
+
+float perlin3D(float amplitude, float frequency, float px, float py, float pz) {
+  float x = px * frequency;
+  float y = py * frequency;
+
+  float fx = floor(x); float fy = floor(y); float fz = floor(pz);
+  float cx = ceil(x);  float cy = ceil(y);  float cz = ceil(pz);
+
+  vec3 g000 = gradientHash(vec3(fx, fy, fz));
+  vec3 g100 = gradientHash(vec3(cx, fy, fz));
+  vec3 g010 = gradientHash(vec3(fx, cy, fz));
+  vec3 g110 = gradientHash(vec3(cx, cy, fz));
+  vec3 g001 = gradientHash(vec3(fx, fy, cz));
+  vec3 g101 = gradientHash(vec3(cx, fy, cz));
+  vec3 g011 = gradientHash(vec3(fx, cy, cz));
+  vec3 g111 = gradientHash(vec3(cx, cy, cz));
+
+  float d000 = dot(g000, vec3(x - fx, y - fy, pz - fz));
+  float d100 = dot(g100, vec3(x - cx, y - fy, pz - fz));
+  float d010 = dot(g010, vec3(x - fx, y - cy, pz - fz));
+  float d110 = dot(g110, vec3(x - cx, y - cy, pz - fz));
+  float d001 = dot(g001, vec3(x - fx, y - fy, pz - cz));
+  float d101 = dot(g101, vec3(x - cx, y - fy, pz - cz));
+  float d011 = dot(g011, vec3(x - fx, y - cy, pz - cz));
+  float d111 = dot(g111, vec3(x - cx, y - cy, pz - cz));
+
+  float sx = quinticSmooth(x - fx);
+  float sy = quinticSmooth(y - fy);
+  float sz = quinticSmooth(pz - fz);
+
+  float lx00 = mix(d000, d100, sx);
+  float lx10 = mix(d010, d110, sx);
+  float lx01 = mix(d001, d101, sx);
+  float lx11 = mix(d011, d111, sx);
+
+  float ly0 = mix(lx00, lx10, sy);
+  float ly1 = mix(lx01, lx11, sy);
+
+  return amplitude * mix(ly0, ly1, sz);
+}
+
+float auroraGlow(float t, vec2 shift) {
+  vec2 uv = gl_FragCoord.xy / uResolution.y;
+  uv += shift;
+
+  float noiseVal = 0.0;
+  float freq = uNoiseFreq;
+  float amp = uNoiseAmp;
+  vec2 samplePos = uv * uScale;
+
+  for (float i = 0.0; i < 3.0; i += 1.0) {
+    noiseVal += perlin3D(amp, freq, samplePos.x, samplePos.y, t);
+    amp *= uOctaveDecay;
+    freq *= 2.0;
   }
 
-  function initParticles() {
-    particles = [];
-    const w = canvas.offsetWidth;
-    const h = canvas.offsetHeight;
-    const cellW = w / GRID_COLS;
-    const cellH = h / GRID_ROWS;
+  float yBand = uv.y * 10.0 - uBandHeight * 10.0;
+  return 0.3 * max(exp(uBandSpread * (1.0 - 1.1 * abs(noiseVal + yBand))), 0.0);
+}
 
-    for (let i = 0; i < GRID_COLS; i++) {
-      for (let j = 0; j < GRID_ROWS; j++) {
-        particles.push({
-          baseX: cellW * i + cellW / 2,
-          baseY: cellH * j + cellH / 2,
-          x: cellW * i + cellW / 2,
-          y: cellH * j + cellH / 2,
-          vx: 0,
-          vy: 0,
-          size: 1.5 + Math.random() * 1.2,
-        });
-      }
-    }
+void main() {
+  vec2 uv = gl_FragCoord.xy / uResolution.xy;
+  float t = uSpeed * 0.4 * uTime;
+
+  vec2 shift = vec2(0.0);
+  if (uEnableMouse) {
+    shift = (uMouse - 0.5) * uMouseInfluence;
   }
 
-  function animateParticles() {
-    const w = canvas.offsetWidth;
-    const h = canvas.offsetHeight;
-    ctx.clearRect(0, 0, w, h);
+  vec3 col = vec3(0.0);
+  col += 0.99 * auroraGlow(t, shift) * cosineGradient(uv.x + uTime * uSpeed * 0.2 * uColorSpeed, vec3(0.5), vec3(0.5), vec3(1.0), vec3(0.3, 0.20, 0.20)) * uColor1;
+  col += 0.99 * auroraGlow(t + uLayerOffset, shift) * cosineGradient(uv.x + uTime * uSpeed * 0.1 * uColorSpeed, vec3(0.5), vec3(0.5), vec3(2.0, 1.0, 0.0), vec3(0.5, 0.20, 0.25)) * uColor2;
 
-    // Update & draw particles
-    for (const p of particles) {
-      const dx = mouse.x - p.x;
-      const dy = mouse.y - p.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+  col *= uBrightness;
+  float alpha = clamp(length(col), 0.0, 1.0);
+  gl_FragColor = vec4(col, alpha);
+}
+    `;
 
-      if (dist < MOUSE_RADIUS) {
-        const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS;
-        const angle = Math.atan2(dy, dx);
-        p.vx -= Math.cos(angle) * force * 2.5;
-        p.vy -= Math.sin(angle) * force * 2.5;
+    function compile(type, src) {
+      const sh = gl.createShader(type);
+      gl.shaderSource(sh, src);
+      gl.compileShader(sh);
+      if (!gl.getShaderParameter(sh, gl.COMPILE_STATUS)) {
+        console.error('SoftAurora shader compile error:', gl.getShaderInfoLog(sh));
+        gl.deleteShader(sh);
+        return null;
       }
-
-      // Spring back
-      p.vx += (p.baseX - p.x) * 0.03;
-      p.vy += (p.baseY - p.y) * 0.03;
-
-      // Damping
-      p.vx *= 0.88;
-      p.vy *= 0.88;
-
-      p.x += p.vx;
-      p.y += p.vy;
-
-      const distFromMouse = Math.sqrt(
-        (mouse.x - p.x) ** 2 + (mouse.y - p.y) ** 2
-      );
-      const brightness = distFromMouse < MOUSE_RADIUS
-        ? 0.45 + 0.55 * (1 - distFromMouse / MOUSE_RADIUS)
-        : 0.35;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(232, 139, 147, ${brightness})`;
-      ctx.fill();
+      return sh;
     }
 
-    // Draw connections
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+    const vs = compile(gl.VERTEX_SHADER, vsSrc);
+    const fs = compile(gl.FRAGMENT_SHADER, fsSrc);
+    const prog = gl.createProgram();
+    gl.attachShader(prog, vs);
+    gl.attachShader(prog, fs);
+    gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+      console.error('SoftAurora program link error:', gl.getProgramInfoLog(prog));
+    }
+    gl.useProgram(prog);
 
-        if (dist < CONNECTION_DIST) {
-          const alpha = (1 - dist / CONNECTION_DIST) * 0.28;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(232, 139, 147, ${alpha})`;
-          ctx.lineWidth = 0.7;
-          ctx.stroke();
-        }
-      }
+    // Triangle covering screen (matches ogl Triangle: vertices [-1,-1, 3,-1, -1,3])
+    const posBuf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, posBuf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+    const aPos = gl.getAttribLocation(prog, 'position');
+    gl.enableVertexAttribArray(aPos);
+    gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+    const uvBuf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, uvBuf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([0, 0, 2, 0, 0, 2]), gl.STATIC_DRAW);
+    const aUv = gl.getAttribLocation(prog, 'uv');
+    if (aUv >= 0) {
+      gl.enableVertexAttribArray(aUv);
+      gl.vertexAttribPointer(aUv, 2, gl.FLOAT, false, 0, 0);
     }
 
-    animFrame = requestAnimationFrame(animateParticles);
+    const u = {
+      uTime: gl.getUniformLocation(prog, 'uTime'),
+      uResolution: gl.getUniformLocation(prog, 'uResolution'),
+      uSpeed: gl.getUniformLocation(prog, 'uSpeed'),
+      uScale: gl.getUniformLocation(prog, 'uScale'),
+      uBrightness: gl.getUniformLocation(prog, 'uBrightness'),
+      uColor1: gl.getUniformLocation(prog, 'uColor1'),
+      uColor2: gl.getUniformLocation(prog, 'uColor2'),
+      uNoiseFreq: gl.getUniformLocation(prog, 'uNoiseFreq'),
+      uNoiseAmp: gl.getUniformLocation(prog, 'uNoiseAmp'),
+      uBandHeight: gl.getUniformLocation(prog, 'uBandHeight'),
+      uBandSpread: gl.getUniformLocation(prog, 'uBandSpread'),
+      uOctaveDecay: gl.getUniformLocation(prog, 'uOctaveDecay'),
+      uLayerOffset: gl.getUniformLocation(prog, 'uLayerOffset'),
+      uColorSpeed: gl.getUniformLocation(prog, 'uColorSpeed'),
+      uMouse: gl.getUniformLocation(prog, 'uMouse'),
+      uMouseInfluence: gl.getUniformLocation(prog, 'uMouseInfluence'),
+      uEnableMouse: gl.getUniformLocation(prog, 'uEnableMouse'),
+    };
+
+    gl.uniform3fv(u.uColor1, auroraOpts.color1);
+    gl.uniform3fv(u.uColor2, auroraOpts.color2);
+    gl.uniform1f(u.uSpeed, auroraOpts.speed);
+    gl.uniform1f(u.uScale, auroraOpts.scale);
+    gl.uniform1f(u.uBrightness, auroraOpts.brightness);
+    gl.uniform1f(u.uNoiseFreq, auroraOpts.noiseFrequency);
+    gl.uniform1f(u.uNoiseAmp, auroraOpts.noiseAmplitude);
+    gl.uniform1f(u.uBandHeight, auroraOpts.bandHeight);
+    gl.uniform1f(u.uBandSpread, auroraOpts.bandSpread);
+    gl.uniform1f(u.uOctaveDecay, auroraOpts.octaveDecay);
+    gl.uniform1f(u.uLayerOffset, auroraOpts.layerOffset);
+    gl.uniform1f(u.uColorSpeed, auroraOpts.colorSpeed);
+    gl.uniform1f(u.uMouseInfluence, auroraOpts.mouseInfluence);
+    gl.uniform1i(u.uEnableMouse, auroraOpts.enableMouseInteraction ? 1 : 0);
+
+    gl.clearColor(0, 0, 0, 0);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = Math.max(1, Math.floor(canvas.offsetWidth * dpr));
+      const h = Math.max(1, Math.floor(canvas.offsetHeight * dpr));
+      if (canvas.width !== w || canvas.height !== h) {
+        canvas.width = w;
+        canvas.height = h;
+        gl.viewport(0, 0, w, h);
+      }
+      gl.uniform3f(u.uResolution, canvas.width, canvas.height, canvas.width / canvas.height);
+    }
+
+    if (auroraOpts.enableMouseInteraction) {
+      canvas.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        targetMouse = [
+          (e.clientX - rect.left) / rect.width,
+          1.0 - (e.clientY - rect.top) / rect.height,
+        ];
+      });
+      canvas.addEventListener('mouseleave', () => {
+        targetMouse = [0.5, 0.5];
+      });
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function render(time) {
+      auroraRaf = requestAnimationFrame(render);
+      resize();
+      gl.uniform1f(u.uTime, time * 0.001);
+
+      if (auroraOpts.enableMouseInteraction) {
+        currentMouse[0] += 0.05 * (targetMouse[0] - currentMouse[0]);
+        currentMouse[1] += 0.05 * (targetMouse[1] - currentMouse[1]);
+        gl.uniform2f(u.uMouse, currentMouse[0], currentMouse[1]);
+      } else {
+        gl.uniform2f(u.uMouse, 0.5, 0.5);
+      }
+
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    }
+    auroraRaf = requestAnimationFrame(render);
+  } else {
+    canvas.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(225, 0, 255, 0.20), transparent 60%)';
   }
 
-  // Track mouse on hero
-  document.getElementById('hero').addEventListener('mousemove', (e) => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
-  });
-  document.getElementById('hero').addEventListener('mouseleave', () => {
-    mouse.x = -9999;
-    mouse.y = -9999;
-  });
+  /* ---------- HERO PARALLAX ---------- */
+  const heroTitleEl = document.querySelector('.hero__title');
+  if (heroTitleEl) {
+    window.addEventListener('scroll', () => {
+      const offset = Math.min(window.scrollY * 0.3, 200);
+      heroTitleEl.style.transform = `translateY(${-offset}px)`;
+    }, { passive: true });
+  }
 
-  window.addEventListener('resize', () => {
-    cancelAnimationFrame(animFrame);
-    resizeCanvas();
+  /* ---------- 3D TILT ON PROJECT CARDS ---------- */
+  document.querySelectorAll('.project-card').forEach((el) => {
+    el.style.transformStyle = 'preserve-3d';
+    el.addEventListener('mousemove', (e) => {
+      const r = el.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      const max = 6;
+      el.style.transform = `perspective(1000px) rotateX(${-py * max}deg) rotateY(${px * max}deg) translateY(-4px) translateZ(8px)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) translateZ(0)';
+    });
   });
-
-  resizeCanvas();
-  animateParticles();
 
   /* ---------- CURSOR GLOW ---------- */
   const cursorGlow = document.getElementById('cursorGlow');

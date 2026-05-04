@@ -7,8 +7,8 @@
   <meta name="description" content="Full-Stack Software Engineer specializing in scalable systems, AI integration, and premium user experiences." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -55,42 +55,74 @@
     </div>
   </div>
 
-  <!-- ========== HERO ========== -->
+  <!-- ========== HERO (Editorial + SoftAurora bg) ========== -->
   <section class="hero" id="hero">
-    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="soft-aurora-container">
+      <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    </div>
     <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <div class="hero__badge anim-fade-up">
-        <span class="hero__badge-dot"></span>
-        <span data-i18n="hero.badge">Available for opportunities</span>
+    <div class="hero__inner">
+      <div class="hero__meta hero__meta--top anim-fade-up">
+        <span class="hero__tag">2026 &mdash; Portfolio</span>
+        <span class="hero__tag" data-i18n="hero.location">Ankara, T&uuml;rkiye</span>
       </div>
+      <div class="hero__meta hero__meta--top hero__meta--right anim-fade-up" style="--delay: 0.05s">
+        <span class="hero__tag" data-i18n="hero.meta">Engineer &times; Designer</span>
+        <span class="hero__availability">
+          <span class="hero__badge-dot"></span>
+          <span data-i18n="hero.badge">Available for opportunities</span>
+        </span>
+      </div>
+
       <h1 class="hero__title anim-fade-up" style="--delay: 0.1s">
-        Buse <span class="hero__title-accent">&Ccedil;elik</span>
+        <span class="hero__title-line">Buse</span>
+        <span class="hero__title-line hero__title-line--right">
+          <span class="hero__title-accent">&Ccedil;elik.</span>
+        </span>
       </h1>
-      <div class="hero__typing-wrap anim-fade-up" style="--delay: 0.2s">
-        <span class="hero__typing-prefix">&gt;&nbsp;</span>
-        <span class="hero__typing" id="typingText"></span>
-        <span class="hero__cursor">|</span>
-      </div>
-      <p class="hero__subtitle anim-fade-up" style="--delay: 0.3s" data-i18n="hero.subtitle">
-        Architecting scalable systems. Crafting seamless experiences.<br/>
-        Full-stack engineer bridging backend depth with frontend finesse.
-      </p>
-      <div class="hero__actions anim-fade-up" style="--delay: 0.4s">
-        <a href="#projects" class="btn btn--primary">
-          <span data-i18n="hero.cta1">View Projects</span>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#contact" class="btn btn--ghost">
-          <span data-i18n="hero.cta2">Get in Touch</span>
-        </a>
-      </div>
-      <div class="hero__scroll anim-fade-up" style="--delay: 0.6s">
-        <div class="hero__scroll-line"></div>
-        <span data-i18n="hero.scroll">Scroll</span>
+
+      <div class="hero__bottom anim-fade-up" style="--delay: 0.25s">
+        <div class="hero__roleline">
+          <span class="hero__num">[01]</span>
+          <span class="hero__role-text">
+            <span class="hero__typing" id="typingText"></span><span class="hero__cursor">_</span>
+          </span>
+        </div>
+        <p class="hero__tagline" data-i18n="hero.subtitle">
+          Architecting scalable systems. Crafting seamless experiences. Full-stack engineer bridging backend depth with frontend finesse.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">
+            <span data-i18n="hero.cta1">View Projects</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost">
+            <span data-i18n="hero.cta2">Get in Touch</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- ========== MARQUEE ========== -->
+  <div class="marquee" data-marquee>
+    <div class="marquee__track">
+      <span class="marquee__item">Full-Stack Engineer<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">UI/UX Designer<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">AI Integration<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">React &middot; Next.js<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Spring Boot<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">React Native<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Available 2026<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Full-Stack Engineer<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">UI/UX Designer<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">AI Integration<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">React &middot; Next.js<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Spring Boot<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">React Native<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Available 2026<i class="marquee__dot">&bull;</i></span>
+    </div>
+  </div>
 
   <!-- ========== ABOUT / HYBRID IDENTITY ========== -->
   <section class="section about" id="about">
@@ -107,6 +139,7 @@
         <!-- THE ENGINE -->
         <div class="about__card about__card--engine anim-fade-up" style="--delay: 0.1s">
           <div class="about__card-glow about__card-glow--blue"></div>
+          <span class="about__card-num">01</span>
           <div class="about__card-header">
             <div class="about__card-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -139,6 +172,7 @@
         <!-- THE INTERFACE -->
         <div class="about__card about__card--interface anim-fade-up" style="--delay: 0.2s">
           <div class="about__card-glow about__card-glow--cyan"></div>
+          <span class="about__card-num">02</span>
           <div class="about__card-header">
             <div class="about__card-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
@@ -459,7 +493,7 @@
         <!-- Empati Game -->
         <div class="project-card project-card--large anim-fade-up" style="--delay: 0.05s">
           <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--dual">
+            <div class="project-card__mockup project-card__mockup--stack">
               <div class="browser-frame">
                 <div class="browser-frame__bar">
                   <div class="browser-dots"><span></span><span></span><span></span></div>
@@ -469,13 +503,16 @@
                   </div>
                 </div>
                 <div class="browser-frame__content">
-                  <img src="assets/empatigame-screenshot.png" alt="Empati Game" class="browser-frame__screenshot" />
+                  <img src="assets/empatigame-screen.png" alt="Empati Game Start Screen" class="browser-frame__screenshot" />
                 </div>
               </div>
-              <div class="phone-frame phone-frame--mini">
-                <div class="phone-frame__notch"></div>
-                <div class="phone-frame__screen">
-                  <img src="assets/empatigame-screen.png" alt="Empati Game Login" class="phone-frame__screenshot" />
+              <div class="browser-frame browser-frame--mini">
+                <div class="browser-frame__bar">
+                  <div class="browser-dots"><span></span><span></span><span></span></div>
+                  <div class="browser-url">empatigame.app/lobby</div>
+                </div>
+                <div class="browser-frame__content">
+                  <img src="assets/empatigame-screenshot.png" alt="Empati Game Lobby" class="browser-frame__screenshot" />
                 </div>
               </div>
             </div>
@@ -1048,6 +1085,22 @@
     </div>
   </section>
 
+  <!-- ========== MARQUEE (reverse) ========== -->
+  <div class="marquee marquee--rev" data-marquee>
+    <div class="marquee__track">
+      <span class="marquee__item">Crafted with precision<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Engineering &times; Design<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Ankara &rarr; World<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">buse.celik.dev<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Open for work 2026<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Crafted with precision<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Engineering &times; Design<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Ankara &rarr; World<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">buse.celik.dev<i class="marquee__dot">&bull;</i></span>
+      <span class="marquee__item">Open for work 2026<i class="marquee__dot">&bull;</i></span>
+    </div>
+  </div>
+
   <!-- ========== EDUCATION ========== -->
   <section class="section education" id="education">
     <div class="container">
@@ -1121,12 +1174,11 @@
     </div>
   </section>
 
-  <!-- ========== CONTACT ========== -->
+  <!-- ========== CONTACT (Editorial) ========== -->
   <section class="section contact" id="contact">
     <div class="container">
       <div class="section__header anim-fade-up">
-        <span class="section__tag" data-i18n="contact.tag">&lt;contact&gt;</span>
-        <h2 class="section__title" data-i18n="contact.title">Let's <span class="text-accent">Connect</span></h2>
+        <h2 class="section__title contact__title" data-i18n="contact.title">Let's build<br/><span class="text-accent">something.</span></h2>
         <p class="section__desc" data-i18n="contact.desc">Open to new opportunities, collaborations, and interesting conversations.</p>
       </div>
 
@@ -1186,7 +1238,7 @@
     </div>
   </footer>
 
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
+  <script src="i18n.js?v=3"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
