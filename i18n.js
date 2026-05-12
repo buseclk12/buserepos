@@ -42,7 +42,6 @@ const translations = {
 
     // Databoss
     "exp.databoss.role": "Software Engineer",
-    "exp.databoss.date": "Mar 2024 — Present",
     "exp.databoss.1": 'Architected secure microservices using <strong>Java (Spring Boot)</strong> and <strong>Node.js</strong> with high availability',
     "exp.databoss.2": 'Engineered IAM solutions integrating <strong>Keycloak (OIDC/OAuth2)</strong> for complex RBAC',
     "exp.databoss.3": 'Optimized <strong>PostgreSQL</strong> architecture through advanced schema design and performance indexing',
@@ -52,7 +51,6 @@ const translations = {
 
     // Soulmate
     "exp.soulmate.role": "Software Engineer",
-    "exp.soulmate.date": "Sep 2025 — Present",
     "exp.soulmate.1": 'Leading end-to-end architecture for a cross-platform mobile app using <strong>React Native & Expo</strong>',
     "exp.soulmate.2": 'Developed AI-integrated chat modules and matchmaking algorithms with <strong>Python (Django REST)</strong>',
     "exp.soulmate.3": 'Translating <strong>Figma design systems</strong> into pixel-perfect, high-performance UI components',
@@ -60,33 +58,28 @@ const translations = {
 
     // SippsHub
     "exp.sipps.role": "Software Engineer",
-    "exp.sipps.date": "Mar 2025 — Present",
     "exp.sipps.1": 'Designed full-stack responsive web application using <strong>React (TypeScript)</strong> and <strong>Node.js/PostgreSQL</strong>',
     "exp.sipps.2": "Led product optimization for backend query efficiency and frontend web vitals",
     "exp.sipps.3": 'Developed secure <strong>RESTful APIs</strong> with integrated data validation',
 
     // Melon
     "exp.melon.role": "Frontend Developer",
-    "exp.melon.date": "Dec 2024 — Present",
     "exp.melon.1": 'Developed core mobile UI components using <strong>React Native</strong> with high-fidelity animations',
     "exp.melon.2": 'Optimized state management using <strong>Redux Toolkit</strong> and <strong>RTK Query</strong>',
     "exp.melon.3": "Agile collaboration iterating on product features based on user feedback",
 
     // FintelaAI
     "exp.fintela.role": "Frontend Developer",
-    "exp.fintela.date": "Feb 2025 — Mar 2025",
     "exp.fintela.1": 'Built a responsive web app using <strong>React.js</strong>',
     "exp.fintela.2": "Developed clean, reusable UI components with API integration",
 
     // iWebsa
     "exp.iwebsa.role": "Frontend Developer",
-    "exp.iwebsa.date": "Nov 2024 — Dec 2024",
     "exp.iwebsa.1": 'Converted <strong>Figma</strong> designs into responsive, pixel-perfect frontend components',
     "exp.iwebsa.2": "Ensured cross-browser compatibility and mobile-first responsive layouts",
 
     // Kloudser
     "exp.kloudser.role": "UI/UX Designer",
-    "exp.kloudser.date": "Sep 2024 — Nov 2024",
     "exp.kloudser.1": 'Designed a complete web application <strong>UI/UX for a cybersecurity firm</strong> using Figma',
     "exp.kloudser.2": "Created high-fidelity wireframes, interactive prototypes, and responsive layouts",
     "exp.kloudser.3": 'Focused on <strong>user-centered design principles</strong> to enhance usability and visual coherence',
@@ -94,7 +87,6 @@ const translations = {
 
     // Databoss Social
     "exp.dbsocial.role": "Social Media Content Creator & Graphic Designer",
-    "exp.dbsocial.date": "Sep 2024 — May 2025",
     "exp.dbsocial.1": 'Designed and managed the company\'s <strong>LinkedIn-based visual content strategy</strong>',
     "exp.dbsocial.2": 'Produced branded visuals including <strong>posters, brochures, banners, business cards</strong>, and videos',
     "exp.dbsocial.3": 'Created <strong>corporate business card designs</strong> aligned with brand identity guidelines',
@@ -102,7 +94,6 @@ const translations = {
     // Freelance Social
     "exp.freelance.role": "Social Media Content Creator & Manager",
     "exp.freelance.company": "Freelance",
-    "exp.freelance.date": "2024 — Present",
     "exp.freelance.1": 'Managing end-to-end <strong>social media strategy</strong>, content creation, and brand identity for multiple clients',
     "exp.freelance.2": 'Producing branded visuals including <strong>posters, reels, stories</strong>, and promotional videos',
     "exp.freelance.3": 'Designing <strong>business cards, logos, brand identities</strong>, and visual content systems from scratch',
@@ -222,7 +213,6 @@ const translations = {
 
     // Databoss
     "exp.databoss.role": "Yazılım Mühendisi",
-    "exp.databoss.date": "Mar 2024 — Devam",
     "exp.databoss.1": '<strong>Java (Spring Boot)</strong> ve <strong>Node.js</strong> ile güvenli mikroservisler tasarladı ve yüksek erişilebilirlik sağladı',
     "exp.databoss.2": 'Karmaşık RBAC yönetimi için <strong>Keycloak (OIDC/OAuth2)</strong> entegre ederek güçlü IAM çözümleri geliştirdi',
     "exp.databoss.3": 'Gelişmiş şema tasarımı ve performans indeksleme ile <strong>PostgreSQL</strong> veri mimarisini optimize etti',
@@ -232,7 +222,6 @@ const translations = {
 
     // Soulmate
     "exp.soulmate.role": "Yazılım Mühendisi",
-    "exp.soulmate.date": "Eyl 2025 — Devam",
     "exp.soulmate.1": '<strong>React Native & Expo</strong> ile çapraz platform mobil uygulama için uçtan uca mimari liderliği',
     "exp.soulmate.2": '<strong>Python (Django REST)</strong> ile AI entegreli sohbet modülleri ve eşleştirme algoritmaları geliştirdi',
     "exp.soulmate.3": '<strong>Figma tasarım sistemlerini</strong> piksel-mükemmel, yüksek performanslı UI bileşenlerine dönüştürüyor',
@@ -240,33 +229,28 @@ const translations = {
 
     // SippsHub
     "exp.sipps.role": "Yazılım Mühendisi",
-    "exp.sipps.date": "Mar 2025 — Devam",
     "exp.sipps.1": '<strong>React (TypeScript)</strong> ve <strong>Node.js/PostgreSQL</strong> ile full-stack responsive web uygulaması tasarladı',
     "exp.sipps.2": "Backend sorgu verimliliği ve frontend web vitals için ürün optimizasyonu liderliği yaptı",
     "exp.sipps.3": 'Entegre veri doğrulaması ile güvenli <strong>RESTful API\'ler</strong> geliştirdi',
 
     // Melon
     "exp.melon.role": "Frontend Geliştirici",
-    "exp.melon.date": "Ara 2024 — Devam",
     "exp.melon.1": '<strong>React Native</strong> ile yüksek kaliteli animasyonlar içeren temel mobil UI bileşenleri geliştirdi',
     "exp.melon.2": '<strong>Redux Toolkit</strong> ve <strong>RTK Query</strong> ile durum yönetimini optimize etti',
     "exp.melon.3": "Kullanıcı geri bildirimleri doğrultusunda Agile ortamda ürün özellikleri üzerinde iterasyon yaptı",
 
     // FintelaAI
     "exp.fintela.role": "Frontend Geliştirici",
-    "exp.fintela.date": "Şub 2025 — Mar 2025",
     "exp.fintela.1": '<strong>React.js</strong> ile responsive bir web uygulaması geliştirdi',
     "exp.fintela.2": "Temiz, yeniden kullanılabilir UI bileşenleri ve API entegrasyonu geliştirdi",
 
     // iWebsa
     "exp.iwebsa.role": "Frontend Geliştirici",
-    "exp.iwebsa.date": "Kas 2024 — Ara 2024",
     "exp.iwebsa.1": '<strong>Figma</strong> tasarımlarını responsive, piksel-mükemmel frontend bileşenlerine dönüştürdü',
     "exp.iwebsa.2": "Çapraz tarayıcı uyumluluk ve mobil-öncelikli responsive düzenler sağladı",
 
     // Kloudser
     "exp.kloudser.role": "UI/UX Tasarımcı",
-    "exp.kloudser.date": "Eyl 2024 — Kas 2024",
     "exp.kloudser.1": 'Figma kullanarak bir <strong>siber güvenlik firması için web uygulaması UI/UX\'i</strong> tasarladı',
     "exp.kloudser.2": "Yüksek kaliteli wireframe'ler, interaktif prototipler ve responsive düzenler oluşturdu",
     "exp.kloudser.3": 'Kullanılabilirlik ve görsel tutarlılığı artırmak için <strong>kullanıcı merkezli tasarım ilkelerine</strong> odaklandı',
@@ -274,7 +258,6 @@ const translations = {
 
     // Databoss Social
     "exp.dbsocial.role": "Sosyal Medya İçerik Üreticisi & Grafik Tasarımcı",
-    "exp.dbsocial.date": "Eyl 2024 — May 2025",
     "exp.dbsocial.1": 'Şirketin <strong>LinkedIn tabanlı görsel içerik stratejisini</strong> tasarladı ve yönetti',
     "exp.dbsocial.2": '<strong>Posterler, broşürler, afişler, kartvizitler</strong> ve videolar dahil markalı görseller üretti',
     "exp.dbsocial.3": 'Marka kimliği yönergelerine uygun <strong>kurumsal kartvizit tasarımları</strong> oluşturdu',
@@ -282,7 +265,6 @@ const translations = {
     // Freelance Social
     "exp.freelance.role": "Sosyal Medya İçerik Üreticisi & Yöneticisi",
     "exp.freelance.company": "Serbest",
-    "exp.freelance.date": "2024 — Devam",
     "exp.freelance.1": 'Birden fazla müşteri için uçtan uca <strong>sosyal medya stratejisi</strong>, içerik üretimi ve marka kimliği yönetimi',
     "exp.freelance.2": '<strong>Posterler, reels, hikayeler</strong> ve tanıtım videoları dahil markalı görseller üretimi',
     "exp.freelance.3": '<strong>Kartvizitler, logolar, marka kimlikleri</strong> ve görsel içerik sistemleri sıfırdan tasarım',
