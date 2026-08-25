@@ -42,12 +42,16 @@ const translations = {
 
     // Databoss
     "exp.databoss.role": "Software Engineer",
-    "exp.databoss.1": 'Architected secure microservices using <strong>Java (Spring Boot)</strong> and <strong>Node.js</strong> with high availability',
-    "exp.databoss.2": 'Engineered IAM solutions integrating <strong>Keycloak (OIDC/OAuth2)</strong> for complex RBAC',
-    "exp.databoss.3": 'Optimized <strong>PostgreSQL</strong> architecture through advanced schema design and performance indexing',
-    "exp.databoss.4": 'Automated ETL pipelines using <strong>Apache Airflow</strong> from multiple data sources',
-    "exp.databoss.5": 'Streamlined deployment via <strong>Docker, Kubernetes, and GitLab CI/CD</strong>',
-    "exp.databoss.6": 'Integrated AI-driven modules and optimized web interfaces with <strong>React/Next.js</strong>',
+    "exp.databoss.1": 'Built an enterprise <strong>LLM assistant</strong> with React, TypeScript and Chainlit on a <strong>LangGraph multi-agent RAG</strong> backend — voice input, streaming audio, guided tours and help-desk integration',
+    "exp.databoss.2": 'Embedded the assistant into surveillance and internal platforms over <strong>Socket.IO / REST</strong> for contextual access to product data',
+    "exp.databoss.3": 'Built a <strong>RAG document-ingestion pipeline</strong> with NestJS, PostgreSQL, Redis and MinIO — real-time progress, failure recovery and self-repair jobs',
+    "exp.databoss.4": 'Unified seven AI services (<strong>OCR, translation, summarisation, STT/TTS</strong>, content generation) in a bilingual React/MUI interface',
+    "exp.databoss.5": 'Designed a <strong>runtime multi-tenant branding system</strong> (Docker + Nginx injection) so a single image serves per-customer themes, logos, legal notices and feature flags',
+    "exp.databoss.6": 'Developed a <strong>drone command-and-control dashboard</strong> (React, MUI, Socket.IO) with live telemetry, mission/waypoint planning, target tracking and video streams',
+    "exp.databoss.7": 'Delivered full-stack features for a video-surveillance platform using <strong>MapLibre/Leaflet, Spring Boot, Oracle and Janus WebRTC</strong>, incl. MGRS mapping',
+    "exp.databoss.8": 'Owned the front end and contributed <strong>Spring Boot / Java 21</strong> services for a predictive-analytics platform with GIS scenario analysis and <strong>Apache Airflow</strong> pipelines',
+    "exp.databoss.9": 'Secured React, NestJS and Spring Boot apps with <strong>Keycloak (OIDC, OAuth2/JWT, UMA)</strong>; tuned <strong>PostgreSQL</strong> on high-volume datasets',
+    "exp.databoss.10": 'Shipped containerised services via <strong>GitLab CI, Harbor and Kubernetes</strong>; delivered product demos and technical walkthroughs to customers and stakeholders',
 
     // Soulmate
     "exp.soulmate.role": "Software Engineer",
@@ -231,12 +235,16 @@ const translations = {
 
     // Databoss
     "exp.databoss.role": "Yazılım Mühendisi",
-    "exp.databoss.1": '<strong>Java (Spring Boot)</strong> ve <strong>Node.js</strong> ile güvenli mikroservisler tasarladı ve yüksek erişilebilirlik sağladı',
-    "exp.databoss.2": 'Karmaşık RBAC yönetimi için <strong>Keycloak (OIDC/OAuth2)</strong> entegre ederek güçlü IAM çözümleri geliştirdi',
-    "exp.databoss.3": 'Gelişmiş şema tasarımı ve performans indeksleme ile <strong>PostgreSQL</strong> veri mimarisini optimize etti',
-    "exp.databoss.4": '<strong>Apache Airflow</strong> kullanarak birden fazla kaynaktan ETL boru hatlarını otomatikleştirdi',
-    "exp.databoss.5": '<strong>Docker, Kubernetes ve GitLab CI/CD</strong> ile deployment süreçlerini hızlandırdı',
-    "exp.databoss.6": 'AI destekli modüller entegre etti ve <strong>React/Next.js</strong> ile web arayüzlerini optimize etti',
+    "exp.databoss.1": 'React, TypeScript ve Chainlit ile <strong>LangGraph çok ajanlı RAG</strong> backend üzerinde kurumsal <strong>LLM asistanı</strong> geliştirdi — sesli giriş, akışlı ses oynatma, rehberli turlar ve help-desk entegrasyonu',
+    "exp.databoss.2": 'Asistanı <strong>Socket.IO / REST</strong> üzerinden gözetim ve iç platformlara gömerek ürün verisine bağlamsal erişim sağladı',
+    "exp.databoss.3": 'NestJS, PostgreSQL, Redis ve MinIO ile <strong>RAG doküman alım pipeline\'ı</strong> kurdu — gerçek zamanlı ilerleme, hata kurtarma ve kendi kendini onaran işler',
+    "exp.databoss.4": 'Yedi AI servisini (<strong>OCR, çeviri, özetleme, STT/TTS</strong>, içerik üretimi) iki dilli React/MUI arayüzünde birleştirdi',
+    "exp.databoss.5": 'Tek bir imajın müşteriye özel tema, logo, yasal metin ve feature flag sunmasını sağlayan <strong>çalışma zamanı multi-tenant branding sistemi</strong> tasarladı (Docker + Nginx injection)',
+    "exp.databoss.6": 'Canlı telemetri, görev/waypoint planlama, hedef takibi ve video akışı içeren <strong>drone komuta-kontrol paneli</strong> geliştirdi (React, MUI, Socket.IO)',
+    "exp.databoss.7": '<strong>MapLibre/Leaflet, Spring Boot, Oracle ve Janus WebRTC</strong> ile video gözetim platformuna MGRS haritalama dahil full-stack özellikler kazandırdı',
+    "exp.databoss.8": 'GIS senaryo analizi ve <strong>Apache Airflow</strong> pipeline\'ları içeren tahmine dayalı analitik platformunda front end\'i üstlendi, <strong>Spring Boot / Java 21</strong> servisleri geliştirdi',
+    "exp.databoss.9": 'React, NestJS ve Spring Boot uygulamalarını <strong>Keycloak (OIDC, OAuth2/JWT, UMA)</strong> ile güvenceye aldı; yüksek hacimli verilerde <strong>PostgreSQL</strong> performansını iyileştirdi',
+    "exp.databoss.10": 'Servisleri <strong>GitLab CI, Harbor ve Kubernetes</strong> ile konteyner olarak yayına aldı; müşterilere ve paydaşlara ürün demoları ve teknik sunumlar yaptı',
 
     // Soulmate
     "exp.soulmate.role": "Yazılım Mühendisi",
