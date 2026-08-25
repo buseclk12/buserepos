@@ -25,7 +25,8 @@
     enableMouseInteraction: true,
     mouseInfluence: 0.25,
   };
-  const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false, antialias: true });
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const gl = prefersReducedMotion ? null : canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false, antialias: false });
   let auroraRaf;
   let targetMouse = [0.5, 0.5];
   let currentMouse = [0.5, 0.5];
@@ -243,8 +244,11 @@ void main() {
     gl.enable(gl.BLEND);
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
 
+    // Render at reduced resolution — the aurora is soft/blurry anyway, so a
+    // 0.5x buffer upscaled by CSS is visually identical and ~4-8x cheaper.
+    const RENDER_SCALE = 0.5;
     function resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1) * RENDER_SCALE;
       const w = Math.max(1, Math.floor(canvas.offsetWidth * dpr));
       const h = Math.max(1, Math.floor(canvas.offsetHeight * dpr));
       if (canvas.width !== w || canvas.height !== h) {
@@ -267,12 +271,40 @@ void main() {
         targetMouse = [0.5, 0.5];
       });
     }
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', resize, { passive: true });
     resize();
 
+    // Only animate while the hero is on screen and the tab is visible.
+    let heroVisible = true;
+    let running = false;
+    const TARGET_FPS = 30;
+    const FRAME_MS = 1000 / TARGET_FPS;
+    let lastFrame = 0;
+
+    function start() {
+      if (!running) { running = true; auroraRaf = requestAnimationFrame(render); }
+    }
+    function stop() {
+      running = false;
+      if (auroraRaf) cancelAnimationFrame(auroraRaf);
+      auroraRaf = null;
+    }
+    function updateRunState() {
+      if (heroVisible && !document.hidden) start(); else stop();
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        heroVisible = entries[0].isIntersecting;
+        updateRunState();
+      }, { threshold: 0 }).observe(canvas);
+    }
+    document.addEventListener('visibilitychange', updateRunState);
+
     function render(time) {
+      if (!running) return;
       auroraRaf = requestAnimationFrame(render);
-      resize();
+      if (time - lastFrame < FRAME_MS) return;
+      lastFrame = time;
       gl.uniform1f(u.uTime, time * 0.001);
 
       if (auroraOpts.enableMouseInteraction) {
@@ -286,7 +318,7 @@ void main() {
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     }
-    auroraRaf = requestAnimationFrame(render);
+    updateRunState();
   } else {
     canvas.style.background = 'radial-gradient(ellipse at 50% 50%, rgba(225, 0, 255, 0.20), transparent 60%)';
   }
