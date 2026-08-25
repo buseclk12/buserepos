@@ -128,6 +128,24 @@ const translations = {
     "proj.eminpt.badge": "Frontend \u2022 Freelance",
     "proj.eminpt.desc": "Professional portfolio website for a personal trainer based in Ankara. Modern dark-themed design with animated backgrounds, bilingual support (TR/EN), client transformations gallery, certifications showcase, and WhatsApp integration for easy client outreach.",
 
+    "proj.finansce.badge": "Fintech • Flutter • Creator Platform",
+    "proj.finansce.desc": "Subscription-based finance content app built with Flutter and Riverpod in a Melos monorepo following Clean Architecture. Firebase Auth, Firestore, Cloud Functions and Messaging power accounts, content and push. LiveKit voice rooms use server-minted, short-lived tokens enforcing a creator/premium speaker policy; the API runs on Cloudflare Workers.",
+
+    "proj.pacer.badge": "Mobile • Social • Running",
+    "proj.pacer.desc": "Social app for local running teams built with Expo Router and Supabase. Geo-located events are stored in PostGIS and team data is secured with Row Level Security. Features RSVPs, team chat, check-ins, Strava OAuth via a Supabase Edge Function, and shareable story cards for Instagram and WhatsApp.",
+
+    "proj.curator.badge": "Mobile • Full-Stack • Recommendation",
+    "proj.curator.desc": "One-tap venue recommender built with React Native and a Node.js/Express backend. Integrates the Google Places API with rating-filtered selection, no-repeat logic and response caching to cut API cost. Visit history is stored locally with deep links into native Maps; marketing site published on Vercel.",
+
+    "proj.aytar.badge": "Frontend • Corporate • Freelance",
+    "proj.aytar.desc": "Corporate website built with React and Vite featuring scroll-driven counters, a custom SVG world map and a fully responsive layout.",
+
+    "proj.bahtinur.badge": "Frontend • Portfolio • Next.js",
+    "proj.bahtinur.desc": "Artist portfolio built with Next.js 16 featuring scroll-linked parallax, an image-first gallery and complete SEO / Open Graph metadata.",
+
+    "proj.nocciola.badge": "Frontend • Brand • i18n",
+    "proj.nocciola.desc": "Pistachio-cream brand site built with React featuring EN/TR internationalisation, motion animations and downloadable PDF pitch decks.",
+
     "proj.melon.badge": "Startup \u2022 Tablet \u2022 Hospitality",
     "proj.melon.desc": "Tablet application designed for the hospitality industry, built with React Native and Expo Go for hotel in-room guest experiences. Developed high-fidelity UI components with fluid animations and optimized state management using Redux Toolkit and RTK Query. Also built the promotional website using React with TypeScript.",
 
@@ -298,6 +316,24 @@ const translations = {
 
     "proj.eminpt.badge": "Frontend \u2022 Serbest",
     "proj.eminpt.desc": "Ankara merkezli bir personal trainer i\u00e7in profesyonel portfolyo web sitesi. Animasyonlu arka planlar, iki dil deste\u011fi (TR/EN), m\u00fc\u015fteri d\u00f6n\u00fc\u015f\u00fcm galerisi, sertifika vitrini ve kolay ileti\u015fim i\u00e7in WhatsApp entegrasyonu ile modern koyu temal\u0131 tasar\u0131m.",
+
+    "proj.finansce.badge": "Fintech • Flutter • İçerik Platformu",
+    "proj.finansce.desc": "Flutter ve Riverpod ile Melos monorepo içinde Clean Architecture prensipleriyle geliştirilen abonelik tabanlı finans içerik uygulaması. Hesaplar, içerik ve bildirimler için Firebase Auth, Firestore, Cloud Functions ve Messaging kullanıldı. LiveKit sesli odalar, sunucuda üretilen kısa ömürlü token'larla içerik üretici/premium konuşmacı politikasını uygular; API Cloudflare Workers üzerinde çalışır.",
+
+    "proj.pacer.badge": "Mobil • Sosyal • Koşu",
+    "proj.pacer.desc": "Expo Router ve Supabase ile geliştirilen, yerel koşu takımları için sosyal uygulama. Konum tabanlı etkinlikler PostGIS'te saklanır, takım verileri Row Level Security ile korunur. RSVP, takım sohbeti, check-in, Supabase Edge Function üzerinden Strava OAuth ve Instagram/WhatsApp için paylaşılabilir hikâye kartları içerir.",
+
+    "proj.curator.badge": "Mobil • Full-Stack • Öneri",
+    "proj.curator.desc": "React Native ve Node.js/Express backend ile geliştirilen tek dokunuşla mekân öneri uygulaması. Google Places API; puan filtreli seçim, tekrar etmeme mantığı ve API maliyetini düşüren yanıt önbellekleme ile entegre edildi. Ziyaret geçmişi cihazda saklanır ve yerel Haritalar uygulamasına deep link verir; tanıtım sitesi Vercel'de yayınlandı.",
+
+    "proj.aytar.badge": "Frontend • Kurumsal • Serbest",
+    "proj.aytar.desc": "React ve Vite ile geliştirilen kurumsal web sitesi. Scroll ile tetiklenen sayaçlar, özel SVG dünya haritası ve tamamen responsive düzen.",
+
+    "proj.bahtinur.badge": "Frontend • Portfolyo • Next.js",
+    "proj.bahtinur.desc": "Next.js 16 ile geliştirilen sanatçı portfolyosu. Scroll'a bağlı parallax, görsel odaklı galeri ve eksiksiz SEO / Open Graph metadata.",
+
+    "proj.nocciola.badge": "Frontend • Marka • i18n",
+    "proj.nocciola.desc": "React ile geliştirilen fıstık kreması marka sitesi. EN/TR çoklu dil desteği, motion animasyonları ve indirilebilir PDF sunum dosyaları.",
 
     "proj.melon.badge": "Startup \u2022 Tablet \u2022 Otelcilik",
     "proj.melon.desc": "Otelcilik sekt\u00f6r\u00fc i\u00e7in tasarlanan, React Native ve Expo Go ile geli\u015ftirilen tablet uygulamas\u0131. Otel oda i\u00e7i misafir deneyimleri i\u00e7in y\u00fcksek kaliteli UI bile\u015fenleri ve ak\u0131c\u0131 animasyonlar geli\u015ftirildi. Redux Toolkit ve RTK Query ile durum y\u00f6netimi optimize edildi. Ayr\u0131ca React ve TypeScript ile tan\u0131t\u0131m web sitesi olu\u015fturuldu.",
