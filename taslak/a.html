@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Taslak A · Gece</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+<style>
+  :root{--bg:#0c0c0e;--fg:#efece6;--mute:#8a8780;--line:rgba(239,236,230,.12);--acc:#d4ff4f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--fg)}
+  body{font-family:"Inter Tight",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{min-height:100vh;display:flex;flex-direction:column;padding:28px 40px 32px;position:relative;isolation:isolate;overflow:clip}
+  .glow{position:absolute;inset:auto -10% -40% 30%;height:80%;background:radial-gradient(closest-side,rgba(212,255,79,.13),transparent);filter:blur(40px);z-index:-1;pointer-events:none}
+  nav{display:flex;align-items:center;justify-content:space-between;font-size:14px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:-.01em}
+  .logo i{width:28px;height:28px;border-radius:50%;background:var(--fg);color:var(--bg);display:grid;place-items:center;font:italic 17px "Instrument Serif",serif}
+  .links{display:flex;gap:32px;color:var(--mute)}
+  .links a:hover{color:var(--fg)}
+  .right{display:flex;align-items:center;gap:18px}
+  .lang{font:12px "JetBrains Mono",monospace;color:var(--mute)}
+  .lang b{color:var(--fg);font-weight:400}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:10px 18px;display:flex;gap:8px;align-items:center;transition:.3s}
+  .pill:hover{background:var(--fg);color:var(--bg)}
+  .hero{flex:1;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;padding:72px 0 48px}
+  .status{display:inline-flex;align-items:center;gap:10px;font:12px "JetBrains Mono",monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;margin-bottom:32px}
+  .status i{width:7px;height:7px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px rgba(212,255,79,.15)}
+  h1{font-weight:500;font-size:clamp(48px,6.6vw,104px);line-height:.98;letter-spacing:-.045em}
+  h1 em{font:italic 400 1.08em "Instrument Serif",serif;letter-spacing:-.01em;color:var(--acc)}
+  h1 .soft{color:var(--mute)}
+  .side{display:flex;flex-direction:column;gap:28px;padding-bottom:10px}
+  .side p{font-size:17px;line-height:1.5;color:#c9c5bd;max-width:36ch}
+  .cta{display:flex;gap:12px}
+  .btn{padding:15px 22px;border-radius:999px;font-weight:500;font-size:15px;display:inline-flex;gap:10px;align-items:center}
+  .btn--a{background:var(--acc);color:#0c0c0e}
+  .btn--b{border:1px solid var(--line)}
+  .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  .meta div{padding:14px 0 0;font:12px "JetBrains Mono",monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.06em}
+  .meta b{display:block;font:500 15px "Inter Tight";color:var(--fg);text-transform:none;letter-spacing:0;margin-top:6px}
+  .work{display:grid;grid-template-columns:1.6fr 1fr 1fr .62fr;gap:14px;height:230px}
+  .card{position:relative;border-radius:18px;overflow:hidden;background:#17171a;border:1px solid var(--line)}
+  .card img{width:100%;height:100%;object-fit:cover;object-position:top;opacity:.92;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .card:hover img{transform:scale(1.04)}
+  .card span{position:absolute;left:12px;bottom:12px;background:rgba(12,12,14,.72);backdrop-filter:blur(10px);padding:7px 12px;border-radius:999px;font-size:13px}
+  .card span small{color:var(--mute);margin-left:6px}
+  .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;font:12px "JetBrains Mono",monospace;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+  @media (max-width:860px){
+    .wrap{padding:20px 18px 24px}
+    .links,.lang{display:none}
+    .hero{grid-template-columns:1fr;padding:56px 0 36px;gap:32px}
+    h1{font-size:46px}
+    .work{grid-template-columns:1fr 1fr;height:auto}
+    .card{height:170px}
+    .card:first-child{grid-column:1/-1;height:200px}
+    .card:last-child{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="glow"></div>
+  <nav>
+    <a class="logo" href="#"><i>b</i>Buse Çelik</a>
+    <div class="links"><a href="#">Hakkımda</a><a href="#">Projeler</a><a href="#">Deneyim</a><a href="#">Yetenekler</a></div>
+    <div class="right"><span class="lang"><b>TR</b> / EN</span><a class="pill" href="#">İletişime geç ↗</a></div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="status"><i></i>Yeni fırsatlara açığım · Ankara</div>
+      <h1>Sistemleri kuran,<br><em>deneyimi</em> tasarlayan<br><span class="soft">full-stack mühendis.</span></h1>
+    </div>
+    <div class="side">
+      <p>Backend derinliği ile frontend zarafetini birleştiriyorum. Ölçeklenebilir mimariler, mobil uygulamalar ve özenle tasarlanmış arayüzler.</p>
+      <div class="cta"><a class="btn btn--a" href="#">Projeleri gör →</a><a class="btn btn--b" href="#">İletişim</a></div>
+      <div class="meta"><div>Proje<b>10+</b></div><div>Deneyim<b>4+ yıl</b></div><div>Odak<b>Web · Mobil · AI</b></div></div>
+    </div>
+  </section>
+
+  <div class="row"><span>Seçili işler</span><span>01 — 04</span></div>
+  <div class="work">
+    <a class="card" href="#"><img src="../assets/empatigame-screen.webp" alt=""><span>Empati Game<small>Web</small></span></a>
+    <a class="card" href="#"><img src="../assets/influencehub.webp" alt=""><span>InfluenceHub<small>SaaS</small></span></a>
+    <a class="card" href="#"><img src="../assets/fintelaai.webp" alt=""><span>Fintela AI<small>AI</small></span></a>
+    <a class="card" href="#"><img src="../assets/soulmate.webp" alt=""><span>Soulmate</span></a>
+  </div>
+</div>
+</body>
+</html>
