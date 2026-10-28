@@ -1721,3 +1721,10 @@ html.has-cursor .cursor { opacity: 1; }
   .collage__photo--b { width: 60%; }
   .clip--collage { right: auto; left: 40%; }
 }
+.deliver > *,
+.deliver__row > * { min-width: 0; }
+.deliver__row p { overflow-wrap: anywhere; }
+@media (max-width: 860px) {
+  .deliver__left { flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  .num--big { font-size: 48px; }
+}
