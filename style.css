@@ -44,17 +44,8 @@ ul { list-style: none; }
 .skip:focus { left: 8px; }
 :focus-visible { outline: 2px solid var(--pink-2); outline-offset: 3px; }
 
-/* The whole site sits on one white "sheet" over pink, like the reference */
-.sheet-page {
-  max-width: 1360px;
-  margin: 0 auto;
-  background: var(--page);
-  box-shadow: 0 30px 80px -40px rgba(120, 40, 90, .35);
-  overflow: clip;
-}
-@media (min-width: 1400px) {
-  body { padding: 28px 0 40px; }
-}
+/* Full-bleed page */
+.sheet-page { background: var(--page); overflow: clip; }
 
 /* ---------- textures ---------- */
 .tex { position: relative; isolation: isolate; background-size: cover; background-position: center; }
@@ -117,7 +108,8 @@ ul { list-style: none; }
    HERO
    ============================================================ */
 .hero {
-  min-height: min(86vh, 820px);
+  min-height: calc(100vh - 51px);
+  min-height: calc(100svh - 51px);
   padding: var(--pad);
   display: grid;
   grid-template-columns: 1fr auto;
@@ -131,7 +123,7 @@ ul { list-style: none; }
 .hero__name {
   grid-column: 1 / -1; grid-row: 1;
   align-self: center;
-  font: 400 clamp(96px, 17vw, 250px)/.78 var(--f-script);
+  font: 400 clamp(96px, 17vw, 330px)/.78 var(--f-script);
   color: rgba(255, 238, 247, .9);
   -webkit-text-stroke: 1.4px rgba(214, 120, 170, .9);
   text-shadow: 0 2px 30px rgba(120, 40, 90, .25);
@@ -157,7 +149,7 @@ ul { list-style: none; }
 @keyframes blink { 50% { opacity: 0; } }
 
 .hero__stack, .hero__tag { grid-row: 2; align-self: end; font-size: 12px; font-weight: 500; color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, .55); }
-.hero__stack { grid-column: 1; }
+.hero__stack { grid-column: 1; justify-self: start; background: rgba(15, 15, 16, .55); padding: 5px 10px; }
 .hero__tag { grid-column: 2; text-align: left; font: 700 clamp(14px, 1.4vw, 19px)/1.1 var(--f-head); color: var(--ink); text-shadow: none; background: rgba(255, 255, 255, .86); padding: 8px 12px; }
 .hero__status {
   position: absolute; left: var(--pad); top: var(--pad);
@@ -470,7 +462,7 @@ ul { list-style: none; }
   .topbar__nav { justify-content: center; gap: 8px; font-size: 10.5px; overflow-x: auto; scrollbar-width: none; }
   .topbar__nav a:nth-child(3), .topbar__nav a:nth-child(4) { display: none; }
 
-  .hero { min-height: 78vh; grid-template-columns: 1fr; grid-template-rows: 1fr auto auto; gap: 10px; }
+  .hero { min-height: calc(100svh - 51px); grid-template-columns: 1fr; grid-template-rows: 1fr auto auto; gap: 10px; }
   .hero__name { font-size: 27vw; }
   .hero__last { padding-left: .5em; }
   .hero__role { position: static; grid-row: 2; justify-self: start; max-width: none; }
