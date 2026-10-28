@@ -121,6 +121,21 @@
   }, { passive: true });
   onScroll();
 
+  /* ---------- Highlight the nav link of the section in view ---------- */
+  const navLinks = [...document.querySelectorAll('.topbar__nav a')];
+  if ('IntersectionObserver' in window) {
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + e.target.id));
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    navLinks.forEach((a) => {
+      const sec = document.querySelector(a.getAttribute('href'));
+      if (sec) navIO.observe(sec);
+    });
+  }
+
   /* ---------- Project dialog ---------- */
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modalBody');
