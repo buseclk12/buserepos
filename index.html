@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buse &Ccedil;elik &mdash; Software Engineer</title>
   <meta name="description" content="Full-Stack Software Engineer specializing in scalable systems, AI integration, and premium user experiences." />
-  <meta name="theme-color" content="#f6dcef" />
+  <meta name="theme-color" content="#e7e1dc" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Pinyon+Script&family=Caveat:wght@500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=9" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Pinyon+Script&family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=10" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -36,16 +36,32 @@
 
   <main id="main">
 
-    <!-- ========== HERO: fur ========== -->
-    <section class="hero tex tex--fur" id="top">
+    <!-- ========== HERO: editorial cover ========== -->
+    <section class="hero" id="top">
+      <div class="hero__band" aria-hidden="true"></div>
+
+      <p class="hero__label"><span>buse &ccedil;elik</span><span data-i18n="hero.label">software engineer</span></p>
+
+      <div class="hero__frames" aria-hidden="true">
+        <figure class="frame frame--a"><img src="assets/buse.webp" alt="" width="900" height="1200" /></figure>
+        <figure class="frame frame--b"><img src="assets/buse.webp" alt="" width="900" height="1200" /></figure>
+        <figure class="frame frame--c"><img src="assets/buse.webp" alt="" width="900" height="1200" /></figure>
+      </div>
+
       <h1 class="hero__name" aria-label="Buse Çelik">
         <span class="hero__first">Buse</span>
         <span class="hero__last">&Ccedil;elik</span>
       </h1>
-      <p class="hero__role"><span class="hero__a" data-i18n="hero.a">A</span> <span id="typingText">Full-Stack Software Engineer</span></p>
-      <p class="hero__stack">Full-stack &middot; Backend &middot; Mobile &middot; UI/UX &middot; AI</p>
-      <p class="hero__tag" data-i18n="hero.tag">building digital products<br />with character.</p>
+
+      <p class="hero__quote hero__quote--top" data-i18n="hero.q1">I don't just design the screen &mdash;<br />I build what runs behind it.</p>
+      <div class="hero__quote hero__quote--bottom">
+        <p data-i18n="hero.tag">building digital products<br />with character.</p>
+        <p class="hero__role"><span class="hero__a" data-i18n="hero.a">A</span> <span id="typingText">Full-Stack Software Engineer</span></p>
+      </div>
+
       <span class="hero__status"><i></i><span data-i18n="hero.badge">Available for opportunities</span></span>
+      <p class="hero__foot"><span data-i18n="hero.location">Ankara, T&uuml;rkiye</span><span>Full-stack &middot; Backend &middot; Mobile &middot; UI/UX &middot; AI</span></p>
+      <span class="hero__mono" aria-hidden="true">b&ccedil;</span>
     </section>
 
     <!-- ========== SELECTED WORK ========== -->
@@ -640,7 +656,7 @@
     <img alt="Poster preview" id="lightboxImg" />
   </div>
 
-  <script src="i18n.js?v=9"></script>
-  <script src="script.js?v=9"></script>
+  <script src="i18n.js?v=10"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

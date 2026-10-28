@@ -4,6 +4,8 @@
 
 const translations = {
   en: {
+    "hero.label": "software engineer",
+    "hero.q1": "I don't just design the screen —<br />I build what runs behind it.",
     "hero.a": "A",
     "hero.tag": "building digital products<br />with character.",
     "work.selected": "Selected",
@@ -228,6 +230,8 @@ const translations = {
   },
 
   tr: {
+    "hero.label": "yazılım mühendisi",
+    "hero.q1": "Sadece ekranı tasarlamıyorum —<br />arkasında çalışanı da kuruyorum.",
     "hero.a": "",
     "hero.tag": "karakteri olan dijital<br />ürünler geliştiriyorum.",
     "work.selected": "Seçili",
