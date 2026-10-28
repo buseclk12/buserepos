@@ -4,6 +4,17 @@
 
 const translations = {
   en: {
+    "nav.menu": "Menu",
+    "nav.design": "Design",
+    "nav.education": "Education",
+    "hero.localtime": "Local time",
+    "hero.now": "Currently",
+    "proj.posters.hint": "Drag or scroll →",
+    "skills.cat.db": "Databases",
+    "skills.cat.ai": "AI & Data",
+    "skills.cat.design": "Design",
+    "skills.cat.tools": "Tools",
+    "footer.top": "Back to top ↑",
     // Nav
     "nav.about": "About",
     "nav.experience": "Experience",
@@ -197,6 +208,17 @@ const translations = {
   },
 
   tr: {
+    "nav.menu": "Menü",
+    "nav.design": "Tasarım",
+    "nav.education": "Eğitim",
+    "hero.localtime": "Yerel saat",
+    "hero.now": "Şu an",
+    "proj.posters.hint": "Sürükle veya kaydır →",
+    "skills.cat.db": "Veritabanları",
+    "skills.cat.ai": "Yapay Zekâ & Veri",
+    "skills.cat.design": "Tasarım",
+    "skills.cat.tools": "Araçlar",
+    "footer.top": "Başa dön ↑",
     // Nav
     "nav.about": "Hakkımda",
     "nav.experience": "Deneyim",
@@ -415,7 +437,8 @@ const typingTitles = {
 (function () {
   'use strict';
 
-  let currentLang = localStorage.getItem('lang') || 'en';
+  let currentLang = 'en';
+  try { currentLang = localStorage.getItem('lang') || 'en'; } catch (e) {}
 
   function applyTranslations(lang) {
     const dict = translations[lang];
@@ -430,8 +453,10 @@ const typingTitles = {
     document.documentElement.lang = lang;
 
     // Update toggle active state
-    document.querySelectorAll('.lang-toggle__option').forEach(opt => {
-      opt.classList.toggle('lang-toggle__option--active', opt.dataset.lang === lang);
+    document.querySelectorAll('.lang__opt').forEach(opt => {
+      const active = opt.dataset.lang === lang;
+      opt.classList.toggle('is-active', active);
+      opt.setAttribute('aria-pressed', String(active));
     });
 
     // Update typing titles
@@ -439,13 +464,13 @@ const typingTitles = {
       window.__updateTypingTitles(lang);
     }
 
-    localStorage.setItem('lang', lang);
+    try { localStorage.setItem('lang', lang); } catch (e) {}
     currentLang = lang;
   }
 
   // Language toggle click handler
   document.addEventListener('click', (e) => {
-    const opt = e.target.closest('.lang-toggle__option');
+    const opt = e.target.closest('.lang__opt');
     if (opt && opt.dataset.lang) {
       const newLang = opt.dataset.lang;
       if (newLang !== currentLang) {
@@ -454,11 +479,8 @@ const typingTitles = {
     }
   });
 
-  // Apply on load
-  if (currentLang === 'tr') {
-    // Defer to let other scripts init first
-    setTimeout(() => applyTranslations('tr'), 150);
-  }
+  // Apply on load (script.js registers __updateTypingTitles first, then calls this)
+  window.__initLang = () => applyTranslations(currentLang);
 
   // Expose for external use
   window.__applyTranslations = applyTranslations;
