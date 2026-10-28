@@ -125,12 +125,11 @@ ul { list-style: none; }
   background: var(--page);
   overflow: hidden;
 }
-/* soft-focus animal band behind the frames (swap the image for a real eye photo later) */
+/* soft-focus lioness-eye band behind the frames */
 .hero__band {
   position: absolute; left: 0; right: 0; top: 27%; height: 46%; z-index: -1;
-  background: url("assets/tex/fur.webp") center / cover;
-  filter: grayscale(1) sepia(.35) contrast(.62) brightness(1.12) blur(1.5px);
-  opacity: .95;
+  background: url("assets/photo/goz-bandi.webp") center 46% / cover;
+  filter: contrast(.9) brightness(1.04) blur(.4px);
 }
 .hero__band::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(231, 225, 220, .15), rgba(231, 225, 220, 0) 30%, rgba(231, 225, 220, 0) 70%, rgba(231, 225, 220, .15)); }
 
@@ -150,11 +149,11 @@ ul { list-style: none; }
 .frame { overflow: hidden; background: #1a1414; box-shadow: 0 18px 30px -18px rgba(40, 10, 10, .55); }
 .frame img { width: 100%; height: 100%; object-fit: cover; }
 .frame--a { aspect-ratio: 4 / 3; }
-.frame--a img { object-position: 50% 16%; transform: scale(1.25); transform-origin: 50% 20%; }
+.frame--a img { object-position: 50% 30%; }
 .frame--b { aspect-ratio: 2 / 1; }
-.frame--b img { transform: scale(2.6); transform-origin: 48.5% 67%; object-position: 50% 0; }
+.frame--b img { object-position: 50% 62%; }
 .frame--c { aspect-ratio: 4 / 3; }
-.frame--c img { object-position: 50% 62%; }
+.frame--c img { object-position: 50% 38%; }
 .js .frame { clip-path: inset(0 0 100% 0); transition: clip-path 1.2s var(--ease); }
 .js .frame--b { transition-delay: .15s; } .js .frame--c { transition-delay: .3s; }
 .is-ready .frame { clip-path: inset(0 0 0 0); }
@@ -509,7 +508,7 @@ ul { list-style: none; }
 
   .hero__label { top: 74px; }
   .hero__status { top: 120px; left: 50%; transform: translateX(-50%); white-space: nowrap; }
-  .hero__band { top: 30%; height: 40%; }
+  .hero__band { top: calc(51% - 26.7vw); height: 53.4vw; background-size: 160vw auto; background-position: center; }
   .hero__frames { width: 50vw; gap: 2.4vh; padding: 170px 0 150px; }
   .hero__name { font-size: 33vw; }
   .hero__first { left: 2%; top: 22%; }
@@ -597,8 +596,8 @@ ul { list-style: none; }
 /* --- shared soft band --- */
 .band {
   position: absolute; left: 0; right: 0; top: 24%; height: 52%; z-index: -1;
-  background: url("assets/tex/fur.webp") center / cover;
-  filter: grayscale(1) sepia(.35) contrast(.62) brightness(1.12) blur(1.5px);
+  background: url("assets/photo/goz-bandi.webp") center 46% / cover;
+  filter: contrast(.9) brightness(1.04) blur(.4px);
 }
 
 /* --- about --- */
@@ -685,3 +684,7 @@ ul { list-style: none; }
   .job__body { margin-left: 44px; }
   .job__toggle { width: 30px; height: 30px; }
 }
+
+/* ============ PROJECT PHOTOS ============ */
+.pcard__photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: 0 22px 34px -22px rgba(40, 10, 10, .55); }
+.pcard__btn:hover .pcard__photo { filter: saturate(1.08); }
