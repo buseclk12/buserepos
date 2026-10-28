@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Pinyon+Script&family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="style.css?v=11" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -67,6 +67,7 @@
     <!-- ========== SELECTED WORK ========== -->
     <section class="work" id="work">
       <h2 class="title reveal"><span data-i18n="work.selected">Selected</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="work.word">Work</span></h2>
+      <p class="sidenote reveal" data-i18n="proj.desc">Products and platforms I've designed, built, and shipped.</p>
       <div class="pcards">
         <article class="pcard reveal" style="--y:150px">
           <button type="button" class="pcard__btn" data-open="p0" aria-haspopup="dialog">
@@ -245,15 +246,15 @@
           </div>
         </article>
       </div>
-      <div class="burst" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 38 100 30 64 54 84 100 50 68 16 100 36 54 0 30 42 38Z"/></svg></div>
     </section>
 
     <!-- ========== ABOUT: steel ========== -->
-    <section class="about tex tex--steel" id="about">
+    <section class="about" id="about">
+      <div class="band" aria-hidden="true"></div>
       <div class="about__left">
         <h2 class="about__hi">
           <span data-i18n="about.hi">Hi I'm</span>
-          <span class="beads" aria-label="Buse"><i>B</i><i>U</i><i>S</i><i>E</i></span>
+          <span class="about__script">Buse</span>
         </h2>
         <p class="about__p" data-i18n="about.p1">I'm a full-stack software engineer building scalable systems, interfaces and digital products.</p>
         <p class="about__p" data-i18n="about.p2">I like clean architecture, thoughtful typography and the small details that make a product feel complete.</p>
@@ -273,7 +274,7 @@
     </section>
 
     <!-- ========== WHAT I DO: paper ========== -->
-    <section class="whatido tex tex--paper" id="skills">
+    <section class="whatido" id="skills">
       <h2 class="whatido__title" data-i18n="skills.title2">What I do</h2>
       <div class="whatido__intro">
         <p class="whatido__lead" data-i18n="about.desc">Where architectural engineering precision meets pixel-perfect creative vision.</p>
@@ -295,8 +296,8 @@
     </section>
 
     <!-- ========== EXPERIENCE: chrome tiles ========== -->
-    <section class="exp tex tex--chrome" id="experience">
-      <h2 class="keys" data-keys data-i18n="nav.experience">Experience</h2>
+    <section class="exp" id="experience">
+      <h2 class="title reveal"><span data-i18n="nav.experience">Experience</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="exp.word">journey</span></h2>
       <p class="exp__desc" data-i18n="exp.desc">From security analytics to startup product development &mdash; a trajectory of increasing scope and impact.</p>
       <div class="jobs">
           <details class="job reveal">
@@ -502,7 +503,6 @@
           <button type="button" class="round" id="postersNext" aria-label="Next"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
       </div>
-      <span class="sticker-star" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 38 100 30 64 54 84 100 50 68 16 100 36 54 0 30 42 38Z"/></svg></span>
     </section>
 
     <!-- ========== MORE PROJECTS ========== -->
@@ -588,8 +588,8 @@
     </section>
 
     <!-- ========== EDUCATION ========== -->
-    <section class="edu tex tex--paper" id="education">
-      <h2 class="title"><span data-i18n="nav.education">Education</span></h2>
+    <section class="edu" id="education">
+      <h2 class="title reveal"><span data-i18n="nav.education">Education</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="edu.word">&amp; more</span></h2>
       <div class="notes">
         <div class="note reveal">
           <span class="tape" aria-hidden="true"></span>
@@ -630,6 +630,7 @@
   </main>
 
   <!-- ========== FOOTER ========== -->
+  <div class="signature" aria-hidden="true">Buse &Ccedil;elik</div>
   <footer class="footer">
     <a href="#top" class="footer__brand"><span class="footer__star"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 38 100 30 64 54 84 100 50 68 16 100 36 54 0 30 42 38Z"/></svg></span>Buse &Ccedil;elik</a>
     <div class="footer__right">
@@ -656,7 +657,7 @@
     <img alt="Poster preview" id="lightboxImg" />
   </div>
 
-  <script src="i18n.js?v=10"></script>
-  <script src="script.js?v=10"></script>
+  <script src="i18n.js?v=11"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>

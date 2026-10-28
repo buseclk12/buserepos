@@ -4,6 +4,8 @@
 
 const translations = {
   en: {
+    "exp.word": "journey",
+    "edu.word": "& more",
     "hero.label": "software engineer",
     "hero.q1": "I don't just design the screen —<br />I build what runs behind it.",
     "hero.a": "A",
@@ -230,6 +232,8 @@ const translations = {
   },
 
   tr: {
+    "exp.word": "yolculuk",
+    "edu.word": "& dahası",
     "hero.label": "yazılım mühendisi",
     "hero.q1": "Sadece ekranı tasarlamıyorum —<br />arkasında çalışanı da kuruyorum.",
     "hero.a": "",
