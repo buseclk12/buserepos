@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Pinyon+Script&family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13b" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -508,83 +508,183 @@
     <!-- ========== MORE PROJECTS ========== -->
     <section class="more" id="more">
       <h2 class="title reveal"><span data-i18n="more.a">More</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="more.b">Projects</span></h2>
-      <div class="index">
-          <article class="index__row reveal">
-            <span class="index__num">(09)</span>
-            <h3 class="index__title">Finansçe</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.finansce.badge">Fintech &bull; Flutter &bull; Creator Platform</span>
+      <div class="pcards pcards--more">
+        <article class="pcard reveal" style="--y:60px">
+          <button type="button" class="pcard__btn" data-open="p8" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">09</span>
+              <b class="pcard__name">Finansçe</b>
+              <span class="pcard__cat" data-i18n="proj.finansce.badge">Fintech &bull; Flutter &bull; Creator Platform</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-9.webp" alt="Finansçe" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p8" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-9.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">09</span>
+              <h3 class="pdetail__title">Finansçe</h3>
+              <span class="pdetail__cat" data-i18n="proj.finansce.badge">Fintech &bull; Flutter &bull; Creator Platform</span>
               <p data-i18n="proj.finansce.desc">Subscription-based finance content app built with Flutter and Riverpod in a Melos monorepo following Clean Architecture. Firebase Auth, Firestore, Cloud Functions and Messaging power accounts, content and push. LiveKit voice rooms use server-minted, short-lived tokens enforcing a creator/premium speaker policy; the API runs on Cloudflare Workers.</p>
-              <span class="index__tech">Flutter · Riverpod · Firebase · LiveKit · Cloudflare Workers · Melos</span>
+              <ul class="chips"><li>Flutter</li><li>Riverpod</li><li>Firebase</li><li>LiveKit</li><li>Cloudflare Workers</li><li>Melos</li></ul>
+              
             </div>
-          </article>
-          <article class="index__row reveal">
-            <span class="index__num">(10)</span>
-            <h3 class="index__title">Pacer</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.pacer.badge">Mobile &bull; Social &bull; Running</span>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:170px">
+          <button type="button" class="pcard__btn" data-open="p9" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">10</span>
+              <b class="pcard__name">Pacer</b>
+              <span class="pcard__cat" data-i18n="proj.pacer.badge">Mobile &bull; Social &bull; Running</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-10.webp" alt="Pacer" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p9" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-10.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">10</span>
+              <h3 class="pdetail__title">Pacer</h3>
+              <span class="pdetail__cat" data-i18n="proj.pacer.badge">Mobile &bull; Social &bull; Running</span>
               <p data-i18n="proj.pacer.desc">Social app for local running teams built with Expo Router and Supabase. Geo-located events are stored in PostGIS and team data is secured with Row Level Security. Features RSVPs, team chat, check-ins, Strava OAuth via a Supabase Edge Function, and shareable story cards for Instagram and WhatsApp.</p>
-              <span class="index__tech">React Native · Expo Router · Supabase · PostGIS · Edge Functions · Strava API</span>
+              <ul class="chips"><li>React Native</li><li>Expo Router</li><li>Supabase</li><li>PostGIS</li><li>Edge Functions</li><li>Strava API</li></ul>
+              
             </div>
-          </article>
-          <article class="index__row reveal">
-            <span class="index__num">(11)</span>
-            <h3 class="index__title">Curator (FavSpot)</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.curator.badge">Mobile &bull; Full-Stack &bull; Recommendation</span>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:0px">
+          <button type="button" class="pcard__btn" data-open="p10" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">11</span>
+              <b class="pcard__name">Curator (FavSpot)</b>
+              <span class="pcard__cat" data-i18n="proj.curator.badge">Mobile &bull; Full-Stack &bull; Recommendation</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-11.webp" alt="Curator (FavSpot)" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p10" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-11.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">11</span>
+              <h3 class="pdetail__title">Curator (FavSpot)</h3>
+              <span class="pdetail__cat" data-i18n="proj.curator.badge">Mobile &bull; Full-Stack &bull; Recommendation</span>
               <p data-i18n="proj.curator.desc">One-tap venue recommender built with React Native and a Node.js/Express backend. Integrates the Google Places API with rating-filtered selection, no-repeat logic and response caching to cut API cost. Visit history is stored locally with deep links into native Maps; marketing site published on Vercel.</p>
-              <span class="index__tech">React Native · Node.js · Express · Google Places API · Caching · Vercel</span>
+              <ul class="chips"><li>React Native</li><li>Node.js</li><li>Express</li><li>Google Places API</li><li>Caching</li><li>Vercel</li></ul>
+              
             </div>
-          </article>
-          <article class="index__row reveal">
-            <span class="index__num">(12)</span>
-            <h3 class="index__title">Aytar Global</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.aytar.badge">Frontend &bull; Corporate &bull; Freelance</span>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:120px">
+          <button type="button" class="pcard__btn" data-open="p11" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">12</span>
+              <b class="pcard__name">Aytar Global</b>
+              <span class="pcard__cat" data-i18n="proj.aytar.badge">Frontend &bull; Corporate &bull; Freelance</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-12.webp" alt="Aytar Global" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p11" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-12.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">12</span>
+              <h3 class="pdetail__title">Aytar Global</h3>
+              <span class="pdetail__cat" data-i18n="proj.aytar.badge">Frontend &bull; Corporate &bull; Freelance</span>
               <p data-i18n="proj.aytar.desc">Corporate website built with React and Vite featuring scroll-driven counters, a custom SVG world map and a fully responsive layout.</p>
-              <span class="index__tech">React · Vite · SVG · Responsive Design</span>
-              <a href="https://aytarglobal.com" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <ul class="chips"><li>React</li><li>Vite</li><li>SVG</li><li>Responsive Design</li></ul>
+              <a href="https://aytarglobal.com" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
-          </article>
-          <article class="index__row reveal">
-            <span class="index__num">(13)</span>
-            <h3 class="index__title">Bahtinur Çelik Art</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.bahtinur.badge">Frontend &bull; Portfolio &bull; Next.js</span>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:140px">
+          <button type="button" class="pcard__btn" data-open="p12" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">13</span>
+              <b class="pcard__name">Bahtinur Çelik Art</b>
+              <span class="pcard__cat" data-i18n="proj.bahtinur.badge">Frontend &bull; Portfolio &bull; Next.js</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-13.webp" alt="Bahtinur Çelik Art" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p12" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-13.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">13</span>
+              <h3 class="pdetail__title">Bahtinur Çelik Art</h3>
+              <span class="pdetail__cat" data-i18n="proj.bahtinur.badge">Frontend &bull; Portfolio &bull; Next.js</span>
               <p data-i18n="proj.bahtinur.desc">Artist portfolio built with Next.js 16 featuring scroll-linked parallax, an image-first gallery and complete SEO / Open Graph metadata.</p>
-              <span class="index__tech">Next.js 16 · React · SEO · Parallax</span>
-              <a href="https://bahtinurcelik.art" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <ul class="chips"><li>Next.js 16</li><li>React</li><li>SEO</li><li>Parallax</li></ul>
+              <a href="https://bahtinurcelik.art" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
-          </article>
-          <article class="index__row reveal">
-            <span class="index__num">(14)</span>
-            <h3 class="index__title">Nocciola</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.nocciola.badge">Frontend &bull; Brand &bull; i18n</span>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:30px">
+          <button type="button" class="pcard__btn" data-open="p13" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">14</span>
+              <b class="pcard__name">Nocciola</b>
+              <span class="pcard__cat" data-i18n="proj.nocciola.badge">Frontend &bull; Brand &bull; i18n</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-14.webp" alt="Nocciola" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p13" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-14.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">14</span>
+              <h3 class="pdetail__title">Nocciola</h3>
+              <span class="pdetail__cat" data-i18n="proj.nocciola.badge">Frontend &bull; Brand &bull; i18n</span>
               <p data-i18n="proj.nocciola.desc">Pistachio-cream brand site built with React featuring EN/TR internationalisation, motion animations and downloadable PDF pitch decks.</p>
-              <span class="index__tech">React · i18n · Motion · PDF</span>
+              <ul class="chips"><li>React</li><li>i18n</li><li>Motion</li><li>PDF</li></ul>
+              
             </div>
-          </article>
-          <article class="index__row reveal">
-            <span class="index__num">(15)</span>
-            <h3 class="index__title">Melon</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.melon.badge">Startup &bull; Tablet &bull; Hospitality</span>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:180px">
+          <button type="button" class="pcard__btn" data-open="p14" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">15</span>
+              <b class="pcard__name">Melon</b>
+              <span class="pcard__cat" data-i18n="proj.melon.badge">Startup &bull; Tablet &bull; Hospitality</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-15.webp" alt="Melon" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p14" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-15.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">15</span>
+              <h3 class="pdetail__title">Melon</h3>
+              <span class="pdetail__cat" data-i18n="proj.melon.badge">Startup &bull; Tablet &bull; Hospitality</span>
               <p data-i18n="proj.melon.desc">Tablet application designed for the hospitality industry, built with React Native and Expo Go for hotel in-room guest experiences. Developed high-fidelity UI components with fluid animations and optimized state management using Redux Toolkit and RTK Query. Also built the promotional website using React with TypeScript.</p>
-              <span class="index__tech">React Native · Expo Go · React · TypeScript · Redux Toolkit · RTK Query</span>
-              <a href="https://mellontech.com.tr" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              <ul class="chips"><li>React Native</li><li>Expo Go</li><li>React</li><li>TypeScript</li><li>Redux Toolkit</li><li>RTK Query</li></ul>
+              <a href="https://mellontech.com.tr" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
-          </article>
-          <article class="index__row reveal">
-            <span class="index__num">(16)</span>
-            <h3 class="index__title">iWebsa</h3>
-            <div class="index__body">
-              <span class="index__badge" data-i18n="proj.iwebsa.badge">Frontend &bull; Remote</span>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:80px">
+          <button type="button" class="pcard__btn" data-open="p15" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">16</span>
+              <b class="pcard__name">iWebsa</b>
+              <span class="pcard__cat" data-i18n="proj.iwebsa.badge">Frontend &bull; Remote</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-16.webp" alt="iWebsa" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p15" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-16.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">16</span>
+              <h3 class="pdetail__title">iWebsa</h3>
+              <span class="pdetail__cat" data-i18n="proj.iwebsa.badge">Frontend &bull; Remote</span>
               <p data-i18n="proj.iwebsa.desc">Converted Figma designs into responsive, pixel-perfect frontend components. Ensured cross-browser compatibility and implemented mobile-first responsive layouts with clean, semantic code architecture.</p>
-              <span class="index__tech">React · Figma · Responsive Design · CSS3 · Mobile-First</span>
+              <ul class="chips"><li>React</li><li>Figma</li><li>Responsive Design</li><li>CSS3</li><li>Mobile-First</li></ul>
+              
             </div>
-          </article>
-      </div>
+          </div>
+        </article></div>
     </section>
 
     <!-- ========== EDUCATION ========== -->
@@ -657,7 +757,7 @@
     <img alt="Poster preview" id="lightboxImg" />
   </div>
 
-  <script src="i18n.js?v=12"></script>
-  <script src="script.js?v=12"></script>
+  <script src="i18n.js?v=13b"></script>
+  <script src="script.js?v=13b"></script>
 </body>
 </html>

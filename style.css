@@ -688,3 +688,6 @@ ul { list-style: none; }
 /* ============ PROJECT PHOTOS ============ */
 .pcard__photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; box-shadow: 0 22px 34px -22px rgba(40, 10, 10, .55); }
 .pcard__btn:hover .pcard__photo { filter: saturate(1.08); }
+.pdetail__num { font: italic 400 16px/1 var(--f-serif); color: var(--red); }
+.pdetail__title { font: 500 clamp(30px, 3.4vw, 46px)/1.02 var(--f-serif); text-transform: none; letter-spacing: 0; }
+.pdetail__cat { background: transparent; color: var(--red); padding: 0; text-transform: uppercase; letter-spacing: .1em; font-size: 10.5px; }
