@@ -467,6 +467,11 @@ const typingTitles = {
       opt.setAttribute('aria-pressed', String(active));
     });
 
+    // Re-run text splitting / effects on freshly injected markup
+    if (window.__afterTranslate) {
+      window.__afterTranslate();
+    }
+
     // Update typing titles
     if (window.__updateTypingTitles) {
       window.__updateTypingTitles(lang);

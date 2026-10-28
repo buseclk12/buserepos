@@ -5,17 +5,104 @@
 (function () {
   'use strict';
 
+  const root = document.documentElement;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
 
-  /* ---------- Local time (Ankara) ---------- */
-  const clock = document.getElementById('clock');
-  if (clock) {
-    const fmt = new Intl.DateTimeFormat('en-GB', {
-      hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Istanbul',
+  /* ---------- Text splitting (words / chars, masked) ---------- */
+  function splitNode(el, mode) {
+    let i = 0;
+    const walk = (node) => {
+      [...node.childNodes].forEach((child) => {
+        if (child.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            const word = document.createElement('span');
+            word.className = 'w';
+            if (mode === 'chars') {
+              [...part].forEach((ch) => {
+                const c = document.createElement('span');
+                c.className = 'w__i';
+                c.style.setProperty('--i', i++);
+                c.textContent = ch;
+                word.appendChild(c);
+              });
+            } else {
+              const inner = document.createElement('span');
+              inner.className = 'w__i';
+              inner.style.setProperty('--i', i++);
+              inner.textContent = part;
+              word.appendChild(inner);
+            }
+            frag.appendChild(word);
+          });
+          child.replaceWith(frag);
+        } else if (child.nodeType === 1 && !child.classList.contains('w')) {
+          walk(child);
+        }
+      });
+    };
+    walk(el);
+  }
+
+  function splitAll() {
+    document.querySelectorAll('[data-split]').forEach((el) => {
+      if (el.querySelector('.w')) return;
+      splitNode(el, el.dataset.split);
     });
-    const tick = () => { clock.textContent = fmt.format(new Date()); };
-    tick();
-    setInterval(tick, 15000);
+  }
+  splitAll();
+
+  const splitIO = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); splitIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.2 })
+    : null;
+
+  document.querySelectorAll('[data-split]').forEach((el) => {
+    if (el.closest('.cover__name')) return; // the hero waits for the loader
+    if (splitIO && !reduceMotion) splitIO.observe(el);
+    else el.classList.add('is-in');
+  });
+
+  /* ---------- Loader ---------- */
+  const loader = document.getElementById('loader');
+  const heroName = document.querySelectorAll('.cover__name [data-split]');
+
+  function revealHero() {
+    root.classList.add('is-loaded');
+    heroName.forEach((el) => el.classList.add('is-in'));
+    setTimeout(() => { if (loader) loader.remove(); }, 1400);
+  }
+
+  if (!loader || reduceMotion) {
+    revealHero();
+  } else {
+    const countEl = document.getElementById('loaderCount');
+    const barEl = document.getElementById('loaderBar');
+    const start = performance.now();
+    const minDur = 1300;
+    let ready = false;
+    const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+    Promise.race([fontsReady, new Promise((r) => setTimeout(r, 2500))]).then(() => { ready = true; });
+
+    const step = (t) => {
+      const elapsed = t - start;
+      let p = clamp(elapsed / minDur, 0, 1);
+      if (!ready) p = Math.min(p, 0.9);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const n = Math.round(eased * 100);
+      countEl.textContent = String(n).padStart(3, '0');
+      barEl.style.transform = `scaleX(${eased})`;
+      if (p < 1) requestAnimationFrame(step);
+      else setTimeout(revealHero, 180);
+    };
+    requestAnimationFrame(step);
   }
 
   /* ---------- Rotating role ---------- */
@@ -25,8 +112,7 @@
 
   function showRole(i) {
     roleEl.classList.remove('is-in');
-    // Force reflow so the enter animation replays
-    void roleEl.offsetWidth;
+    void roleEl.offsetWidth; // replay the enter animation
     roleEl.textContent = roles[i];
     roleEl.classList.add('is-in');
   }
@@ -38,18 +124,19 @@
     }, 2600);
   }
 
-  // i18n hook: swap role list when the language changes
   window.__updateTypingTitles = (lang) => {
     roles = typingTitles[lang] || typingTitles.en;
     roleIdx = 0;
     if (roleEl) showRole(0);
   };
 
-  /* ---------- Header state ---------- */
-  const topbar = document.getElementById('topbar');
-  const onScroll = () => topbar.classList.toggle('is-scrolled', window.scrollY > 12);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  // i18n hook: newly injected headings need splitting again
+  window.__afterTranslate = () => {
+    splitAll();
+    document.querySelectorAll('[data-split]').forEach((el) => {
+      if (reduceMotion || el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-in');
+    });
+  };
 
   /* ---------- Mobile menu ---------- */
   const menuBtn = document.getElementById('menuBtn');
@@ -97,7 +184,7 @@
       nums.forEach((n) => {
         const target = +n.dataset.count;
         const start = performance.now();
-        const dur = 1100;
+        const dur = 1200;
         const step = (t) => {
           const p = Math.min((t - start) / dur, 1);
           n.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
@@ -107,6 +194,119 @@
       });
     }, { threshold: 0.4 });
     co.observe(stats);
+  }
+
+  /* ---------- Scroll-driven effects ---------- */
+  const topbar = document.getElementById('topbar');
+  const progress = document.getElementById('progress');
+  const marq = document.getElementById('bigmarq');
+  const coverName = document.querySelector('.cover__name');
+  const slides = [...document.querySelectorAll('.slide')];
+  const stackQuery = window.matchMedia('(min-width: 1081px) and (min-height: 700px)');
+  let ticking = false;
+
+  function onScroll() {
+    const y = window.scrollY;
+    const vh = window.innerHeight;
+    const max = document.documentElement.scrollHeight - vh;
+
+    topbar.classList.toggle('is-scrolled', y > 12);
+    progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+
+    if (!reduceMotion) {
+      if (coverName && y < vh * 1.2) coverName.style.transform = `translate3d(0, ${y * 0.18}px, 0)`;
+
+      if (marq) {
+        const r = marq.parentElement.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < vh) {
+          const p = (vh - r.top) / (vh + r.height);
+          marq.style.transform = `translate3d(${-p * 35}%, 0, 0)`;
+        }
+      }
+
+      // Stacked project slides: earlier cards shrink and dim as the next one covers them
+      if (stackQuery.matches) {
+        slides.forEach((slide, i) => {
+          const next = slides[i + 1];
+          if (!next) return;
+          const top = parseFloat(getComputedStyle(slide).top) || 0;
+          const nr = next.getBoundingClientRect();
+          const p = clamp((vh - nr.top) / (vh - top), 0, 1);
+          slide.style.setProperty('--p', p.toFixed(3));
+        });
+      } else {
+        slides.forEach((s) => s.style.removeProperty('--p'));
+      }
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ---------- Pointer effects (desktop only) ---------- */
+  if (finePointer && !reduceMotion) {
+    // Follower cursor with contextual label
+    const cursor = document.getElementById('cursor');
+    const label = document.getElementById('cursorLabel');
+    const words = {
+      en: { view: 'View', drag: 'Drag' },
+      tr: { view: 'İncele', drag: 'Sürükle' },
+    };
+    let mx = -100, my = -100, cx = -100, cy = -100;
+
+    window.addEventListener('pointermove', (e) => {
+      mx = e.clientX; my = e.clientY;
+      root.classList.add('has-cursor');
+    }, { passive: true });
+    document.addEventListener('pointerleave', () => root.classList.remove('has-cursor'));
+
+    const loop = () => {
+      cx += (mx - cx) * 0.2;
+      cy += (my - cy) * 0.2;
+      cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+      requestAnimationFrame(loop);
+    };
+    loop();
+
+    document.addEventListener('pointerover', (e) => {
+      const ctx = e.target.closest('[data-cursor]');
+      const link = e.target.closest('a, button, summary');
+      const lang = (window.__getCurrentLang && window.__getCurrentLang()) || 'en';
+      cursor.classList.toggle('is-label', !!ctx && !link);
+      cursor.classList.toggle('is-link', !!link);
+      label.textContent = ctx && !link ? words[lang][ctx.dataset.cursor] : '';
+    });
+
+    // Magnetic buttons
+    document.querySelectorAll('.btn, .round, .topbar__menu, .slide__link').forEach((el) => {
+      el.addEventListener('pointermove', (e) => {
+        const r = el.getBoundingClientRect();
+        const dx = e.clientX - (r.left + r.width / 2);
+        const dy = e.clientY - (r.top + r.height / 2);
+        el.style.transform = `translate(${dx * 0.22}px, ${dy * 0.32}px)`;
+      });
+      el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+    });
+
+    // Hero: blobs and thumbnails drift with the pointer
+    const cover = document.querySelector('.hero .cover');
+    const blobs = cover.querySelector('.blobs');
+    const thumbs = cover.querySelector('.cover__thumbs');
+    cover.addEventListener('pointermove', (e) => {
+      const r = cover.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      blobs.style.transform = `translate(${px * 40}px, ${py * 30}px)`;
+      thumbs.style.transform = `translate(${px * -14}px, ${py * -10}px)`;
+    });
+    cover.addEventListener('pointerleave', () => {
+      blobs.style.transform = '';
+      thumbs.style.transform = '';
+    });
   }
 
   /* ---------- Poster strip ---------- */
