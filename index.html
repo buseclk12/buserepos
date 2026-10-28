@@ -5,1460 +5,759 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buse &Ccedil;elik &mdash; Software Engineer</title>
   <meta name="description" content="Full-Stack Software Engineer specializing in scalable systems, AI integration, and premium user experiences." />
+  <meta name="theme-color" content="#e7e1dc" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Pinyon+Script&family=Caveat:wght@500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=13b" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-  <!-- ========== CURSOR GLOW ========== -->
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ========== NAVIGATION ========== -->
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="#hero" class="nav__logo">
-        <span class="nav__logo-bracket">&lt;</span>B<span class="nav__logo-dot">.</span>C<span class="nav__logo-bracket">/&gt;</span>
-      </a>
-      <div class="nav__links" id="navLinks">
-        <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
-        <a href="#experience" class="nav__link" data-i18n="nav.experience">Experience</a>
-        <a href="#projects" class="nav__link" data-i18n="nav.projects">Projects</a>
-        <a href="#skills" class="nav__link" data-i18n="nav.skills">Skills</a>
-        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-          <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
-          <span class="lang-toggle__divider">/</span>
-          <span class="lang-toggle__option" data-lang="tr">TR</span>
-        </button>
-      </div>
-      <button class="nav__burger" id="navBurger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+  <div class="sheet-page">
 
-  <!-- ========== MOBILE MENU ========== -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" class="mobile-menu__link" data-i18n="nav.about">About</a>
-    <a href="#experience" class="mobile-menu__link" data-i18n="nav.experience">Experience</a>
-    <a href="#projects" class="mobile-menu__link" data-i18n="nav.projects">Projects</a>
-    <a href="#skills" class="mobile-menu__link" data-i18n="nav.skills">Skills</a>
-    <a href="#contact" class="mobile-menu__link" data-i18n="nav.contact">Contact</a>
-    <div class="mobile-menu__lang">
-      <button class="lang-toggle" aria-label="Switch language">
-        <span class="lang-toggle__option lang-toggle__option--active" data-lang="en">EN</span>
-        <span class="lang-toggle__divider">/</span>
-        <span class="lang-toggle__option" data-lang="tr">TR</span>
-      </button>
+  <!-- ========== HEADER ========== -->
+  <header class="topbar" id="topbar">
+    <a href="#top" class="topbar__star" aria-label="Buse Çelik"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 38 100 30 64 54 84 100 50 68 16 100 36 54 0 30 42 38Z"/></svg></a>
+    <nav class="topbar__nav" aria-label="Primary">
+      <a href="#work">( <span data-i18n="nav.projects">Projects</span> )</a>
+      <a href="#about">( <span data-i18n="nav.about">About</span> )</a>
+      <a href="#experience">( <span data-i18n="nav.experience">Experience</span> )</a>
+      <a href="#skills">( <span data-i18n="nav.skills">Skills</span> )</a>
+      <a href="#contact">( <span data-i18n="nav.contact">Contact</span> )</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" class="lang__opt is-active" data-lang="en">EN</button>
+      <button type="button" class="lang__opt" data-lang="tr">TR</button>
     </div>
-  </div>
+  </header>
 
-  <!-- ========== HERO (Editorial + SoftAurora bg) ========== -->
-  <section class="hero" id="hero">
-    <div class="soft-aurora-container">
-      <canvas class="hero__canvas" id="heroCanvas"></canvas>
-    </div>
-    <div class="hero__overlay"></div>
-    <div class="hero__inner">
-      <div class="hero__meta hero__meta--top anim-fade-up">
-        <span class="hero__tag">2026 &mdash; Portfolio</span>
-        <span class="hero__tag" data-i18n="hero.location">Ankara, T&uuml;rkiye</span>
-      </div>
-      <div class="hero__meta hero__meta--top hero__meta--right anim-fade-up" style="--delay: 0.05s">
-        <span class="hero__tag" data-i18n="hero.meta">Engineer &times; Designer</span>
-        <span class="hero__availability">
-          <span class="hero__badge-dot"></span>
-          <span data-i18n="hero.badge">Available for opportunities</span>
-        </span>
+  <main id="main">
+
+    <!-- ========== HERO: editorial cover ========== -->
+    <section class="hero" id="top">
+      <div class="hero__band" aria-hidden="true"></div>
+
+      <p class="hero__label"><span>buse &ccedil;elik</span><span data-i18n="hero.label">software engineer</span></p>
+
+      <div class="hero__frames" aria-hidden="true">
+        <figure class="frame frame--a"><img src="assets/photo/kare-1.webp" alt="" width="1000" height="1000" /></figure>
+        <figure class="frame frame--b"><img src="assets/photo/kare-2.webp" alt="" width="1000" height="1000" /></figure>
+        <figure class="frame frame--c"><img src="assets/photo/kare-3.webp" alt="" width="1000" height="1000" /></figure>
       </div>
 
-      <h1 class="hero__title anim-fade-up" style="--delay: 0.1s">
-        <span class="hero__title-line">Buse</span>
-        <span class="hero__title-line hero__title-line--right">
-          <span class="hero__title-accent">&Ccedil;elik.</span>
-        </span>
+      <h1 class="hero__name" aria-label="Buse Çelik">
+        <span class="hero__first">Buse</span>
+        <span class="hero__last">&Ccedil;elik</span>
       </h1>
 
-      <div class="hero__bottom anim-fade-up" style="--delay: 0.25s">
-        <div class="hero__roleline">
-          <span class="hero__num">[01]</span>
-          <span class="hero__role-text">
-            <span class="hero__typing" id="typingText"></span><span class="hero__cursor">_</span>
-          </span>
-        </div>
-        <p class="hero__tagline" data-i18n="hero.subtitle">
-          Architecting scalable systems. Crafting seamless experiences. Full-stack engineer bridging backend depth with frontend finesse.
-        </p>
-        <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">
-            <span data-i18n="hero.cta1">View Projects</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#contact" class="btn btn--ghost">
-            <span data-i18n="hero.cta2">Get in Touch</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== MARQUEE ========== -->
-  <div class="marquee" data-marquee>
-    <div class="marquee__track">
-      <span class="marquee__item">Full-Stack Engineer<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">UI/UX Designer<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">AI Integration<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">React &middot; Next.js<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Spring Boot<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">React Native<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Available 2026<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Full-Stack Engineer<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">UI/UX Designer<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">AI Integration<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">React &middot; Next.js<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Spring Boot<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">React Native<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Available 2026<i class="marquee__dot">&bull;</i></span>
-    </div>
-  </div>
-
-  <!-- ========== ABOUT / HYBRID IDENTITY ========== -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section__header anim-fade-up">
-        <span class="section__tag" data-i18n="about.tag">&lt;about&gt;</span>
-        <h2 class="section__title" data-i18n="about.title">The <span class="text-accent">Hybrid</span> Identity</h2>
-        <p class="section__desc" data-i18n="about.desc">
-          Where architectural engineering precision meets pixel-perfect creative vision.
-        </p>
+      <p class="hero__quote hero__quote--top" data-i18n="hero.q1">I don't just design the screen &mdash;<br />I build what runs behind it.</p>
+      <div class="hero__quote hero__quote--bottom">
+        <p data-i18n="hero.tag">building digital products<br />with character.</p>
+        <p class="hero__role"><span class="hero__a" data-i18n="hero.a">A</span> <span id="typingText">Full-Stack Software Engineer</span></p>
       </div>
 
-      <div class="about__grid">
-        <!-- THE ENGINE -->
-        <div class="about__card about__card--engine anim-fade-up" style="--delay: 0.1s">
-          <div class="about__card-glow about__card-glow--blue"></div>
-          <span class="about__card-num">01</span>
-          <div class="about__card-header">
-            <div class="about__card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
-            <h3 class="about__card-title" data-i18n="about.engine.title">The Engine</h3>
-            <span class="about__card-label" data-i18n="about.engine.label">Backend &amp; Architecture</span>
-          </div>
-          <div class="about__card-body">
-            <p data-i18n="about.engine.text">Building the invisible infrastructure that powers everything. Microservices, security layers, and data pipelines engineered for scale.</p>
-            <div class="about__card-techs">
-              <span class="tech-chip">Java / Spring Boot</span>
-              <span class="tech-chip">Python / Django</span>
-              <span class="tech-chip">Node.js</span>
-              <span class="tech-chip">PostgreSQL</span>
-              <span class="tech-chip">Microservices</span>
-              <span class="tech-chip">Keycloak / OIDC</span>
-              <span class="tech-chip">WebSockets</span>
-              <span class="tech-chip">Apache Airflow</span>
-              <span class="tech-chip">Docker / K8s</span>
-              <span class="tech-chip">AWS (EC2, S3, RDS)</span>
-              <span class="tech-chip">CI/CD (GitLab/GitHub)</span>
-            </div>
-          </div>
-          <div class="about__card-terminal">
-            <div class="terminal-dots"><span></span><span></span><span></span></div>
-            <code>$ deploy --env production --scale 3</code>
-          </div>
-        </div>
+      <span class="hero__status"><i></i><span data-i18n="hero.badge">Available for opportunities</span></span>
+      <p class="hero__foot"><span data-i18n="hero.location">Ankara, T&uuml;rkiye</span><span>Full-stack &middot; Backend &middot; Mobile &middot; UI/UX &middot; AI</span></p>
+      <span class="hero__mono" aria-hidden="true">b&ccedil;</span>
+    </section>
 
-        <!-- THE INTERFACE -->
-        <div class="about__card about__card--interface anim-fade-up" style="--delay: 0.2s">
-          <div class="about__card-glow about__card-glow--cyan"></div>
-          <span class="about__card-num">02</span>
-          <div class="about__card-header">
-            <div class="about__card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-            </div>
-            <h3 class="about__card-title" data-i18n="about.interface.title">The Interface</h3>
-            <span class="about__card-label" data-i18n="about.interface.label">Frontend &amp; Mobile</span>
-          </div>
-          <div class="about__card-body">
-            <p data-i18n="about.interface.text">Translating Figma visions into high-performance, pixel-perfect experiences. From responsive web apps to cross-platform mobile products.</p>
-            <div class="about__card-techs">
-              <span class="tech-chip">React / Next.js</span>
-              <span class="tech-chip">React Native / Expo</span>
-              <span class="tech-chip">TypeScript</span>
-              <span class="tech-chip">Flutter</span>
-              <span class="tech-chip">Redux / RTK Query</span>
-              <span class="tech-chip">Tailwind CSS</span>
-              <span class="tech-chip">HTML5 / CSS3</span>
-              <span class="tech-chip">Figma</span>
-              <span class="tech-chip">UI/UX Design</span>
-              <span class="tech-chip">Mobile-First Design</span>
-            </div>
-          </div>
-          <div class="about__card-terminal">
-            <div class="terminal-dots"><span></span><span></span><span></span></div>
-            <code>$ npx expo start --ios --android</code>
-          </div>
-        </div>
-      </div>
-
-      <!-- STATS -->
-      <div class="about__stats anim-fade-up" style="--delay: 0.3s">
-        <div class="stat">
-          <span class="stat__number" data-count="4">0</span><span class="stat__plus">+</span>
-          <span class="stat__label" data-i18n="about.stat.years">Years Experience</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number" data-count="10">0</span><span class="stat__plus">+</span>
-          <span class="stat__label" data-i18n="about.stat.projects">Projects Delivered</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number" data-count="6">0</span><span class="stat__plus">+</span>
-          <span class="stat__label" data-i18n="about.stat.companies">Companies</span>
-        </div>
-        <div class="stat">
-          <span class="stat__number" data-count="8">0</span><span class="stat__plus">+</span>
-          <span class="stat__label" data-i18n="about.stat.certs">Certifications</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EXPERIENCE TIMELINE ========== -->
-  <section class="section experience" id="experience">
-    <div class="container">
-      <div class="section__header anim-fade-up">
-        <span class="section__tag" data-i18n="exp.tag">&lt;experience&gt;</span>
-        <h2 class="section__title" data-i18n="exp.title">Professional <span class="text-accent">Journey</span></h2>
-        <p class="section__desc" data-i18n="exp.desc">From security analytics to startup product development &mdash; a trajectory of increasing scope and impact.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline__line"></div>
-
-        <!-- Databoss -->
-        <div class="timeline__item anim-fade-up" style="--delay: 0.1s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.databoss.role">Software Engineer</h3>
-                <span class="timeline__company">Databoss Security &amp; Analytics A.&#350;.</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.databoss.1">Built an enterprise <strong>LLM assistant</strong> with React, TypeScript and Chainlit on a <strong>LangGraph multi-agent RAG</strong> backend — voice input, streaming audio, guided tours and help-desk integration</li>
-              <li data-i18n="exp.databoss.2">Embedded the assistant into surveillance and internal platforms over <strong>Socket.IO / REST</strong> for contextual access to product data</li>
-              <li data-i18n="exp.databoss.3">Built a <strong>RAG document-ingestion pipeline</strong> with NestJS, PostgreSQL, Redis and MinIO — real-time progress, failure recovery and self-repair jobs</li>
-              <li data-i18n="exp.databoss.4">Unified seven AI services (<strong>OCR, translation, summarisation, STT/TTS</strong>, content generation) in a bilingual React/MUI interface</li>
-              <li data-i18n="exp.databoss.5">Designed a <strong>runtime multi-tenant branding system</strong> (Docker + Nginx injection) so a single image serves per-customer themes, logos, legal notices and feature flags</li>
-              <li data-i18n="exp.databoss.6">Developed a <strong>drone command-and-control dashboard</strong> (React, MUI, Socket.IO) with live telemetry, mission/waypoint planning, target tracking and video streams</li>
-              <li data-i18n="exp.databoss.7">Delivered full-stack features for a video-surveillance platform using <strong>MapLibre/Leaflet, Spring Boot, Oracle and Janus WebRTC</strong>, incl. MGRS mapping</li>
-              <li data-i18n="exp.databoss.8">Owned the front end and contributed <strong>Spring Boot / Java 21</strong> services for a predictive-analytics platform with GIS scenario analysis and <strong>Apache Airflow</strong> pipelines</li>
-              <li data-i18n="exp.databoss.9">Secured React, NestJS and Spring Boot apps with <strong>Keycloak (OIDC, OAuth2/JWT, UMA)</strong>; tuned <strong>PostgreSQL</strong> on high-volume datasets</li>
-              <li data-i18n="exp.databoss.10">Shipped containerised services via <strong>GitLab CI, Harbor and Kubernetes</strong>; delivered product demos and technical walkthroughs to customers and stakeholders</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>React</span><span>TypeScript</span><span>NestJS</span><span>Spring Boot</span><span>LangGraph / RAG</span><span>Socket.IO</span><span>Keycloak</span><span>PostgreSQL</span><span>Docker</span><span>K8s</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Soulmate -->
-        <div class="timeline__item timeline__item--right anim-fade-up" style="--delay: 0.15s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.soulmate.role">Software Engineer</h3>
-                <span class="timeline__company">Soulmate Project &mdash; Startup</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.soulmate.1">Leading end-to-end architecture for a cross-platform mobile app using <strong>React Native &amp; Expo</strong></li>
-              <li data-i18n="exp.soulmate.2">Developed AI-integrated chat modules and matchmaking algorithms with <strong>Python (Django REST)</strong></li>
-              <li data-i18n="exp.soulmate.3">Translating <strong>Figma design systems</strong> into pixel-perfect, high-performance UI components</li>
-              <li data-i18n="exp.soulmate.4">Implemented <strong>Firebase</strong> services (Auth, Firestore, Cloud Functions) for real-time data</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>React Native</span><span>Expo</span><span>Django</span><span>WebSockets</span><span>Firebase</span><span>AI/ML</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- SippsHub -->
-        <div class="timeline__item anim-fade-up" style="--delay: 0.2s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.sipps.role">Software Engineer</h3>
-                <span class="timeline__company">SippsHub &mdash; sipsshub.com</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.sipps.1">Designed full-stack responsive web application using <strong>React (TypeScript)</strong> and <strong>Node.js/PostgreSQL</strong></li>
-              <li data-i18n="exp.sipps.2">Led product optimization for backend query efficiency and frontend web vitals</li>
-              <li data-i18n="exp.sipps.3">Developed secure <strong>RESTful APIs</strong> with integrated data validation</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>React</span><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>REST APIs</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Melon -->
-        <div class="timeline__item timeline__item--right anim-fade-up" style="--delay: 0.25s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.melon.role">Frontend Developer</h3>
-                <span class="timeline__company">Melon (Startup) &mdash; mellontech.com.tr</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.melon.1">Developed core mobile UI components using <strong>React Native</strong> with high-fidelity animations</li>
-              <li data-i18n="exp.melon.2">Optimized state management using <strong>Redux Toolkit</strong> and <strong>RTK Query</strong></li>
-              <li data-i18n="exp.melon.3">Agile collaboration iterating on product features based on user feedback</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>React Native</span><span>Redux Toolkit</span><span>RTK Query</span><span>Agile</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- FintelaAI -->
-        <div class="timeline__item anim-fade-up" style="--delay: 0.3s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.fintela.role">Frontend Developer</h3>
-                <span class="timeline__company">FintelaAI &mdash; AI-Powered Financial Assistant</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.fintela.1">Built a responsive web app using <strong>React.js</strong></li>
-              <li data-i18n="exp.fintela.2">Developed clean, reusable UI components with API integration</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>React.js</span><span>API Integration</span><span>UI Components</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- iWebsa -->
-        <div class="timeline__item timeline__item--right anim-fade-up" style="--delay: 0.33s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.iwebsa.role">Frontend Developer</h3>
-                <span class="timeline__company">iWebsa &mdash; Remote</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.iwebsa.1">Converted <strong>Figma</strong> designs into responsive, pixel-perfect frontend components</li>
-              <li data-i18n="exp.iwebsa.2">Ensured cross-browser compatibility and mobile-first responsive layouts</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>React</span><span>Figma</span><span>Responsive Design</span><span>CSS3</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kloudser Technologies -->
-        <div class="timeline__item anim-fade-up" style="--delay: 0.36s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.kloudser.role">UI/UX Designer</h3>
-                <span class="timeline__company">Kloudser Technologies &mdash; Freelance</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.kloudser.1">Designed a complete web application <strong>UI/UX for a cybersecurity firm</strong> using Figma</li>
-              <li data-i18n="exp.kloudser.2">Created high-fidelity wireframes, interactive prototypes, and responsive layouts</li>
-              <li data-i18n="exp.kloudser.3">Focused on <strong>user-centered design principles</strong> to enhance usability and visual coherence</li>
-              <li data-i18n="exp.kloudser.4">Collaborated with stakeholders to translate business requirements into effective UI components</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>Figma</span><span>UI/UX Design</span><span>Wireframing</span><span>Prototyping</span><span>Cybersecurity</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Databoss Social Media -->
-        <div class="timeline__item timeline__item--right anim-fade-up" style="--delay: 0.39s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.dbsocial.role">Social Media Content Creator &amp; Graphic Designer</h3>
-                <span class="timeline__company">Databoss Security &amp; Analytics A.&#350;.</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.dbsocial.1">Designed and managed the company's <strong>LinkedIn-based visual content strategy</strong></li>
-              <li data-i18n="exp.dbsocial.2">Produced branded visuals including <strong>posters, brochures, banners, business cards</strong>, and videos</li>
-              <li data-i18n="exp.dbsocial.3">Created <strong>corporate business card designs</strong> aligned with brand identity guidelines</li>
-            </ul>
-            <div class="timeline__techs">
-              <span>Graphic Design</span><span>Figma</span><span>LinkedIn</span><span>Brand Identity</span><span>Business Cards</span><span>Video</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Freelance Social Media Content Creator -->
-        <div class="timeline__item anim-fade-up" style="--delay: 0.42s">
-          <div class="timeline__node">
-            <div class="timeline__node-dot"></div>
-          </div>
-          <div class="timeline__card timeline__card--social">
-            <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role" data-i18n="exp.freelance.role">Social Media Content Creator &amp; Manager</h3>
-                <span class="timeline__company" data-i18n="exp.freelance.company">Freelance</span>
-              </div>
-            </div>
-            <ul class="timeline__list">
-              <li data-i18n="exp.freelance.1">Managing end-to-end <strong>social media strategy</strong>, content creation, and brand identity for multiple clients</li>
-              <li data-i18n="exp.freelance.2">Producing branded visuals including <strong>posters, reels, stories</strong>, and promotional videos</li>
-              <li data-i18n="exp.freelance.3">Designing <strong>business cards, logos, brand identities</strong>, and visual content systems from scratch</li>
-              <li data-i18n="exp.freelance.4">Growing audience engagement through consistent, data-driven content planning</li>
-            </ul>
-            <div class="timeline__clients">
-              <span class="timeline__clients-label" data-i18n="exp.freelance.clients">Clients</span>
-              <div class="timeline__clients-grid">
-                <div class="client-card">
-                  <img loading="lazy" decoding="async" src="assets/elan-studio.webp" alt="&Eacute;lan Studio" class="client-card__img" />
-                  <div class="client-card__info">
-                    <span class="client-card__name">&Eacute;lan Studio</span>
-                    <span class="client-card__handle">@elanflow.co</span>
-                  </div>
-                </div>
-                <div class="client-card">
-                  <img loading="lazy" decoding="async" src="assets/emin-hatipoglu.webp" alt="Emin Hatipo&#287;lu" class="client-card__img" />
-                  <div class="client-card__info">
-                    <span class="client-card__name">Emin Hatipo&#287;lu PT</span>
-                    <span class="client-card__handle">@eminhatipoglu.pt</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="timeline__techs">
-              <span>Content Strategy</span><span>Graphic Design</span><span>Business Cards</span><span>Brand Identity</span><span>Video Editing</span><span>Instagram</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PROJECTS ========== -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <div class="section__header anim-fade-up">
-        <span class="section__tag" data-i18n="proj.tag">&lt;projects&gt;</span>
-        <h2 class="section__title" data-i18n="proj.title">Featured <span class="text-accent">Work</span></h2>
-        <p class="section__desc" data-i18n="proj.desc">Products and platforms I've designed, built, and shipped.</p>
-      </div>
-
-      <div class="projects__grid">
-
-        <!-- Empati Game -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.05s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--stack">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    empatigame.app
-                  </div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/empatigame-screen.webp" alt="Empati Game Start Screen" class="browser-frame__screenshot" />
-                </div>
-              </div>
-              <div class="browser-frame browser-frame--mini">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">empatigame.app/lobby</div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/empatigame-screenshot.webp" alt="Empati Game Lobby" class="browser-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.empati.badge">Full-Stack &bull; Multiplayer</div>
-            <h3 class="project-card__title">Empati Game</h3>
-            <p class="project-card__desc" data-i18n="proj.empati.desc">
-              A Kahoot-style real-time multiplayer word game where players try to predict what others will write for a given topic. A main screen (TV/computer) displays the game state while players interact via their mobile devices.
-            </p>
-            <div class="project-card__techs">
-              <span>Next.js 15</span><span>TypeScript</span><span>Socket.IO</span><span>Redis</span><span>Tailwind CSS</span><span>Zustand</span><span>Turborepo</span><span>pnpm</span>
-            </div>
-            <div class="project-card__arch">
-              <span class="arch-label" data-i18n="proj.arch">Architecture</span>
-              <div class="arch-flow">
-                <span class="arch-node">Next.js App</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Socket.IO Server</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Shared Types</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Turborepo</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Soulmate -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.1s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup">
-              <div class="phone-frame phone-frame--real">
-                <div class="phone-frame__notch"></div>
-                <div class="phone-frame__screen">
-                  <img loading="lazy" decoding="async" src="assets/soulmate.webp" alt="Soulmate App" class="phone-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.soulmate.badge">Startup &bull; Founder</div>
-            <h3 class="project-card__title">Soulmate</h3>
-            <p class="project-card__desc" data-i18n="proj.soulmate.desc">
-              Cross-platform dating app for iOS and Android featuring AI-driven matchmaking algorithms,
-              real-time chat with WebSockets, and Firebase-powered authentication. End-to-end architecture
-              from Figma design systems to production deployment.
-            </p>
-            <div class="project-card__techs">
-              <span>React Native</span><span>Expo</span><span>Django REST</span><span>WebSockets</span><span>Firebase</span><span>AI/ML</span><span>Figma</span>
-            </div>
-            <div class="project-card__arch">
-              <span class="arch-label" data-i18n="proj.arch">Architecture</span>
-              <div class="arch-flow">
-                <span class="arch-node">React Native</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Django API</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">PostgreSQL</span>
-                <span class="arch-arrow">&rarr;</span>
-                <span class="arch-node">Firebase</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- InfluenceHub -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.15s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--dual">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    influencehub.club
-                  </div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/influencehub.webp" alt="InfluenceHub Website" class="browser-frame__screenshot" />
-                </div>
-              </div>
-              <div class="phone-frame phone-frame--mini">
-                <div class="phone-frame__notch"></div>
-                <div class="phone-frame__screen">
-                  <img loading="lazy" decoding="async" src="assets/influencehub-mobile.webp" alt="InfluenceHub Mobile App" class="phone-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.influence.badge">Senior Project &bull; Founder &bull; Cross-Platform</div>
-            <h3 class="project-card__title">InfluenceHub</h3>
-            <p class="project-card__desc" data-i18n="proj.influence.desc">
-              Full-scale AI-based recommendation platform connecting brands with influencers and event organizers
-              with performers. Web and mobile applications with AI matchmaking model, Docker deployment,
-              and complete UI/UX design in Figma.
-            </p>
-            <div class="project-card__techs">
-              <span>React</span><span>React Native</span><span>TypeScript</span><span>AI Model</span><span>Docker</span><span>Figma</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://www.influencehub.club" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- SippsHub -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.2s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    sipsshub.com
-                  </div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/sipsshub.webp" alt="SippsHub Website" class="browser-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.sipps.badge">Full-Stack</div>
-            <h3 class="project-card__title">SippsHub</h3>
-            <p class="project-card__desc" data-i18n="proj.sipps.desc">
-              Full-stack responsive web application with React/TypeScript frontend and Node.js/PostgreSQL backend.
-              Focused on backend query efficiency and frontend web vitals optimization.
-            </p>
-            <div class="project-card__techs">
-              <span>React</span><span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://www.sipsshub.com" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- S.S. Isaret -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.25s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    ssisaret.com
-                  </div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/ssisaret.webp" alt="S.S. Isaret Website" class="browser-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.isaret.badge">Frontend &bull; Corporate</div>
-            <h3 class="project-card__title">S.S. &#304;&#351;aret</h3>
-            <p class="project-card__desc" data-i18n="proj.isaret.desc">
-              Corporate website for a real estate development company. Modern, responsive design
-              showcasing property projects with immersive visuals, interactive layouts, and
-              a professional web presence.
-            </p>
-            <div class="project-card__techs">
-              <span>React</span><span>Responsive Design</span><span>UI/UX</span><span>Corporate Web</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://www.ssisaret.com" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- FintelaAI -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.3s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    fintelaai.com
-                  </div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/fintelaai.webp" alt="FintelaAI Website" class="browser-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.fintela.badge">Frontend &bull; AI</div>
-            <h3 class="project-card__title">FintelaAI</h3>
-            <p class="project-card__desc" data-i18n="proj.fintela.desc">
-              AI-powered financial assistant web application. Responsive React.js interface with
-              clean, reusable components and dynamic API-driven data rendering.
-            </p>
-            <div class="project-card__techs">
-              <span>React.js</span><span>AI Integration</span><span>REST APIs</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://fintelaai.com" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Emin Hatipoglu PT -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.33s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    pteminhatipoglu.vercel.app
-                  </div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/emin-hatipoglu-pt.webp" alt="Emin Hatipo&#287;lu PT Website" class="browser-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.eminpt.badge">Frontend &bull; Freelance</div>
-            <h3 class="project-card__title">Emin Hatipo&#287;lu PT</h3>
-            <p class="project-card__desc" data-i18n="proj.eminpt.desc">
-              Professional portfolio website for a personal trainer based in Ankara. Modern dark-themed design
-              with animated backgrounds, bilingual support (TR/EN), client transformations gallery,
-              certifications showcase, and WhatsApp integration for easy client outreach.
-            </p>
-            <div class="project-card__techs">
-              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span><span>i18n</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://pteminhatipoglu.vercel.app/" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Finansçe -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.34s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup">
-              <div class="phone-frame">
-                <div class="phone-frame__notch"></div>
-                <div class="phone-frame__screen" style="padding: 28px 14px 14px; display:flex; flex-direction:column; gap:10px;">
-                  <div class="mock-line large w60"></div>
-                  <div class="mock-line w40 dim"></div>
-                  <div class="mock-img" style="height:110px"></div>
-                  <div class="mock-line w90"></div>
-                  <div class="mock-line w70"></div>
-                  <div class="mock-img" style="height:70px"></div>
-                  <div class="mock-line w80"></div>
-                  <div class="mock-line w50 dim"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.finansce.badge">Fintech &bull; Flutter &bull; Creator Platform</div>
-            <h3 class="project-card__title">Finansçe</h3>
-            <p class="project-card__desc" data-i18n="proj.finansce.desc">
-              Subscription-based finance content app built with Flutter and Riverpod in a Melos monorepo following Clean Architecture. Firebase Auth, Firestore, Cloud Functions and Messaging power accounts, content and push. LiveKit voice rooms use server-minted, short-lived tokens enforcing a creator/premium speaker policy; the API runs on Cloudflare Workers.
-            </p>
-            <div class="project-card__techs">
-              <span>Flutter</span><span>Riverpod</span><span>Firebase</span><span>LiveKit</span><span>Cloudflare Workers</span><span>Melos</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pacer -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.35s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup">
-              <div class="phone-frame">
-                <div class="phone-frame__notch"></div>
-                <div class="phone-frame__screen" style="padding: 28px 14px 14px; display:flex; flex-direction:column; gap:10px;">
-                  <div class="mock-line large w60"></div>
-                  <div class="mock-line w40 dim"></div>
-                  <div class="mock-img" style="height:110px"></div>
-                  <div class="mock-line w90"></div>
-                  <div class="mock-line w70"></div>
-                  <div class="mock-img" style="height:70px"></div>
-                  <div class="mock-line w80"></div>
-                  <div class="mock-line w50 dim"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.pacer.badge">Mobile &bull; Social &bull; Running</div>
-            <h3 class="project-card__title">Pacer</h3>
-            <p class="project-card__desc" data-i18n="proj.pacer.desc">
-              Social app for local running teams built with Expo Router and Supabase. Geo-located events are stored in PostGIS and team data is secured with Row Level Security. Features RSVPs, team chat, check-ins, Strava OAuth via a Supabase Edge Function, and shareable story cards for Instagram and WhatsApp.
-            </p>
-            <div class="project-card__techs">
-              <span>React Native</span><span>Expo Router</span><span>Supabase</span><span>PostGIS</span><span>Edge Functions</span><span>Strava API</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Curator (FavSpot) -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.36s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup">
-              <div class="phone-frame">
-                <div class="phone-frame__notch"></div>
-                <div class="phone-frame__screen" style="padding: 28px 14px 14px; display:flex; flex-direction:column; gap:10px;">
-                  <div class="mock-line large w60"></div>
-                  <div class="mock-line w40 dim"></div>
-                  <div class="mock-img" style="height:110px"></div>
-                  <div class="mock-line w90"></div>
-                  <div class="mock-line w70"></div>
-                  <div class="mock-img" style="height:70px"></div>
-                  <div class="mock-line w80"></div>
-                  <div class="mock-line w50 dim"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.curator.badge">Mobile &bull; Full-Stack &bull; Recommendation</div>
-            <h3 class="project-card__title">Curator (FavSpot)</h3>
-            <p class="project-card__desc" data-i18n="proj.curator.desc">
-              One-tap venue recommender built with React Native and a Node.js/Express backend. Integrates the Google Places API with rating-filtered selection, no-repeat logic and response caching to cut API cost. Visit history is stored locally with deep links into native Maps; marketing site published on Vercel.
-            </p>
-            <div class="project-card__techs">
-              <span>React Native</span><span>Node.js</span><span>Express</span><span>Google Places API</span><span>Caching</span><span>Vercel</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Aytar Global -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.37s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>aytarglobal.com</div>
-                </div>
-                <div class="browser-frame__content" style="padding: 16px;">
-                  <div class="mock-web__nav">
-                    <div class="mock-line w20" style="margin-bottom:0"></div>
-                    <div class="mock-web__nav-links"><span></span><span></span><span></span><span></span></div>
-                  </div>
-                  <div class="mock-web__hero">
-                    <div class="mock-line large w90 centered"></div>
-                    <div class="mock-line large w70 centered"></div>
-                    <div class="mock-line w50 dim centered"></div>
-                  </div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px">
-                    <div class="mock-img" style="height:56px"></div>
-                    <div class="mock-img" style="height:56px"></div>
-                    <div class="mock-img" style="height:56px"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.aytar.badge">Frontend &bull; Corporate &bull; Freelance</div>
-            <h3 class="project-card__title">Aytar Global</h3>
-            <p class="project-card__desc" data-i18n="proj.aytar.desc">
-              Corporate website built with React and Vite featuring scroll-driven counters, a custom SVG world map and a fully responsive layout.
-            </p>
-            <div class="project-card__techs">
-              <span>React</span><span>Vite</span><span>SVG</span><span>Responsive Design</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://aytarglobal.com" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bahtinur Çelik Art -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.38s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>bahtinurcelik.art</div>
-                </div>
-                <div class="browser-frame__content" style="padding: 16px;">
-                  <div class="mock-web__nav">
-                    <div class="mock-line w20" style="margin-bottom:0"></div>
-                    <div class="mock-web__nav-links"><span></span><span></span><span></span><span></span></div>
-                  </div>
-                  <div class="mock-web__hero">
-                    <div class="mock-line large w90 centered"></div>
-                    <div class="mock-line large w70 centered"></div>
-                    <div class="mock-line w50 dim centered"></div>
-                  </div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px">
-                    <div class="mock-img" style="height:56px"></div>
-                    <div class="mock-img" style="height:56px"></div>
-                    <div class="mock-img" style="height:56px"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.bahtinur.badge">Frontend &bull; Portfolio &bull; Next.js</div>
-            <h3 class="project-card__title">Bahtinur Çelik Art</h3>
-            <p class="project-card__desc" data-i18n="proj.bahtinur.desc">
-              Artist portfolio built with Next.js 16 featuring scroll-linked parallax, an image-first gallery and complete SEO / Open Graph metadata.
-            </p>
-            <div class="project-card__techs">
-              <span>Next.js 16</span><span>React</span><span>SEO</span><span>Parallax</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://bahtinurcelik.art" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Nocciola -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.39s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>nocciola</div>
-                </div>
-                <div class="browser-frame__content" style="padding: 16px;">
-                  <div class="mock-web__nav">
-                    <div class="mock-line w20" style="margin-bottom:0"></div>
-                    <div class="mock-web__nav-links"><span></span><span></span><span></span><span></span></div>
-                  </div>
-                  <div class="mock-web__hero">
-                    <div class="mock-line large w90 centered"></div>
-                    <div class="mock-line large w70 centered"></div>
-                    <div class="mock-line w50 dim centered"></div>
-                  </div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px">
-                    <div class="mock-img" style="height:56px"></div>
-                    <div class="mock-img" style="height:56px"></div>
-                    <div class="mock-img" style="height:56px"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.nocciola.badge">Frontend &bull; Brand &bull; i18n</div>
-            <h3 class="project-card__title">Nocciola</h3>
-            <p class="project-card__desc" data-i18n="proj.nocciola.desc">
-              Pistachio-cream brand site built with React featuring EN/TR internationalisation, motion animations and downloadable PDF pitch decks.
-            </p>
-            <div class="project-card__techs">
-              <span>React</span><span>i18n</span><span>Motion</span><span>PDF</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Melon -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.35s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup">
-              <div class="tablet-frame">
-                <div class="tablet-frame__bezel">
-                  <div class="tablet-frame__camera"></div>
-                </div>
-                <div class="tablet-frame__screen">
-                  <div class="tablet-frosted">
-                    <span class="tablet-frosted__title">melon</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.melon.badge">Startup &bull; Tablet &bull; Hospitality</div>
-            <h3 class="project-card__title">Melon</h3>
-            <p class="project-card__desc" data-i18n="proj.melon.desc">
-              Tablet application designed for the hospitality industry, built with React Native and Expo Go
-              for hotel in-room guest experiences. Developed high-fidelity UI components with fluid animations
-              and optimized state management using Redux Toolkit and RTK Query. Also built the promotional
-              website using React with TypeScript.
-            </p>
-            <div class="project-card__techs">
-              <span>React Native</span><span>Expo Go</span><span>React</span><span>TypeScript</span><span>Redux Toolkit</span><span>RTK Query</span>
-            </div>
-            <div class="project-card__links">
-              <a href="https://mellontech.com.tr" target="_blank" rel="noopener" class="project-link">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-                <span data-i18n="proj.visit">Visit Site</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Kloudser Technologies -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.4s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    kloudser.com
-                  </div>
-                </div>
-                <div class="browser-frame__content">
-                  <img loading="lazy" decoding="async" src="assets/klaoudser.webp" alt="Kloudser Technologies" class="browser-frame__screenshot" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.kloudser.badge">UI/UX &bull; Cybersecurity</div>
-            <h3 class="project-card__title">Kloudser Technologies</h3>
-            <p class="project-card__desc" data-i18n="proj.kloudser.desc">
-              Complete web application UI/UX designed for a cybersecurity firm using Figma. Created
-              high-fidelity wireframes, interactive prototypes, and responsive layouts with a focus on
-              user-centered design principles to enhance usability and visual coherence.
-            </p>
-            <div class="project-card__techs">
-              <span>Figma</span><span>UI/UX Design</span><span>Wireframing</span><span>Prototyping</span><span>Responsive</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- iWebsa -->
-        <div class="project-card project-card--large anim-fade-up" style="--delay: 0.45s">
-          <div class="project-card__visual">
-            <div class="project-card__mockup project-card__mockup--web">
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <div class="browser-dots"><span></span><span></span><span></span></div>
-                  <div class="browser-url">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    iwebsa.com
-                  </div>
-                </div>
-                <div class="browser-frame__content" style="padding: 16px;">
-                  <div class="mock-web__nav">
-                    <div class="mock-line w20" style="margin-bottom:0"></div>
-                    <div class="mock-web__nav-links"><span></span><span></span><span></span><span></span></div>
-                  </div>
-                  <div class="mock-web__hero">
-                    <div class="mock-line large w90 centered"></div>
-                    <div class="mock-line large w70 centered"></div>
-                    <div class="mock-line w50 dim centered"></div>
-                  </div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
-                    <div class="mock-img" style="height:60px"></div>
-                    <div class="mock-img" style="height:60px"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card__info">
-            <div class="project-card__badge" data-i18n="proj.iwebsa.badge">Frontend &bull; Remote</div>
-            <h3 class="project-card__title">iWebsa</h3>
-            <p class="project-card__desc" data-i18n="proj.iwebsa.desc">
-              Converted Figma designs into responsive, pixel-perfect frontend components. Ensured
-              cross-browser compatibility and implemented mobile-first responsive layouts with
-              clean, semantic code architecture.
-            </p>
-            <div class="project-card__techs">
-              <span>React</span><span>Figma</span><span>Responsive Design</span><span>CSS3</span><span>Mobile-First</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ========== POSTER DESIGNS CAROUSEL ========== -->
-      <div class="posters anim-fade-up" style="--delay: 0.35s">
-        <div class="posters__header">
-          <div class="posters__icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          </div>
-          <h3 class="posters__title" data-i18n="proj.posters.title">Poster <span class="text-accent">Designs</span></h3>
-          <p class="posters__desc" data-i18n="proj.posters.desc">Visual content and poster designs crafted for brands and campaigns.</p>
-        </div>
-
-        <div class="carousel" id="posterCarousel">
-          <div class="carousel__track" id="carouselTrack">
-            <div class="carousel__slide" data-poster="assets/kırmızıafis.webp">
-              <img decoding="async" src="assets/kırmızıafis.webp" alt="Poster Design" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/maviafis.webp">
-              <img decoding="async" src="assets/maviafis.webp" alt="Poster Design" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/morafis.webp">
-              <img decoding="async" src="assets/morafis.webp" alt="Poster Design" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/beyazafis.webp">
-              <img decoding="async" src="assets/beyazafis.webp" alt="Poster Design" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/pembeafis.webp">
-              <img decoding="async" src="assets/pembeafis.webp" alt="Poster Design" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/kırmızıpost.webp">
-              <img decoding="async" src="assets/kırmızıpost.webp" alt="Social Media Post" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/mavipost.webp">
-              <img decoding="async" src="assets/mavipost.webp" alt="Social Media Post" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/griafis.webp">
-              <img decoding="async" src="assets/griafis.webp" alt="Event Poster" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/pembecard.webp">
-              <img decoding="async" src="assets/pembecard.webp" alt="Graphic Design" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-            <div class="carousel__slide" data-poster="assets/kahvecard.webp">
-              <img decoding="async" src="assets/kahvecard.webp" alt="Business Card Design" loading="lazy" />
-              <div class="carousel__slide-overlay">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation Arrows -->
-          <button class="carousel__btn carousel__btn--prev" id="carouselPrev" aria-label="Previous">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    <!-- ========== SELECTED WORK ========== -->
+    <section class="work" id="work">
+      <h2 class="title reveal"><span data-i18n="work.selected">Selected</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="work.word">Work</span></h2>
+      <p class="sidenote reveal" data-i18n="proj.desc">Products and platforms I've designed, built, and shipped.</p>
+      <div class="pcards">
+        <article class="pcard reveal" style="--y:150px">
+          <button type="button" class="pcard__btn" data-open="p0" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">01</span>
+              <b class="pcard__name">Empati Game</b>
+              <span class="pcard__cat" data-i18n="proj.empati.badge">Full-Stack &bull; Multiplayer</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-1.webp" alt="Empati Game" width="1448" height="1086" /></span>
           </button>
-          <button class="carousel__btn carousel__btn--next" id="carouselNext" aria-label="Next">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          <div class="pdetail" id="p0" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-1.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/empatigame-screen.webp" alt="" width="1600" height="813" /><img loading="lazy" decoding="async" src="assets/empatigame-screenshot.webp" alt="" width="1600" height="808" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">01 &mdash; empatigame.app</span>
+              <h3 class="pdetail__title">Empati Game</h3>
+              <span class="pdetail__cat" data-i18n="proj.empati.badge">Full-Stack &bull; Multiplayer</span>
+              <p data-i18n="proj.empati.desc">A Kahoot-style real-time multiplayer word game where players try to predict what others will write for a given topic. A main screen (TV/computer) displays the game state while players interact via their mobile devices.</p>
+              <ul class="chips"><li>Next.js 15</li><li>TypeScript</li><li>Socket.IO</li><li>Redis</li><li>Tailwind CSS</li><li>Zustand</li><li>Turborepo</li><li>pnpm</li></ul>
+              
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:20px">
+          <button type="button" class="pcard__btn" data-open="p1" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">02</span>
+              <b class="pcard__name">Soulmate</b>
+              <span class="pcard__cat" data-i18n="proj.soulmate.badge">Startup &bull; Founder</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-2.webp" alt="Soulmate" width="1448" height="1086" /></span>
           </button>
-
-          <!-- Dots -->
-          <div class="carousel__dots" id="carouselDots"></div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========== POSTER LIGHTBOX ========== -->
-  <div class="poster-lightbox" id="posterLightbox">
-    <button class="poster-lightbox__close" id="posterLightboxClose" aria-label="Close">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
-    <div class="poster-lightbox__content">
-      <img loading="lazy" decoding="async" src="" alt="Poster Preview" id="posterLightboxImg" />
-    </div>
-  </div>
-
-  <!-- ========== SKILLS ========== -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section__header anim-fade-up">
-        <span class="section__tag" data-i18n="skills.tag">&lt;skills&gt;</span>
-        <h2 class="section__title" data-i18n="skills.title">Tech <span class="text-accent">Arsenal</span></h2>
-        <p class="section__desc" data-i18n="skills.desc">The tools and technologies I work with daily.</p>
-      </div>
-
-      <div class="skills__terminal anim-fade-up" style="--delay: 0.1s">
-        <div class="terminal">
-          <div class="terminal__bar">
-            <div class="terminal-dots"><span></span><span></span><span></span></div>
-            <span class="terminal__title">buse@portfolio ~ skills</span>
-          </div>
-          <div class="terminal__body" id="terminalBody">
-            <div class="terminal__line">
-              <span class="terminal__prompt">$</span>
-              <span class="terminal__cmd">cat skills.json</span>
-            </div>
-            <div class="terminal__output">
-              <pre>{
-  <span class="t-key">"languages"</span>: [<span class="t-val">"Java"</span>, <span class="t-val">"Python"</span>, <span class="t-val">"TypeScript"</span>, <span class="t-val">"Swift"</span>, <span class="t-val">"Dart"</span>, <span class="t-val">"HTML5/CSS3"</span>],
-  <span class="t-key">"frontend"</span>: [<span class="t-val">"React"</span>, <span class="t-val">"Next.js"</span>, <span class="t-val">"React Native"</span>, <span class="t-val">"Expo"</span>, <span class="t-val">"Flutter"</span>, <span class="t-val">"Redux/RTK Query"</span>, <span class="t-val">"Tailwind"</span>],
-  <span class="t-key">"backend"</span>: [<span class="t-val">"Spring Boot"</span>, <span class="t-val">"Django"</span>, <span class="t-val">"Node.js"</span>, <span class="t-val">"REST APIs"</span>, <span class="t-val">"WebSockets"</span>, <span class="t-val">"Keycloak"</span>, <span class="t-val">"Microservices"</span>],
-  <span class="t-key">"database"</span>: [<span class="t-val">"PostgreSQL"</span>, <span class="t-val">"Firebase"</span>, <span class="t-val">"Redis"</span>],
-  <span class="t-key">"devops"</span>: [<span class="t-val">"Docker"</span>, <span class="t-val">"Kubernetes"</span>, <span class="t-val">"GitLab/GitHub CI/CD"</span>, <span class="t-val">"AWS (EC2,S3,RDS)"</span>, <span class="t-val">"Nginx"</span>],
-  <span class="t-key">"ai_data"</span>: [<span class="t-val">"Apache Airflow"</span>, <span class="t-val">"OpenAI API"</span>, <span class="t-val">"Pandas"</span>, <span class="t-val">"NumPy"</span>, <span class="t-val">"Data Preprocessing"</span>],
-  <span class="t-key">"design"</span>: [<span class="t-val">"Figma"</span>, <span class="t-val">"UI/UX"</span>, <span class="t-val">"Graphic Design"</span>, <span class="t-val">"Business Cards"</span>],
-  <span class="t-key">"tools"</span>: [<span class="t-val">"Git"</span>, <span class="t-val">"Jira"</span>, <span class="t-val">"YouTrack"</span>, <span class="t-val">"Agile/Scrum"</span>, <span class="t-val">"Linux"</span>]
-}</pre>
-            </div>
-            <div class="terminal__line">
-              <span class="terminal__prompt">$</span>
-              <span class="terminal__cmd terminal__cmd--typing" id="terminalCmd"></span>
-              <span class="terminal__cursor">&#9608;</span>
+          <div class="pdetail" id="p1" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-2.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/soulmate.webp" alt="" width="1206" height="2622" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">02 &mdash; iOS · Android</span>
+              <h3 class="pdetail__title">Soulmate</h3>
+              <span class="pdetail__cat" data-i18n="proj.soulmate.badge">Startup &bull; Founder</span>
+              <p data-i18n="proj.soulmate.desc">Cross-platform dating app for iOS and Android featuring AI-driven matchmaking algorithms, real-time chat with WebSockets, and Firebase-powered authentication. End-to-end architecture from Figma design systems to production deployment.</p>
+              <ul class="chips"><li>React Native</li><li>Expo</li><li>Django REST</li><li>WebSockets</li><li>Firebase</li><li>AI/ML</li><li>Figma</li></ul>
+              
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Visual Skills Grid -->
-      <div class="skills__grid anim-fade-up" style="--delay: 0.2s">
-        <div class="skill-category">
-          <h4 class="skill-category__title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span data-i18n="skills.cat.lang">Languages</span>
-          </h4>
-          <div class="skill-category__items">
-            <div class="skill-item"><span class="skill-item__name">Java</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 92%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Python</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 85%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">TypeScript</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 90%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Swift</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 60%"></div></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4 class="skill-category__title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            <span data-i18n="skills.cat.front">Frontend &amp; Mobile</span>
-          </h4>
-          <div class="skill-category__items">
-            <div class="skill-item"><span class="skill-item__name">React / Next.js</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 94%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">React Native</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 88%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Flutter</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 65%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Tailwind CSS</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 90%"></div></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4 class="skill-category__title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            <span data-i18n="skills.cat.back">Backend &amp; Data</span>
-          </h4>
-          <div class="skill-category__items">
-            <div class="skill-item"><span class="skill-item__name">Spring Boot</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 90%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">PostgreSQL</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 88%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Django</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 80%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Node.js</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 84%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Keycloak/IAM</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 82%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Firebase</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 78%"></div></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4 class="skill-category__title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span data-i18n="skills.cat.devops">DevOps &amp; Cloud</span>
-          </h4>
-          <div class="skill-category__items">
-            <div class="skill-item"><span class="skill-item__name">Docker / K8s</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 86%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">GitLab / GitHub CI/CD</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 84%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">AWS (EC2, S3, RDS)</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 75%"></div></div></div>
-            <div class="skill-item"><span class="skill-item__name">Linux / Nginx</span><div class="skill-item__bar"><div class="skill-item__fill" style="--w: 80%"></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== MARQUEE (reverse) ========== -->
-  <div class="marquee marquee--rev" data-marquee>
-    <div class="marquee__track">
-      <span class="marquee__item">Crafted with precision<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Engineering &times; Design<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Ankara &rarr; World<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">buse.celik.dev<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Open for work 2026<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Crafted with precision<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Engineering &times; Design<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Ankara &rarr; World<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">buse.celik.dev<i class="marquee__dot">&bull;</i></span>
-      <span class="marquee__item">Open for work 2026<i class="marquee__dot">&bull;</i></span>
-    </div>
-  </div>
-
-  <!-- ========== EDUCATION ========== -->
-  <section class="section education" id="education">
-    <div class="container">
-      <div class="section__header anim-fade-up">
-        <span class="section__tag" data-i18n="edu.tag">&lt;education&gt;</span>
-        <h2 class="section__title" data-i18n="edu.title">Education &amp; <span class="text-accent">Certifications</span></h2>
-      </div>
-
-      <div class="education__content anim-fade-up" style="--delay: 0.1s">
-        <div class="edu-card">
-          <div class="edu-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
-          <div class="edu-card__info">
-            <h3 data-i18n="edu.degree">B.Sc. in Computer Technology and Information Systems</h3>
-            <span class="edu-card__school" data-i18n="edu.school">Bilkent University, Ankara</span>
-            <span class="edu-card__date" data-i18n="edu.date">Feb 2021 &mdash; June 2025</span>
-            <div class="edu-card__details">
-              <span data-i18n="edu.gpa">GPA: 3.06 / 4.00</span>
-              <span data-i18n="edu.honors">High Honor &amp; Honor Certificates</span>
+        </article>
+        <article class="pcard reveal" style="--y:80px">
+          <button type="button" class="pcard__btn" data-open="p2" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">03</span>
+              <b class="pcard__name">InfluenceHub</b>
+              <span class="pcard__cat" data-i18n="proj.influence.badge">Senior Project &bull; Founder &bull; Cross-Platform</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-3.webp" alt="InfluenceHub" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p2" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-3.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/influencehub.webp" alt="" width="1440" height="900" /><img loading="lazy" decoding="async" src="assets/influencehub-mobile.webp" alt="" width="842" height="1554" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">03 &mdash; influencehub.club</span>
+              <h3 class="pdetail__title">InfluenceHub</h3>
+              <span class="pdetail__cat" data-i18n="proj.influence.badge">Senior Project &bull; Founder &bull; Cross-Platform</span>
+              <p data-i18n="proj.influence.desc">Full-scale AI-based recommendation platform connecting brands with influencers and event organizers with performers. Web and mobile applications with AI matchmaking model, Docker deployment, and complete UI/UX design in Figma.</p>
+              <ul class="chips"><li>React</li><li>React Native</li><li>TypeScript</li><li>AI Model</li><li>Docker</li><li>Figma</li></ul>
+              <a href="https://www.influencehub.club" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
             </div>
           </div>
+        </article>
+        <article class="pcard reveal" style="--y:180px">
+          <button type="button" class="pcard__btn" data-open="p3" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">04</span>
+              <b class="pcard__name">SippsHub</b>
+              <span class="pcard__cat" data-i18n="proj.sipps.badge">Full-Stack</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-4.webp" alt="SippsHub" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p3" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-4.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/sipsshub.webp" alt="" width="1440" height="900" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">04 &mdash; sipsshub.com</span>
+              <h3 class="pdetail__title">SippsHub</h3>
+              <span class="pdetail__cat" data-i18n="proj.sipps.badge">Full-Stack</span>
+              <p data-i18n="proj.sipps.desc">Full-stack responsive web application with React/TypeScript frontend and Node.js/PostgreSQL backend. Focused on backend query efficiency and frontend web vitals optimization.</p>
+              <ul class="chips"><li>React</li><li>TypeScript</li><li>Node.js</li><li>PostgreSQL</li></ul>
+              <a href="https://www.sipsshub.com" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:60px">
+          <button type="button" class="pcard__btn" data-open="p4" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">05</span>
+              <b class="pcard__name">S.S. &#304;&#351;aret</b>
+              <span class="pcard__cat" data-i18n="proj.isaret.badge">Frontend &bull; Corporate</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-5.webp" alt="S.S. &#304;&#351;aret" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p4" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-5.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/ssisaret.webp" alt="" width="1440" height="900" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">05 &mdash; ssisaret.com</span>
+              <h3 class="pdetail__title">S.S. &#304;&#351;aret</h3>
+              <span class="pdetail__cat" data-i18n="proj.isaret.badge">Frontend &bull; Corporate</span>
+              <p data-i18n="proj.isaret.desc">Corporate website for a real estate development company. Modern, responsive design showcasing property projects with immersive visuals, interactive layouts, and a professional web presence.</p>
+              <ul class="chips"><li>React</li><li>Responsive Design</li><li>UI/UX</li><li>Corporate Web</li></ul>
+              <a href="https://www.ssisaret.com" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:170px">
+          <button type="button" class="pcard__btn" data-open="p5" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">06</span>
+              <b class="pcard__name">FintelaAI</b>
+              <span class="pcard__cat" data-i18n="proj.fintela.badge">Frontend &bull; AI</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-6.webp" alt="FintelaAI" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p5" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-6.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/fintelaai.webp" alt="" width="1440" height="900" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">06 &mdash; fintelaai.com</span>
+              <h3 class="pdetail__title">FintelaAI</h3>
+              <span class="pdetail__cat" data-i18n="proj.fintela.badge">Frontend &bull; AI</span>
+              <p data-i18n="proj.fintela.desc">AI-powered financial assistant web application. Responsive React.js interface with clean, reusable components and dynamic API-driven data rendering.</p>
+              <ul class="chips"><li>React.js</li><li>AI Integration</li><li>REST APIs</li></ul>
+              <a href="https://fintelaai.com" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:0px">
+          <button type="button" class="pcard__btn" data-open="p6" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">07</span>
+              <b class="pcard__name">Emin Hatipo&#287;lu PT</b>
+              <span class="pcard__cat" data-i18n="proj.eminpt.badge">Frontend &bull; Freelance</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-7.webp" alt="Emin Hatipo&#287;lu PT" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p6" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-7.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/emin-hatipoglu-pt.webp" alt="" width="1280" height="720" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">07 &mdash; pteminhatipoglu.vercel.app</span>
+              <h3 class="pdetail__title">Emin Hatipo&#287;lu PT</h3>
+              <span class="pdetail__cat" data-i18n="proj.eminpt.badge">Frontend &bull; Freelance</span>
+              <p data-i18n="proj.eminpt.desc">Professional portfolio website for a personal trainer based in Ankara. Modern dark-themed design with animated backgrounds, bilingual support (TR/EN), client transformations gallery, certifications showcase, and WhatsApp integration for easy client outreach.</p>
+              <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Responsive Design</li><li>i18n</li></ul>
+              <a href="https://pteminhatipoglu.vercel.app/" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal" style="--y:110px">
+          <button type="button" class="pcard__btn" data-open="p7" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">08</span>
+              <b class="pcard__name">Kloudser Technologies</b>
+              <span class="pcard__cat" data-i18n="proj.kloudser.badge">UI/UX &bull; Cybersecurity</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-8.webp" alt="Kloudser Technologies" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p7" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-8.webp" alt="" width="1448" height="1086" /><img loading="lazy" decoding="async" src="assets/klaoudser.webp" alt="" width="1440" height="1307" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">08 &mdash; kloudser.com</span>
+              <h3 class="pdetail__title">Kloudser Technologies</h3>
+              <span class="pdetail__cat" data-i18n="proj.kloudser.badge">UI/UX &bull; Cybersecurity</span>
+              <p data-i18n="proj.kloudser.desc">Complete web application UI/UX designed for a cybersecurity firm using Figma. Created high-fidelity wireframes, interactive prototypes, and responsive layouts with a focus on user-centered design principles to enhance usability and visual coherence.</p>
+              <ul class="chips"><li>Figma</li><li>UI/UX Design</li><li>Wireframing</li><li>Prototyping</li><li>Responsive</li></ul>
+              
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT: steel ========== -->
+    <section class="about" id="about">
+      <div class="band" aria-hidden="true"></div>
+      <div class="about__left">
+        <h2 class="about__hi">
+          <span data-i18n="about.hi">Hi I'm</span>
+          <span class="about__script">Buse</span>
+        </h2>
+        <p class="about__p" data-i18n="about.p1">I'm a full-stack software engineer building scalable systems, interfaces and digital products.</p>
+        <p class="about__p" data-i18n="about.p2">I like clean architecture, thoughtful typography and the small details that make a product feel complete.</p>
+        <ul class="chips chips--line"><li>React</li><li>Spring Boot</li><li>React Native</li><li>Figma</li><li>LangGraph</li></ul>
+        <dl class="stats">
+          <div><dt data-i18n="about.stat.years">Years Experience</dt><dd><span data-count="4">4</span>+</dd></div>
+          <div><dt data-i18n="about.stat.projects">Projects Delivered</dt><dd><span data-count="10">10</span>+</dd></div>
+          <div><dt data-i18n="about.stat.companies">Companies</dt><dd><span data-count="6">6</span>+</dd></div>
+          <div><dt data-i18n="about.stat.certs">Certifications</dt><dd><span data-count="8">8</span>+</dd></div>
+        </dl>
+      </div>
+      <figure class="polaroid reveal">
+        <span class="polaroid__clip" aria-hidden="true"><svg viewBox="0 0 24 64"><path d="M8 52V14a6 6 0 0112 0v40a9 9 0 01-18 0V20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+        <img loading="lazy" decoding="async" src="assets/buse.webp" alt="Buse Çelik" width="900" height="1200" />
+        <figcaption>buse &middot; ankara &#9825;</figcaption>
+      </figure>
+    </section>
+
+    <!-- ========== WHAT I DO: paper ========== -->
+    <section class="whatido" id="skills">
+      <h2 class="whatido__title" data-i18n="skills.title2">What I do</h2>
+      <div class="whatido__intro">
+        <p class="whatido__lead" data-i18n="about.desc">Where architectural engineering precision meets pixel-perfect creative vision.</p>
+        <div class="whatido__pair">
+          <div><h3 data-i18n="about.engine.label">Backend &amp; Architecture</h3><p data-i18n="about.engine.text">Building the invisible infrastructure that powers everything.</p></div>
+          <div><h3 data-i18n="about.interface.label">Frontend &amp; Mobile</h3><p data-i18n="about.interface.text">Translating Figma visions into high-performance, pixel-perfect experiences.</p></div>
         </div>
+      </div>
+      <div class="whatido__grid">
+          <div class="do reveal"><h3 data-i18n="skills.cat.lang">Languages</h3><ul><li>Java</li><li>Python</li><li>TypeScript</li><li>Swift</li><li>Dart</li><li>HTML5 &amp; CSS3</li></ul></div>
+          <div class="do reveal"><h3 data-i18n="skills.cat.front">Frontend &amp; Mobile</h3><ul><li>React</li><li>Next.js</li><li>React Native</li><li>Expo</li><li>Flutter</li><li>Redux &amp; RTK Query</li><li>Tailwind</li></ul></div>
+          <div class="do reveal"><h3 data-i18n="skills.cat.back">Backend &amp; Data</h3><ul><li>Spring Boot</li><li>Django</li><li>Node.js</li><li>NestJS</li><li>REST APIs</li><li>WebSockets</li><li>Keycloak</li><li>Microservices</li></ul></div>
+          <div class="do reveal"><h3 data-i18n="skills.cat.db">Databases</h3><ul><li>PostgreSQL</li><li>Firebase</li><li>Redis</li><li>Supabase</li></ul></div>
+          <div class="do reveal"><h3 data-i18n="skills.cat.devops">DevOps &amp; Cloud</h3><ul><li>Docker</li><li>Kubernetes</li><li>GitLab &amp; GitHub CI/CD</li><li>AWS (EC2, S3, RDS)</li><li>Nginx</li><li>Linux</li></ul></div>
+          <div class="do reveal"><h3 data-i18n="skills.cat.ai">AI &amp; Data</h3><ul><li>LangGraph &amp; RAG</li><li>OpenAI API</li><li>Apache Airflow</li><li>Pandas</li><li>NumPy</li></ul></div>
+          <div class="do reveal"><h3 data-i18n="skills.cat.design">Design</h3><ul><li>Figma</li><li>UI/UX</li><li>Graphic Design</li><li>Brand Identity</li></ul></div>
+          <div class="do reveal"><h3 data-i18n="skills.cat.tools">Tools</h3><ul><li>Git</li><li>Jira</li><li>YouTrack</li><li>Agile &amp; Scrum</li></ul></div>
+      </div>
+    </section>
 
-        <div class="extra-info anim-fade-up" style="--delay: 0.15s">
-          <div class="extra-info__item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-            <span data-i18n="edu.lang"><strong>English</strong> &mdash; Advanced (IELTS 6.5)</span>
-          </div>
-          <div class="extra-info__item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            <span data-i18n="edu.karting"><strong>Board Member</strong> &mdash; Bilkent Karting Society (2022&ndash;2023), Led marketing &amp; visual content</span>
-          </div>
+    <!-- ========== EXPERIENCE: chrome tiles ========== -->
+    <section class="exp" id="experience">
+      <h2 class="title reveal"><span data-i18n="nav.experience">Experience</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="exp.word">journey</span></h2>
+      <p class="exp__desc" data-i18n="exp.desc">From security analytics to startup product development &mdash; a trajectory of increasing scope and impact.</p>
+      <div class="jobs">
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">01</span>
+              <span class="job__role" data-i18n="exp.databoss.role">Software Engineer</span>
+              <span class="job__company">Databoss Security &amp; Analytics A.&#350;.</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.databoss.1">Built an enterprise <strong>LLM assistant</strong> with React, TypeScript and Chainlit on a <strong>LangGraph multi-agent RAG</strong> backend — voice input, streaming audio, guided tours and help-desk integration</li>
+                  <li data-i18n="exp.databoss.2">Embedded the assistant into surveillance and internal platforms over <strong>Socket.IO / REST</strong> for contextual access to product data</li>
+                  <li data-i18n="exp.databoss.3">Built a <strong>RAG document-ingestion pipeline</strong> with NestJS, PostgreSQL, Redis and MinIO — real-time progress, failure recovery and self-repair jobs</li>
+                  <li data-i18n="exp.databoss.4">Unified seven AI services (<strong>OCR, translation, summarisation, STT/TTS</strong>, content generation) in a bilingual React/MUI interface</li>
+                  <li data-i18n="exp.databoss.5">Designed a <strong>runtime multi-tenant branding system</strong> (Docker + Nginx injection) so a single image serves per-customer themes, logos, legal notices and feature flags</li>
+                  <li data-i18n="exp.databoss.6">Developed a <strong>drone command-and-control dashboard</strong> (React, MUI, Socket.IO) with live telemetry, mission/waypoint planning, target tracking and video streams</li>
+                  <li data-i18n="exp.databoss.7">Delivered full-stack features for a video-surveillance platform using <strong>MapLibre/Leaflet, Spring Boot, Oracle and Janus WebRTC</strong>, incl. MGRS mapping</li>
+                  <li data-i18n="exp.databoss.8">Owned the front end and contributed <strong>Spring Boot / Java 21</strong> services for a predictive-analytics platform with GIS scenario analysis and <strong>Apache Airflow</strong> pipelines</li>
+                  <li data-i18n="exp.databoss.9">Secured React, NestJS and Spring Boot apps with <strong>Keycloak (OIDC, OAuth2/JWT, UMA)</strong>; tuned <strong>PostgreSQL</strong> on high-volume datasets</li>
+                  <li data-i18n="exp.databoss.10">Shipped containerised services via <strong>GitLab CI, Harbor and Kubernetes</strong>; delivered product demos and technical walkthroughs to customers and stakeholders</li>
+                </ul>
+                <ul class="tags"><li>React</li><li>TypeScript</li><li>NestJS</li><li>Spring Boot</li><li>LangGraph / RAG</li><li>Socket.IO</li><li>Keycloak</li><li>PostgreSQL</li><li>Docker</li><li>K8s</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">02</span>
+              <span class="job__role" data-i18n="exp.soulmate.role">Software Engineer</span>
+              <span class="job__company">Soulmate Project &mdash; Startup</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.soulmate.1">Leading end-to-end architecture for a cross-platform mobile app using <strong>React Native &amp; Expo</strong></li>
+                  <li data-i18n="exp.soulmate.2">Developed AI-integrated chat modules and matchmaking algorithms with <strong>Python (Django REST)</strong></li>
+                  <li data-i18n="exp.soulmate.3">Translating <strong>Figma design systems</strong> into pixel-perfect, high-performance UI components</li>
+                  <li data-i18n="exp.soulmate.4">Implemented <strong>Firebase</strong> services (Auth, Firestore, Cloud Functions) for real-time data</li>
+                </ul>
+                <ul class="tags"><li>React Native</li><li>Expo</li><li>Django</li><li>WebSockets</li><li>Firebase</li><li>AI/ML</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">03</span>
+              <span class="job__role" data-i18n="exp.sipps.role">Software Engineer</span>
+              <span class="job__company">SippsHub &mdash; sipsshub.com</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.sipps.1">Designed full-stack responsive web application using <strong>React (TypeScript)</strong> and <strong>Node.js/PostgreSQL</strong></li>
+                  <li data-i18n="exp.sipps.2">Led product optimization for backend query efficiency and frontend web vitals</li>
+                  <li data-i18n="exp.sipps.3">Developed secure <strong>RESTful APIs</strong> with integrated data validation</li>
+                </ul>
+                <ul class="tags"><li>React</li><li>TypeScript</li><li>Node.js</li><li>PostgreSQL</li><li>REST APIs</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">04</span>
+              <span class="job__role" data-i18n="exp.melon.role">Frontend Developer</span>
+              <span class="job__company">Melon (Startup) &mdash; mellontech.com.tr</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.melon.1">Developed core mobile UI components using <strong>React Native</strong> with high-fidelity animations</li>
+                  <li data-i18n="exp.melon.2">Optimized state management using <strong>Redux Toolkit</strong> and <strong>RTK Query</strong></li>
+                  <li data-i18n="exp.melon.3">Agile collaboration iterating on product features based on user feedback</li>
+                </ul>
+                <ul class="tags"><li>React Native</li><li>Redux Toolkit</li><li>RTK Query</li><li>Agile</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">05</span>
+              <span class="job__role" data-i18n="exp.fintela.role">Frontend Developer</span>
+              <span class="job__company">FintelaAI &mdash; AI-Powered Financial Assistant</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.fintela.1">Built a responsive web app using <strong>React.js</strong></li>
+                  <li data-i18n="exp.fintela.2">Developed clean, reusable UI components with API integration</li>
+                </ul>
+                <ul class="tags"><li>React.js</li><li>API Integration</li><li>UI Components</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">06</span>
+              <span class="job__role" data-i18n="exp.iwebsa.role">Frontend Developer</span>
+              <span class="job__company">iWebsa &mdash; Remote</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.iwebsa.1">Converted <strong>Figma</strong> designs into responsive, pixel-perfect frontend components</li>
+                  <li data-i18n="exp.iwebsa.2">Ensured cross-browser compatibility and mobile-first responsive layouts</li>
+                </ul>
+                <ul class="tags"><li>React</li><li>Figma</li><li>Responsive Design</li><li>CSS3</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">07</span>
+              <span class="job__role" data-i18n="exp.kloudser.role">UI/UX Designer</span>
+              <span class="job__company">Kloudser Technologies &mdash; Freelance</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.kloudser.1">Designed a complete web application <strong>UI/UX for a cybersecurity firm</strong> using Figma</li>
+                  <li data-i18n="exp.kloudser.2">Created high-fidelity wireframes, interactive prototypes, and responsive layouts</li>
+                  <li data-i18n="exp.kloudser.3">Focused on <strong>user-centered design principles</strong> to enhance usability and visual coherence</li>
+                  <li data-i18n="exp.kloudser.4">Collaborated with stakeholders to translate business requirements into effective UI components</li>
+                </ul>
+                <ul class="tags"><li>Figma</li><li>UI/UX Design</li><li>Wireframing</li><li>Prototyping</li><li>Cybersecurity</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">08</span>
+              <span class="job__role" data-i18n="exp.dbsocial.role">Social Media Content Creator &amp; Graphic Designer</span>
+              <span class="job__company">Databoss Security &amp; Analytics A.&#350;.</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.dbsocial.1">Designed and managed the company's <strong>LinkedIn-based visual content strategy</strong></li>
+                  <li data-i18n="exp.dbsocial.2">Produced branded visuals including <strong>posters, brochures, banners, business cards</strong>, and videos</li>
+                  <li data-i18n="exp.dbsocial.3">Created <strong>corporate business card designs</strong> aligned with brand identity guidelines</li>
+                </ul>
+                <ul class="tags"><li>Graphic Design</li><li>Figma</li><li>LinkedIn</li><li>Brand Identity</li><li>Business Cards</li><li>Video</li></ul>
+              </div>
+            </div>
+          </details>
+          <details class="job reveal">
+            <summary class="job__row">
+              <span class="job__num">09</span>
+              <span class="job__role" data-i18n="exp.freelance.role">Social Media Content Creator &amp; Manager</span>
+              <span class="job__company" data-i18n="exp.freelance.company">Freelance</span>
+              <span class="job__toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="job__body">
+              <div class="job__inner">
+                <ul class="job__list">
+                  <li data-i18n="exp.freelance.1">Managing end-to-end <strong>social media strategy</strong>, content creation, and brand identity for multiple clients</li>
+                  <li data-i18n="exp.freelance.2">Producing branded visuals including <strong>posters, reels, stories</strong>, and promotional videos</li>
+                  <li data-i18n="exp.freelance.3">Designing <strong>business cards, logos, brand identities</strong>, and visual content systems from scratch</li>
+                  <li data-i18n="exp.freelance.4">Growing audience engagement through consistent, data-driven content planning</li>
+                </ul>
+                <div class="clients">
+                  <span class="clients__label" data-i18n="exp.freelance.clients">Clients</span>
+                  <div class="clients__row">
+                    <div class="client"><img loading="lazy" decoding="async" src="assets/elan-studio.webp" alt="&Eacute;lan Studio" width="1206" height="2388" /><div><strong>&Eacute;lan Studio</strong><span>@elanflow.co</span></div></div>
+                    <div class="client"><img loading="lazy" decoding="async" src="assets/emin-hatipoglu.webp" alt="Emin Hatipo&#287;lu" width="1206" height="2349" /><div><strong>Emin Hatipo&#287;lu PT</strong><span>@eminhatipoglu.pt</span></div></div>
+                  </div>
+                </div>
+                <ul class="tags"><li>Content Strategy</li><li>Graphic Design</li><li>Business Cards</li><li>Brand Identity</li><li>Video Editing</li><li>Instagram</li></ul>
+              </div>
+            </div>
+          </details>
+      </div>
+    </section>
+
+    <!-- ========== POSTERS ========== -->
+    <section class="posters-sec" id="posters">
+      <h2 class="title reveal"><span data-i18n="posters.a">Poster</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="posters.b">Designs</span></h2>
+      <p class="sub reveal" data-i18n="proj.posters.desc">Visual content and poster designs crafted for brands and campaigns.</p>
+      <div class="posters" id="posters-strip">
+        <button type="button" class="poster" data-full="assets/kırmızıafis.webp"><img loading="lazy" decoding="async" src="assets/kırmızıafis.webp" alt="Poster design" width="1080" height="1920" /></button>
+        <button type="button" class="poster" data-full="assets/maviafis.webp"><img loading="lazy" decoding="async" src="assets/maviafis.webp" alt="Poster design" width="1587" height="2245" /></button>
+        <button type="button" class="poster" data-full="assets/morafis.webp"><img loading="lazy" decoding="async" src="assets/morafis.webp" alt="Poster design" width="1414" height="2000" /></button>
+        <button type="button" class="poster" data-full="assets/beyazafis.webp"><img loading="lazy" decoding="async" src="assets/beyazafis.webp" alt="Poster design" width="1080" height="1920" /></button>
+        <button type="button" class="poster" data-full="assets/pembeafis.webp"><img loading="lazy" decoding="async" src="assets/pembeafis.webp" alt="Poster design" width="1080" height="1080" /></button>
+        <button type="button" class="poster" data-full="assets/kırmızıpost.webp"><img loading="lazy" decoding="async" src="assets/kırmızıpost.webp" alt="Social media post" width="1080" height="1920" /></button>
+        <button type="button" class="poster" data-full="assets/mavipost.webp"><img loading="lazy" decoding="async" src="assets/mavipost.webp" alt="Social media post" width="1080" height="1920" /></button>
+        <button type="button" class="poster" data-full="assets/griafis.webp"><img loading="lazy" decoding="async" src="assets/griafis.webp" alt="Event poster" width="1587" height="2245" /></button>
+        <button type="button" class="poster" data-full="assets/pembecard.webp"><img loading="lazy" decoding="async" src="assets/pembecard.webp" alt="Graphic design" width="1600" height="1136" /></button>
+        <button type="button" class="poster" data-full="assets/kahvecard.webp"><img loading="lazy" decoding="async" src="assets/kahvecard.webp" alt="Business card design" width="1004" height="591" /></button>
+      </div>
+      <div class="posters__ctrl">
+        <span data-i18n="proj.posters.hint">Drag or scroll &rarr;</span>
+        <div>
+          <button type="button" class="round" id="postersPrev" aria-label="Previous"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button type="button" class="round" id="postersNext" aria-label="Next"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </div>
+      </div>
+    </section>
 
-        <div class="cert-grid">
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>Java (Intermediate-Advanced) &mdash; T&Uuml;B&#304;TAK</span>
+    <!-- ========== MORE PROJECTS ========== -->
+    <section class="more" id="more">
+      <h2 class="title reveal"><span data-i18n="more.a">More</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="more.b">Projects</span></h2>
+      <div class="pcards pcards--more">
+        <article class="pcard reveal" style="--y:60px">
+          <button type="button" class="pcard__btn" data-open="p8" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">09</span>
+              <b class="pcard__name">Finansçe</b>
+              <span class="pcard__cat" data-i18n="proj.finansce.badge">Fintech &bull; Flutter &bull; Creator Platform</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-9.webp" alt="Finansçe" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p8" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-9.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">09</span>
+              <h3 class="pdetail__title">Finansçe</h3>
+              <span class="pdetail__cat" data-i18n="proj.finansce.badge">Fintech &bull; Flutter &bull; Creator Platform</span>
+              <p data-i18n="proj.finansce.desc">Subscription-based finance content app built with Flutter and Riverpod in a Melos monorepo following Clean Architecture. Firebase Auth, Firestore, Cloud Functions and Messaging power accounts, content and push. LiveKit voice rooms use server-minted, short-lived tokens enforcing a creator/premium speaker policy; the API runs on Cloudflare Workers.</p>
+              <ul class="chips"><li>Flutter</li><li>Riverpod</li><li>Firebase</li><li>LiveKit</li><li>Cloudflare Workers</li><li>Melos</li></ul>
+              
+            </div>
           </div>
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>Spring Framework &mdash; T&Uuml;B&#304;TAK</span>
+        </article>
+        <article class="pcard reveal" style="--y:170px">
+          <button type="button" class="pcard__btn" data-open="p9" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">10</span>
+              <b class="pcard__name">Pacer</b>
+              <span class="pcard__cat" data-i18n="proj.pacer.badge">Mobile &bull; Social &bull; Running</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-10.webp" alt="Pacer" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p9" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-10.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">10</span>
+              <h3 class="pdetail__title">Pacer</h3>
+              <span class="pdetail__cat" data-i18n="proj.pacer.badge">Mobile &bull; Social &bull; Running</span>
+              <p data-i18n="proj.pacer.desc">Social app for local running teams built with Expo Router and Supabase. Geo-located events are stored in PostGIS and team data is secured with Row Level Security. Features RSVPs, team chat, check-ins, Strava OAuth via a Supabase Edge Function, and shareable story cards for Instagram and WhatsApp.</p>
+              <ul class="chips"><li>React Native</li><li>Expo Router</li><li>Supabase</li><li>PostGIS</li><li>Edge Functions</li><li>Strava API</li></ul>
+              
+            </div>
           </div>
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>Microservices Architectures &mdash; T&Uuml;B&#304;TAK</span>
+        </article>
+        <article class="pcard reveal" style="--y:0px">
+          <button type="button" class="pcard__btn" data-open="p10" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">11</span>
+              <b class="pcard__name">Curator (FavSpot)</b>
+              <span class="pcard__cat" data-i18n="proj.curator.badge">Mobile &bull; Full-Stack &bull; Recommendation</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-11.webp" alt="Curator (FavSpot)" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p10" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-11.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">11</span>
+              <h3 class="pdetail__title">Curator (FavSpot)</h3>
+              <span class="pdetail__cat" data-i18n="proj.curator.badge">Mobile &bull; Full-Stack &bull; Recommendation</span>
+              <p data-i18n="proj.curator.desc">One-tap venue recommender built with React Native and a Node.js/Express backend. Integrates the Google Places API with rating-filtered selection, no-repeat logic and response caching to cut API cost. Visit history is stored locally with deep links into native Maps; marketing site published on Vercel.</p>
+              <ul class="chips"><li>React Native</li><li>Node.js</li><li>Express</li><li>Google Places API</li><li>Caching</li><li>Vercel</li></ul>
+              
+            </div>
           </div>
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>UX &amp; Usability &mdash; T&Uuml;B&#304;TAK</span>
+        </article>
+        <article class="pcard reveal" style="--y:120px">
+          <button type="button" class="pcard__btn" data-open="p11" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">12</span>
+              <b class="pcard__name">Aytar Global</b>
+              <span class="pcard__cat" data-i18n="proj.aytar.badge">Frontend &bull; Corporate &bull; Freelance</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-12.webp" alt="Aytar Global" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p11" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-12.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">12</span>
+              <h3 class="pdetail__title">Aytar Global</h3>
+              <span class="pdetail__cat" data-i18n="proj.aytar.badge">Frontend &bull; Corporate &bull; Freelance</span>
+              <p data-i18n="proj.aytar.desc">Corporate website built with React and Vite featuring scroll-driven counters, a custom SVG world map and a fully responsive layout.</p>
+              <ul class="chips"><li>React</li><li>Vite</li><li>SVG</li><li>Responsive Design</li></ul>
+              <a href="https://aytarglobal.com" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
           </div>
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>CCNAv7: Switching &amp; Routing &mdash; Cisco</span>
+        </article>
+        <article class="pcard reveal" style="--y:140px">
+          <button type="button" class="pcard__btn" data-open="p12" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">13</span>
+              <b class="pcard__name">Bahtinur Çelik Art</b>
+              <span class="pcard__cat" data-i18n="proj.bahtinur.badge">Frontend &bull; Portfolio &bull; Next.js</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-13.webp" alt="Bahtinur Çelik Art" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p12" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-13.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">13</span>
+              <h3 class="pdetail__title">Bahtinur Çelik Art</h3>
+              <span class="pdetail__cat" data-i18n="proj.bahtinur.badge">Frontend &bull; Portfolio &bull; Next.js</span>
+              <p data-i18n="proj.bahtinur.desc">Artist portfolio built with Next.js 16 featuring scroll-linked parallax, an image-first gallery and complete SEO / Open Graph metadata.</p>
+              <ul class="chips"><li>Next.js 16</li><li>React</li><li>SEO</li><li>Parallax</li></ul>
+              <a href="https://bahtinurcelik.art" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
           </div>
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>CCNAv7: Intro to Networks &mdash; Cisco</span>
+        </article>
+        <article class="pcard reveal" style="--y:30px">
+          <button type="button" class="pcard__btn" data-open="p13" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">14</span>
+              <b class="pcard__name">Nocciola</b>
+              <span class="pcard__cat" data-i18n="proj.nocciola.badge">Frontend &bull; Brand &bull; i18n</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-14.webp" alt="Nocciola" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p13" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-14.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">14</span>
+              <h3 class="pdetail__title">Nocciola</h3>
+              <span class="pdetail__cat" data-i18n="proj.nocciola.badge">Frontend &bull; Brand &bull; i18n</span>
+              <p data-i18n="proj.nocciola.desc">Pistachio-cream brand site built with React featuring EN/TR internationalisation, motion animations and downloadable PDF pitch decks.</p>
+              <ul class="chips"><li>React</li><li>i18n</li><li>Motion</li><li>PDF</li></ul>
+              
+            </div>
           </div>
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>PCAP &mdash; Python Essentials &mdash; Cisco</span>
+        </article>
+        <article class="pcard reveal" style="--y:180px">
+          <button type="button" class="pcard__btn" data-open="p14" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">15</span>
+              <b class="pcard__name">Melon</b>
+              <span class="pcard__cat" data-i18n="proj.melon.badge">Startup &bull; Tablet &bull; Hospitality</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-15.webp" alt="Melon" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p14" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-15.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">15</span>
+              <h3 class="pdetail__title">Melon</h3>
+              <span class="pdetail__cat" data-i18n="proj.melon.badge">Startup &bull; Tablet &bull; Hospitality</span>
+              <p data-i18n="proj.melon.desc">Tablet application designed for the hospitality industry, built with React Native and Expo Go for hotel in-room guest experiences. Developed high-fidelity UI components with fluid animations and optimized state management using Redux Toolkit and RTK Query. Also built the promotional website using React with TypeScript.</p>
+              <ul class="chips"><li>React Native</li><li>Expo Go</li><li>React</li><li>TypeScript</li><li>Redux Toolkit</li><li>RTK Query</li></ul>
+              <a href="https://mellontech.com.tr" target="_blank" rel="noopener" class="ulink"><span data-i18n="proj.visit">Visit Site</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
           </div>
-          <div class="cert-item">
-            <span class="cert-icon">&#9733;</span>
-            <span>Figma / Mockup Design &mdash; T&Uuml;B&#304;TAK</span>
+        </article>
+        <article class="pcard reveal" style="--y:80px">
+          <button type="button" class="pcard__btn" data-open="p15" aria-haspopup="dialog">
+            <span class="pcard__meta">
+              <span class="pcard__num">16</span>
+              <b class="pcard__name">iWebsa</b>
+              <span class="pcard__cat" data-i18n="proj.iwebsa.badge">Frontend &bull; Remote</span>
+              <span class="pcard__view">[ <span data-i18n="work.view">View project</span> &#8599; ]</span>
+            </span>
+            <span class="pcard__media"><img class="pcard__photo" loading="lazy" decoding="async" src="assets/photo/proje-16.webp" alt="iWebsa" width="1448" height="1086" /></span>
+          </button>
+          <div class="pdetail" id="p15" hidden>
+            <div class="pdetail__gallery"><img loading="lazy" decoding="async" src="assets/photo/proje-16.webp" alt="" width="1448" height="1086" /></div>
+            <div class="pdetail__text">
+              <span class="pdetail__num">16</span>
+              <h3 class="pdetail__title">iWebsa</h3>
+              <span class="pdetail__cat" data-i18n="proj.iwebsa.badge">Frontend &bull; Remote</span>
+              <p data-i18n="proj.iwebsa.desc">Converted Figma designs into responsive, pixel-perfect frontend components. Ensured cross-browser compatibility and implemented mobile-first responsive layouts with clean, semantic code architecture.</p>
+              <ul class="chips"><li>React</li><li>Figma</li><li>Responsive Design</li><li>CSS3</li><li>Mobile-First</li></ul>
+              
+            </div>
           </div>
+        </article></div>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section class="edu" id="education">
+      <h2 class="title reveal"><span data-i18n="nav.education">Education</span> <span class="title__blank" aria-hidden="true"></span> <span data-i18n="edu.word">&amp; more</span></h2>
+      <div class="notes">
+        <div class="note reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="note__k" data-i18n="edu.date">Feb 2021 &mdash; June 2025</span>
+          <p><b data-i18n="edu.degree">B.Sc. in Computer Technology and Information Systems</b></p>
+          <p data-i18n="edu.school">Bilkent University, Ankara</p>
+          <p><span data-i18n="edu.gpa">GPA: 3.06 / 4.00</span> &middot; <span data-i18n="edu.honors">High Honor &amp; Honor Certificates</span></p>
+        </div>
+        <div class="note note--pink reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="note__k" data-i18n="edu.extra">Beyond</span>
+          <p data-i18n="edu.lang"><strong>English</strong> &mdash; Advanced (IELTS 6.5)</p>
+          <p data-i18n="edu.karting"><strong>Board Member</strong> &mdash; Bilkent Karting Society (2022&ndash;2023), Led marketing &amp; visual content</p>
+        </div>
+        <div class="note reveal">
+          <span class="tape" aria-hidden="true"></span>
+          <span class="note__k" data-i18n="edu.certs">Certifications</span>
+          <ul class="note__list"><li>Java (Intermediate-Advanced) &mdash; T&Uuml;B&#304;TAK</li><li>Spring Framework &mdash; T&Uuml;B&#304;TAK</li><li>Microservices Architectures &mdash; T&Uuml;B&#304;TAK</li><li>UX &amp; Usability &mdash; T&Uuml;B&#304;TAK</li><li>Figma / Mockup Design &mdash; T&Uuml;B&#304;TAK</li><li>CCNAv7: Switching &amp; Routing &mdash; Cisco</li><li>CCNAv7: Intro to Networks &mdash; Cisco</li><li>PCAP &mdash; Python Essentials &mdash; Cisco</li></ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== CONTACT (Editorial) ========== -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section__header anim-fade-up">
-        <h2 class="section__title contact__title" data-i18n="contact.title">Let's build<br/><span class="text-accent">something.</span></h2>
-        <p class="section__desc" data-i18n="contact.desc">Open to new opportunities, collaborations, and interesting conversations.</p>
+    <!-- ========== CONTACT: wall + tear-off note ========== -->
+    <section class="contact tex tex--steel-dark" id="contact">
+      <div class="flyer reveal">
+        <span class="pin" aria-hidden="true"></span>
+        <h2 class="flyer__title" data-i18n="contact.big">Have a project<br />in mind?</h2>
+        <p class="flyer__sub" data-i18n="contact.desc">Open to new opportunities, collaborations, and interesting conversations.</p>
+        <a class="flyer__cta" href="mailto:celikb292@icloud.com"><span data-i18n="contact.start">Start a project</span> <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 12L12 4M12 4H5.5M12 4v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <ul class="tabs">
+          <li><a href="https://www.linkedin.com/in/buse-%C3%A7elik-8a2006237/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.github.com/buseclk12" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="tel:+905342735783">+90 534 273 57 83</a></li>
+          <li><a href="mailto:celikb292@icloud.com">celikb292@icloud.com</a></li>
+        </ul>
       </div>
-
-      <div class="contact__grid anim-fade-up" style="--delay: 0.1s">
-        <a href="mailto:celikb292@icloud.com" class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </div>
-          <span class="contact-card__label" data-i18n="contact.email">Email</span>
-          <span class="contact-card__value">celikb292@icloud.com</span>
-        </a>
-
-        <a href="https://www.linkedin.com/in/buse-%C3%A7elik-8a2006237/" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </div>
-          <span class="contact-card__label" data-i18n="contact.linkedin">LinkedIn</span>
-          <span class="contact-card__value">busecelik</span>
-        </a>
-
-        <a href="https://www.github.com/buseclk12" target="_blank" rel="noopener" class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-          </div>
-          <span class="contact-card__label" data-i18n="contact.github">GitHub</span>
-          <span class="contact-card__value">buseclk12</span>
-        </a>
-
-        <a href="tel:+905342735783" class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <span class="contact-card__label" data-i18n="contact.phone">Phone</span>
-          <span class="contact-card__value">+90 (534) 273 57 83</span>
-        </a>
-      </div>
-
-      <div class="contact__location anim-fade-up" style="--delay: 0.2s">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Ankara, T&uuml;rkiye</span>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- ========== FOOTER ========== -->
+  <div class="signature" aria-hidden="true">Buse &Ccedil;elik</div>
   <footer class="footer">
-    <div class="container footer__inner">
-      <span class="footer__copy" data-i18n="footer.copy">&copy; 2026 Buse &Ccedil;elik. Crafted with precision.</span>
-      <div class="footer__links">
-        <a href="https://www.linkedin.com/in/buse-%C3%A7elik-8a2006237/" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="https://www.github.com/buseclk12" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-        </a>
-      </div>
+    <a href="#top" class="footer__brand"><span class="footer__star"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0 58 38 100 30 64 54 84 100 50 68 16 100 36 54 0 30 42 38Z"/></svg></span>Buse &Ccedil;elik</a>
+    <div class="footer__right">
+      <span>Full-stack &middot; UI/UX &middot; Design</span>
+      <span><a href="https://www.linkedin.com/in/buse-%C3%A7elik-8a2006237/" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://www.github.com/buseclk12" target="_blank" rel="noopener">GitHub</a> &middot; <a href="mailto:celikb292@icloud.com">Email</a></span>
+      <span data-i18n="footer.copy">&copy; 2026 Buse &Ccedil;elik. Crafted with precision.</span>
     </div>
   </footer>
 
-  <script src="i18n.js?v=5"></script>
-  <script src="script.js?v=4"></script>
+  </div>
+
+  <!-- ========== PROJECT DIALOG ========== -->
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Project">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card">
+      <button type="button" class="modal__close" data-close><span data-i18n="ui.close">Close</span> &times;</button>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox__close round" id="lightboxClose" aria-label="Close"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <img alt="Poster preview" id="lightboxImg" />
+  </div>
+
+  <script src="i18n.js?v=13b"></script>
+  <script src="script.js?v=13b"></script>
 </body>
 </html>

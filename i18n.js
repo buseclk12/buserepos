@@ -4,6 +4,41 @@
 
 const translations = {
   en: {
+    "exp.word": "journey",
+    "edu.word": "& more",
+    "hero.label": "software engineer",
+    "hero.q1": "I don't just design the screen —<br />I build what runs behind it.",
+    "hero.a": "A",
+    "hero.tag": "building digital products<br />with character.",
+    "work.selected": "Selected",
+    "work.word": "Work",
+    "work.view": "View project",
+    "about.hi": "Hi I'm",
+    "about.p1": "I'm a full-stack software engineer building scalable systems, interfaces and digital products.",
+    "about.p2": "I like clean architecture, thoughtful typography and the small details that make a product feel complete.",
+    "skills.title2": "What I do",
+    "posters.a": "Poster",
+    "posters.b": "Designs",
+    "more.a": "More",
+    "more.b": "Projects",
+    "contact.big": "Have a project<br />in mind?",
+    "contact.start": "Start a project",
+    "ui.close": "Close",
+    "about.big": "About me",
+    "proj.more": "More projects",
+    "edu.extra": "Beyond",
+    "edu.certs": "Certifications",
+    "nav.menu": "Menu",
+    "nav.design": "Design",
+    "nav.education": "Education",
+    "hero.localtime": "Local time",
+    "hero.now": "Currently",
+    "proj.posters.hint": "Drag or scroll →",
+    "skills.cat.db": "Databases",
+    "skills.cat.ai": "AI & Data",
+    "skills.cat.design": "Design",
+    "skills.cat.tools": "Tools",
+    "footer.top": "Back to top ↑",
     // Nav
     "nav.about": "About",
     "nav.experience": "Experience",
@@ -197,6 +232,41 @@ const translations = {
   },
 
   tr: {
+    "exp.word": "yolculuk",
+    "edu.word": "& dahası",
+    "hero.label": "yazılım mühendisi",
+    "hero.q1": "Sadece ekranı tasarlamıyorum —<br />arkasında çalışanı da kuruyorum.",
+    "hero.a": "",
+    "hero.tag": "karakteri olan dijital<br />ürünler geliştiriyorum.",
+    "work.selected": "Seçili",
+    "work.word": "İşler",
+    "work.view": "Projeyi incele",
+    "about.hi": "Merhaba ben",
+    "about.p1": "Ölçeklenebilir sistemler, arayüzler ve dijital ürünler geliştiren bir full-stack yazılım mühendisiyim.",
+    "about.p2": "Temiz mimariyi, özenli tipografiyi ve bir ürünü tamamlanmış hissettiren küçük detayları seviyorum.",
+    "skills.title2": "Neler yaparım",
+    "posters.a": "Afiş",
+    "posters.b": "Tasarımlar",
+    "more.a": "Diğer",
+    "more.b": "Projeler",
+    "contact.big": "Aklında bir<br />proje mi var?",
+    "contact.start": "Bir proje başlat",
+    "ui.close": "Kapat",
+    "about.big": "Hakkımda",
+    "proj.more": "Diğer projeler",
+    "edu.extra": "Ek bilgiler",
+    "edu.certs": "Sertifikalar",
+    "nav.menu": "Menü",
+    "nav.design": "Tasarım",
+    "nav.education": "Eğitim",
+    "hero.localtime": "Yerel saat",
+    "hero.now": "Şu an",
+    "proj.posters.hint": "Sürükle veya kaydır →",
+    "skills.cat.db": "Veritabanları",
+    "skills.cat.ai": "Yapay Zekâ & Veri",
+    "skills.cat.design": "Tasarım",
+    "skills.cat.tools": "Araçlar",
+    "footer.top": "Başa dön ↑",
     // Nav
     "nav.about": "Hakkımda",
     "nav.experience": "Deneyim",
@@ -415,7 +485,8 @@ const typingTitles = {
 (function () {
   'use strict';
 
-  let currentLang = localStorage.getItem('lang') || 'en';
+  let currentLang = 'en';
+  try { currentLang = localStorage.getItem('lang') || 'en'; } catch (e) {}
 
   function applyTranslations(lang) {
     const dict = translations[lang];
@@ -430,22 +501,29 @@ const typingTitles = {
     document.documentElement.lang = lang;
 
     // Update toggle active state
-    document.querySelectorAll('.lang-toggle__option').forEach(opt => {
-      opt.classList.toggle('lang-toggle__option--active', opt.dataset.lang === lang);
+    document.querySelectorAll('.lang__opt').forEach(opt => {
+      const active = opt.dataset.lang === lang;
+      opt.classList.toggle('is-active', active);
+      opt.setAttribute('aria-pressed', String(active));
     });
+
+    // Re-run text splitting / effects on freshly injected markup
+    if (window.__afterTranslate) {
+      window.__afterTranslate();
+    }
 
     // Update typing titles
     if (window.__updateTypingTitles) {
       window.__updateTypingTitles(lang);
     }
 
-    localStorage.setItem('lang', lang);
+    try { localStorage.setItem('lang', lang); } catch (e) {}
     currentLang = lang;
   }
 
   // Language toggle click handler
   document.addEventListener('click', (e) => {
-    const opt = e.target.closest('.lang-toggle__option');
+    const opt = e.target.closest('.lang__opt');
     if (opt && opt.dataset.lang) {
       const newLang = opt.dataset.lang;
       if (newLang !== currentLang) {
@@ -454,11 +532,8 @@ const typingTitles = {
     }
   });
 
-  // Apply on load
-  if (currentLang === 'tr') {
-    // Defer to let other scripts init first
-    setTimeout(() => applyTranslations('tr'), 150);
-  }
+  // Apply on load (script.js registers __updateTypingTitles first, then calls this)
+  window.__initLang = () => applyTranslations(currentLang);
 
   // Expose for external use
   window.__applyTranslations = applyTranslations;
