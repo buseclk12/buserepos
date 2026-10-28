@@ -4,6 +4,10 @@
 
 const translations = {
   en: {
+    "about.big": "About me",
+    "proj.more": "More projects",
+    "edu.extra": "Beyond",
+    "edu.certs": "Certifications",
     "nav.menu": "Menu",
     "nav.design": "Design",
     "nav.education": "Education",
@@ -208,6 +212,10 @@ const translations = {
   },
 
   tr: {
+    "about.big": "Hakkımda",
+    "proj.more": "Diğer projeler",
+    "edu.extra": "Ek bilgiler",
+    "edu.certs": "Sertifikalar",
     "nav.menu": "Menü",
     "nav.design": "Tasarım",
     "nav.education": "Eğitim",
